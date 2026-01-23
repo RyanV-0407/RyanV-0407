@@ -24,9 +24,9 @@
 
 
 📊 GitHub Stats
-<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=transparent" /> </p>
+<p align="left"> <img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=transparent" /> </p>
 
 
 👀 Visitors
-<<p align="center"> <img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" /> </p>
+<<p align="left"> <img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" /> </p>
 
