@@ -1,16 +1,75 @@
-## Hi there 👋
+```bash
+> booting ryan-os v3.0...
+> loading modules [DEV_CORE, AI_STACK, SYSTEM_UI]
+> status: ONLINE
+```
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=700&color=00FF9C&width=700&lines=ryan@github:~$+whoami;Developer;Learning+AI+%26+Systems;Building+Cool+Stuff;ryan@github:~$+_" />
 
-<!--
-**RyanV-0407/RyanV-0407** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+---
 
-Here are some ideas to get you started:
+## 🖥️ Ryan OS — System Monitor
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+| Module   | Status | Load |
+|---------|--------|------|
+| Dev Core | 🟢 ON  | ████████░░ |
+| AI Stack | 🟢 ON  | ███████░░░ |
+| Backend  | 🟢 ON  | █████████░ |
+
+---
+
+## 📊 Stats
+
+<img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=transparent" />
+
+---
+
+## 🎮 Game
+
+<a href="https://github.com/abhisheknaiidu/tic-tac-toe">PLAY TIC TAC TOE</a>
+
+---
+
+## 🐍 Snake
+
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" />
+
+---
+
+## 👀 Visitors
+
+<img src="https://profile-counter.glitch.me/RyanV-0407/count.svg" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=700&color=00FF9C&width=700&lines=ryan@github:~$+whoami;Developer;Learning+AI+%26+Systems;Building+Cool+Stuff;ryan@github:~$+_" />
+
+---
+
+## 🖥️ Ryan OS — System Monitor
+
+| Module   | Status | Load |
+|---------|--------|------|
+| Dev Core | 🟢 ON  | ████████░░ |
+| AI Stack | 🟢 ON  | ███████░░░ |
+| Backend  | 🟢 ON  | █████████░ |
+
+---
+
+## 📊 Stats
+
+<img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=transparent" />
+
+---
+
+## 🎮 Game
+
+<a href="https://github.com/abhisheknaiidu/tic-tac-toe">PLAY TIC TAC TOE</a>
+
+---
+
+## 🐍 Snake
+
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" />
+
+---
+
+## 👀 Visitors
+
+<img src="https://profile-counter.glitch.me/RyanV-0407/count.svg" />
