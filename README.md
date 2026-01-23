@@ -9,7 +9,9 @@
 
 ```
 <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=700&color=00FF9C&width=700&lines=ryan@github:~$+whoami;Developer;Learning+AI+%26+Systems;Building+Cool+Stuff;ryan@github:~$+_" />
+```
 
+```
 ---
 
 ## 🖥️ Ryan OS — System Monitor
@@ -20,7 +22,9 @@
 | AI Stack | 🟢 ON  | ███████░░░ |
 | Backend  | 🟢 ON  | █████████░ |
 
+```
 
+```
 📊 GitHub Stats
 <img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=transparent" />
 
