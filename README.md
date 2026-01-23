@@ -13,7 +13,7 @@
 
 
 
-## 🖥️ Ryan OS — System Monitor
+🖥️ Ryan OS — System Monitor
 
 | Module   | Status | Load |
 |---------|--------|------|
@@ -24,9 +24,9 @@
 
 
 📊 GitHub Stats
-<img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=transparent" />
+<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=transparent" /> </p>
 
 
 👀 Visitors
-<img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" />
+<<p align="center"> <img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" /> </p>
 
