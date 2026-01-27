@@ -27,3 +27,7 @@ jobs:
 
           plugin_activity: yes
           plugin_activity_limit: 5
+
+          # 🔑 THIS IS THE IMPORTANT PART
+          output_action: commit
+          output_path: metrics.svg
