@@ -36,7 +36,7 @@
 
 ### 📊 Activity Metrics
 
-<img src="./github-metrices.svg" />
+<img src="./github-metrics.svg" />
 
     </td>
   </tr>
