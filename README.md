@@ -30,3 +30,8 @@
 👀 Visitors
 <<p align="left"> <img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" /> </p>
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=00FF9C&height=120&section=footer"/>
+</p>
+
+
