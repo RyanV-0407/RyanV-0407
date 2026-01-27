@@ -1,0 +1,31 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="360">
+  <style>
+    text {
+      font-family: monospace;
+      font-size: 14px;
+      fill: #00FF9C;
+      white-space: pre;
+    }
+    rect {
+      fill: #0b0b0b;
+      stroke: #00FF9C;
+      stroke-width: 1;
+    }
+  </style>
+  <rect x="5" y="5" width="690" height="350" rx="8"/>
+  <text x="20" y="30">Commit activity by time of day
+Morning     28  ██████████████████
+Daytime      0  ░░░░░░░░░░░░░░░░░░
+Evening      0  ░░░░░░░░░░░░░░░░░░
+Night        0  ░░░░░░░░░░░░░░░░░░
+
+Commits by weekday
+Monday       0  ░░░░░░░░░░░░░░░░░░
+Tuesday     27  ██████████████████
+Wednesday    0  ░░░░░░░░░░░░░░░░░░
+Thursday     0  ░░░░░░░░░░░░░░░░░░
+Friday       1  ░░░░░░░░░░░░░░░░░░
+Saturday     0  ░░░░░░░░░░░░░░░░░░
+Sunday       0  ░░░░░░░░░░░░░░░░░░</text>
+</svg>
