@@ -34,13 +34,14 @@
   <tr>
     <td align="center">
 
-### 📊 Activity Metrics
+### 📊 Developer Activity Analytics
 
 <img src="./github-metrics.svg" />
 
     </td>
   </tr>
 </table>
+
 
 <p align="center">
   <img src="./assets/footer.svg" />
