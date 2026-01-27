@@ -3,7 +3,7 @@ name: GitHub Metrics
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 2 * * *"
 
 jobs:
   metrics:
@@ -14,23 +14,21 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           user: RyanV-0407
 
-          # 📌 CLEAN BASE (no noise)
-          base: ""
+          # Base kept minimal (prevents crashes)
+          base: header
 
-          # 🧠 CODING HABITS (THIS IS THE PART YOU LIKED)
+          # ✅ REAL-TIME COMMIT HABITS (THIS IS WHAT YOU WANT)
           plugin_habits: yes
           plugin_habits_facts: yes
           plugin_habits_charts: yes
-          plugin_habits_days: 14
+          plugin_habits_days: 30
 
-          # 💻 LANGUAGES (BAR STYLE)
-          plugin_languages: yes
-          plugin_languages_indepth: yes
-          plugin_languages_details: percentage
-          plugin_languages_limit: 6
+          # ❌ REMOVE NOISY STUFF
+          plugin_activity: no
+          plugin_languages: no
+          plugin_repositories: no
 
-          # 🎨 DARK, CLEAN LOOK
-          config_display: columns
+          # Output
           config_output: svg
           output_action: commit
           output_path: github-metrices.svg
