@@ -1,9 +1,9 @@
 name: GitHub Metrics
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"
-  workflow_dispatch:
 
 jobs:
   metrics:
@@ -12,21 +12,25 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
           user: RyanV-0407
-          template: classic
-          base: activity, repositories
 
-          plugin_languages: yes
-          plugin_languages_details: bytes-size, percentage
+          # 📌 CLEAN BASE (no noise)
+          base: ""
 
+          # 🧠 CODING HABITS (THIS IS THE PART YOU LIKED)
           plugin_habits: yes
           plugin_habits_facts: yes
           plugin_habits_charts: yes
+          plugin_habits_days: 14
 
-          plugin_activity: yes
-          plugin_activity_limit: 5
+          # 💻 LANGUAGES (BAR STYLE)
+          plugin_languages: yes
+          plugin_languages_indepth: yes
+          plugin_languages_details: percentage
+          plugin_languages_limit: 6
 
-          # ✅ FORCE OUTPUT TO REPO ROOT
+          # 🎨 DARK, CLEAN LOOK
+          config_display: columns
+          config_output: svg
           output_action: commit
-          output_path: metrics.svg
+          output_path: github-metrices.svg
