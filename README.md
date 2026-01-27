@@ -32,7 +32,7 @@
 
 
 <p align ="center">
-<img src="https://raw.githubusercontent.com/RyanV-0407/RyanV-0407/main/metrics.svg" />
+<img src="./github-metrices.svg" />
 </p>
 
 <p align="center">
