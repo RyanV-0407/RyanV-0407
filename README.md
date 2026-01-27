@@ -38,7 +38,6 @@
 
 <img src="./github-metrics.svg" />
 
-    </td>
   </tr>
 </table>
 
