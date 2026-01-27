@@ -31,7 +31,7 @@
 <<p align="left"> <img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" /> </p>
 
 <p align="center">
-  <img src="./assets/analytics.svg" />
+  <img src="https://raw.githubusercontent.com/RyanV-0407/wakatime-dashboard/main/stats.svg" />
 </p>
 
 
