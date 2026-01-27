@@ -31,7 +31,7 @@
 <<p align="left"> <img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" /> </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&section=footer&height=90&color=0:00FF9C,50:00E0FF,100:7F00FF&waveHeight=20"/>
+  <img src="./assets/footer.svg" />
 </p>
 
 
