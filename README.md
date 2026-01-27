@@ -30,16 +30,10 @@
 👀 Visitors
 <<p align="left"> <img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" /> </p>
 
-<table align="center">
-  <tr>
-    <td align="center">
+<p align="center">
+  <img src="./assets/analytics.svg" />
+</p>
 
-### 📊 Developer Activity Analytics
-
-<img src="./github-metrics.svg" />
-
-  </tr>
-</table>
 
 
 <p align="center">
