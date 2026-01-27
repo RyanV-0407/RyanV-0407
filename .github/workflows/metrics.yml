@@ -15,7 +15,6 @@ jobs:
 
           user: RyanV-0407
           template: classic
-
           base: activity, repositories
 
           plugin_languages: yes
@@ -28,6 +27,6 @@ jobs:
           plugin_activity: yes
           plugin_activity_limit: 5
 
-          # 🔑 THIS IS THE IMPORTANT PART
+          # ✅ FORCE OUTPUT TO REPO ROOT
           output_action: commit
           output_path: metrics.svg
