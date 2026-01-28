@@ -34,17 +34,10 @@
   <img src="https://raw.githubusercontent.com/RyanV-0407/wakatime-dashboard/main/stats.svg" />
 </p>
 
-## ⌛ Commit Activity
+## ⏳ Commit Activity
 
 <p align="center">
-  <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time
-    ?username=RyanV-0407
-    &utcOffset=5.5
-    &theme=github_dark
-    &v=3"
-    width="480"
-  />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=RyanV-0407&utcOffset=5.5&theme=github_dark&v=4" width="480"/>
 </p>
 
 <p align="center">
@@ -54,6 +47,7 @@
     🕒 Timezone: IST
   </sub>
 </p>
+
 
 
 
