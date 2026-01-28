@@ -36,9 +36,14 @@
 
 ## 📊 Developer Activity
 
-![WakaTime](stats.svg?v=4)
+![Coding Activity (GitHub Profile Stats)](
+https://github-profile-summary-cards.vercel.app/api/cards/productive-time
+?username=RyanV-0407
+&utcOffset=5.5
+&theme=github_dark
+&v=1
+)
 
-![Commits by Weekday](commits.svg?v=1)
 
 
 
