@@ -34,7 +34,8 @@
   <img src="https://raw.githubusercontent.com/RyanV-0407/wakatime-dashboard/main/stats.svg" />
 </p>
 
-![Commits per hour](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=<username>&utcOffset=5.5)
+![Commits per hour](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=RyanV-0407&utcOffset=5.5)
+
 
 
 <p align="center">
