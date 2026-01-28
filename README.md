@@ -31,13 +31,12 @@
 <<p align="left"> <img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" /> </p>
 
 
-## <img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/c4b41bd1-5b03-4227-9373-fd6df5cfaa84" />
- Developers Activity
+## 🧑🏻‍💻 Developers Activity
 <p align="center">
   <img src="https://raw.githubusercontent.com/RyanV-0407/wakatime-dashboard/main/stats.svg" />
 </p>
 
-## ⏳ Commit Activity
+## ⏳ Commits
 
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=RyanV-0407&utcOffset=5.5&theme=github_dark&v=4" width="480"/>
