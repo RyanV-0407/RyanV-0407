@@ -59,5 +59,10 @@
   <img src="./assets/footer.svg" />
 </p>
 
+<br/>
+<p align="center">
+  <img src="assets/Thanks.svg" />
+</p>
+
 
 
