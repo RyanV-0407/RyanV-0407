@@ -2,13 +2,13 @@
 
 <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" />
 
+## 🖥️ Ryan OS — System Monitor
 ```bash
 > booting ryan-os v3.0...
 > loading modules [DEV_CORE, AI_STACK, SYSTEM_UI]
 > status: ONLINE
 
 ```
-## 🖥️ Ryan OS — System Monitor
 
 | Module   | Status | Load |
 |---------|--------|------|
