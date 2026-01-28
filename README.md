@@ -30,6 +30,12 @@
 👀 Visitors
 <<p align="left"> <img src="https://visitor-badge.laobi.icu/badge?page_id=RyanV-0407.RyanV-0407" /> </p>
 
+---
+
+<p align="center">
+  <img src="https://camo.githubusercontent.com/332d665fc568c9b1292bb282979ca2dc057b5c1a55866110d16a4611e271e6ac/68747470733a2f2f692e696d6775722e636f6d2f5943773437446d2e676966" alt="Footer Graphic" />
+</p>
+
 
 ## 🧑🏻‍💻 Developers Activity
 <p align="center">
