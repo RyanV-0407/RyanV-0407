@@ -8,7 +8,7 @@
 > status: ONLINE
 
 ```
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=700&color=00FF9C&width=700&lines=ryan@github:~$+whoami;Developer;Learning+AI+%26+Systems;Building+Cool+Stuff;ryan@github:~$+_" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&pause=700&color=00FF9C&width=700&lines=RyanV-0407@github:~$+whoami;Developer;Learning+AI+%26+Systems;Building+Cool+Stuff;ryan@github:~$+_" />
 
 
 
