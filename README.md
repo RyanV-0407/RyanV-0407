@@ -34,15 +34,26 @@
   <img src="https://raw.githubusercontent.com/RyanV-0407/wakatime-dashboard/main/stats.svg" />
 </p>
 
-## 📊 Developer Activity
+## ⌛ Commit Activity
 
-![Coding Activity (GitHub Profile Stats)](
-https://github-profile-summary-cards.vercel.app/api/cards/productive-time
-?username=RyanV-0407
-&utcOffset=5.5
-&theme=github_dark
-&v=1
-)
+<p align="center">
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time
+    ?username=RyanV-0407
+    &utcOffset=5.5
+    &theme=github_dark
+    &v=3"
+    width="480"
+  />
+</p>
+
+<p align="center">
+  <sub>
+    ⏱ X-axis: Hour of day (0–23) &nbsp;•&nbsp;
+    📊 Y-axis: Commit count &nbsp;•&nbsp;
+    🕒 Timezone: IST
+  </sub>
+</p>
 
 
 
