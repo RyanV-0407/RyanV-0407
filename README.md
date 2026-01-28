@@ -34,7 +34,12 @@
   <img src="https://raw.githubusercontent.com/RyanV-0407/wakatime-dashboard/main/stats.svg" />
 </p>
 
-![Commits per hour](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=RyanV-0407&utcOffset=5.5)
+## 📊 Developer Activity
+
+![WakaTime](stats.svg?v=4)
+
+![Commits by Weekday](commits.svg?v=1)
+
 
 
 
