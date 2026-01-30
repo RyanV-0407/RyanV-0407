@@ -29,7 +29,12 @@
 </p>
 
 ## 📊 GitHub Stats
-<p align="left"> <img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=transparent" /> </p>
+
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=github_dark&hide_border=true&rank_icon=github&v=1" />
+</p>
+
 
 
 ## 🧑🏻‍💻 Developers Activity
