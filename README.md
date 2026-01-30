@@ -28,12 +28,13 @@
   <img src="https://camo.githubusercontent.com/332d665fc568c9b1292bb282979ca2dc057b5c1a55866110d16a4611e271e6ac/68747470733a2f2f692e696d6775722e636f6d2f5943773437446d2e676966" alt="Footer Graphic" />
 </p>
 
+
 ## 📊 GitHub Stats
 
-
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&theme=github_dark&hide_border=true&rank_icon=github&v=1" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RyanV-0407&theme=github_dark" />
 </p>
+
 
 
 
