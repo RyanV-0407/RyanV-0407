@@ -1,103 +1,75 @@
-<svg viewBox="0 0 580 185" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 580 180" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap');
-
-      .card-bg { fill: #07070f; rx: 14; ry: 14; }
-      .card-border { fill: none; stroke: #16162e; stroke-width: 1; rx: 14; ry: 14; }
-      .card-glow {
-        fill: none; stroke: url(#pBrd4); stroke-width: 1.5; rx: 14; ry: 14;
-        stroke-dasharray: 120 450; animation: pFlow4 6s linear infinite;
-        animation-delay: -4.5s;
-      }
-      @keyframes pFlow4 { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -570; } }
-
-      .p-icon-box { fill: #0e1e18; stroke: #10b981; stroke-width: 0.8; stroke-opacity: 0.5; rx: 10; ry: 10; }
-      .p-tag-mono { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 9px; fill: #10b981; letter-spacing: 2px; }
-      .p-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; fill: #ffffff; letter-spacing: -0.3px; }
-      .p-desc { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 13px; fill: #9494b8; line-height: 1.5; }
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap');
+      .c-bg { fill: #0c0c16; rx: 18; ry: 18; }
       
-      .status-badge { fill: #0e1224; stroke: #22d3ee; stroke-width: 0.8; rx: 10; ry: 10; }
-      .status-text { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 8.5px; fill: #22d3ee; letter-spacing: 1.5px; }
-      .status-dot { fill: #22d3ee; animation: pPulse4 2s ease-in-out infinite; }
-      @keyframes pPulse4 { 0%,100% { opacity: 0.3; r: 2.5; } 50% { opacity: 1; r: 3.5; } }
+      .c-border-base {
+        fill: none; rx: 18; ry: 18;
+        stroke: #18182c; stroke-width: 1.2;
+      }
+      .c-border-laser {
+        fill: none; rx: 18; ry: 18;
+        stroke: url(#pLaser4); stroke-width: 2; stroke-linecap: round;
+        stroke-dasharray: 180 1300; animation: pLaserRun4 7s linear infinite;
+        animation-delay: -5.25s;
+      }
+      @keyframes pLaserRun4 {
+        from { stroke-dashoffset: 0; }
+        to   { stroke-dashoffset: -1480; }
+      }
 
-      .tag-pill { fill: #0e0e1c; stroke: #222240; stroke-width: 0.8; rx: 6; ry: 6; }
-      .tag-text { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 9.5px; fill: #d0d0ec; letter-spacing: 1px; dominant-baseline: central; }
-      .arrow { fill: #10b981; animation: arrowSlide 2s ease-in-out infinite; }
-      @keyframes arrowSlide { 0%,100% { transform: translateX(0); opacity: 0.6; } 50% { transform: translateX(4px); opacity: 1; } }
+      .c-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; fill: #ffffff; }
+      .c-desc { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 13px; fill: #9898b0; line-height: 1.6; }
+      
+      .c-tag-bg { fill: #121224; stroke: #1e1e38; stroke-width: 0.8; rx: 8; ry: 8; }
+      .c-tag { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 10px; fill: #10b981; letter-spacing: 1px; }
+      
+      .c-icon { font-size: 24px; }
+      .c-glow { fill: #10b981; opacity: 0.06; animation: pGlow 4s ease-in-out infinite; }
+      @keyframes pGlow { 0%,100% { opacity: 0.04; r: 70; } 50% { opacity: 0.09; r: 90; } }
 
-      .corner { stroke: #10b981; stroke-width: 1.2; fill: none; }
+      .c-arrow {
+        font-family: 'Inter', sans-serif; font-size: 18px; fill: #10b981;
+        animation: arrowShift 2s ease-in-out infinite;
+      }
+      @keyframes arrowShift {
+        0%,100% { transform: translateX(0); opacity: 0.4; }
+        50%     { transform: translateX(5px); opacity: 1; }
+      }
     </style>
     
-    <linearGradient id="pBrd4" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#10b981"/>
-      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#10b981"/>
+    <linearGradient id="pLaser4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
     </linearGradient>
 
-    <radialGradient id="pAmbient4" cx="0.1" cy="0.1" r="0.8">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#07070f" stop-opacity="0"/>
-    </radialGradient>
+    <filter id="pBlur4"><feGaussianBlur stdDeviation="35"/></filter>
   </defs>
 
-  <rect x="2" y="2" width="576" height="181" class="card-bg"/>
-  <rect x="2" y="2" width="576" height="181" fill="url(#pAmbient4)" rx="14" ry="14"/>
-  <rect x="2" y="2" width="576" height="181" class="card-border"/>
-  <rect x="2" y="2" width="576" height="181" class="card-glow"/>
+  <rect x="2" y="2" width="576" height="176" class="c-bg"/>
+  <circle cx="520" cy="40" r="80" class="c-glow" filter="url(#pBlur4)"/>
+  
+  <rect x="2" y="2" width="576" height="176" class="c-border-base"/>
+  <rect x="2" y="2" width="576" height="176" class="c-border-laser"/>
 
-  <!-- Corner Brackets -->
-  <path d="M 10 20 L 10 10 L 20 10" class="corner"/>
-  <path d="M 570 20 L 570 10 L 560 10" class="corner"/>
-  <path d="M 10 165 L 10 175 L 20 175" class="corner"/>
-  <path d="M 570 165 L 570 175 L 560 175" class="corner"/>
+  <text x="36" y="48" class="c-icon">🔔</text>
+  <text x="72" y="46" class="c-title">Event Reminder System</text>
+  <text x="536" y="46" class="c-arrow">→</text>
 
-  <!-- Top Header Bar -->
-  <g transform="translate(24, 18)">
-    <rect x="0" y="0" width="34" height="34" class="p-icon-box"/>
-    <text x="17" y="22" font-family="'Space Mono', monospace" font-size="16" fill="#10b981" text-anchor="middle">🔔</text>
+  <text x="36" y="80" class="c-desc">Automated event scheduling and notification delivery</text>
+  <text x="36" y="102" class="c-desc">system managing time-sensitive tasks, reminders, and</text>
+  <text x="36" y="124" class="c-desc">multi-channel alerts with high reliability and precision.</text>
 
-    <text x="44" y="13" class="p-tag-mono">SYS::DAEMON // 04</text>
-    <text x="44" y="31" class="p-title">Event Reminder System</text>
+  <rect x="36" y="140" width="80" height="24" class="c-tag-bg"/>
+  <text x="76" y="156" class="c-tag" text-anchor="middle">PYTHON</text>
 
-    <!-- Live Status Badge -->
-    <rect x="390" y="4" width="124" height="22" class="status-badge"/>
-    <circle cx="404" cy="15" r="3" class="status-dot"/>
-    <text x="414" y="18" class="status-text">DAEMON::ONLINE</text>
+  <rect x="124" y="140" width="105" height="24" class="c-tag-bg"/>
+  <text x="176" y="156" class="c-tag" text-anchor="middle">AUTOMATION</text>
 
-    <!-- Arrow icon -->
-    <g class="arrow" transform="translate(528, 12)">
-      <path d="M 0 5 L 8 5 M 5 2 L 8 5 L 5 8" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </g>
-  </g>
-
-  <!-- Project Summary -->
-  <g transform="translate(24, 74)">
-    <text x="0" y="16" class="p-desc">Resilient event scheduling daemon providing distributed job queues,</text>
-    <text x="0" y="36" class="p-desc">intelligent multi-channel dispatch, and automated alert delivery.</text>
-  </g>
-
-  <!-- Tech Badges -->
-  <g transform="translate(24, 136)">
-    <!-- Pill 1 -->
-    <rect x="0" y="0" width="85" height="26" class="tag-pill" stroke="#10b981" stroke-opacity="0.4"/>
-    <circle cx="12" cy="13" r="2.5" fill="#10b981"/>
-    <text x="24" y="13" class="tag-text">DAEMON</text>
-
-    <!-- Pill 2 -->
-    <rect x="95" y="0" width="75" height="26" class="tag-pill" stroke="#22d3ee" stroke-opacity="0.4"/>
-    <circle cx="107" cy="13" r="2.5" fill="#22d3ee"/>
-    <text x="119" y="13" class="tag-text">PYTHON</text>
-
-    <!-- Pill 3 -->
-    <rect x="180" y="0" width="85" height="26" class="tag-pill" stroke="#a78bfa" stroke-opacity="0.4"/>
-    <circle cx="192" cy="13" r="2.5" fill="#a78bfa"/>
-    <text x="204" y="13" class="tag-text">ASYNCIO</text>
-
-    <!-- Pill 4 -->
-    <rect x="275" y="0" width="90" height="26" class="tag-pill"/>
-    <circle cx="287" cy="13" r="2.5" fill="#f472b6"/>
-    <text x="299" y="13" class="tag-text">AUTOMATION</text>
-  </g>
+  <rect x="237" y="140" width="60" height="24" class="c-tag-bg"/>
+  <text x="267" y="156" class="c-tag" text-anchor="middle">CRON</text>
 </svg>

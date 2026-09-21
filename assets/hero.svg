@@ -1,499 +1,182 @@
-<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
-<defs>
-  <style>
-    /* ── FONTS ── */
-    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&amp;display=swap');
 
-    /* ── NOISE TEXTURE (SVG filter) ── */
+      .bg { fill: #07070d; }
 
-    /* ── BG ── */
-    .bg { fill: #050508; }
+      /* Aurora Blobs */
+      .aurora-1 { fill: #7c3aed; opacity: 0.28; animation: aFloat1 16s ease-in-out infinite alternate; }
+      .aurora-2 { fill: #0891b2; opacity: 0.25; animation: aFloat2 18s ease-in-out infinite alternate; }
+      .aurora-3 { fill: #db2777; opacity: 0.22; animation: aFloat3 14s ease-in-out infinite alternate; }
+      .aurora-4 { fill: #4f46e5; opacity: 0.26; animation: aFloat1 20s ease-in-out infinite alternate-reverse; }
 
-    /* ── GRID (perspective) ── */
-    .grid-line {
-      stroke: #0f0f24;
-      stroke-width: 0.8;
-      fill: none;
-    }
-    .grid-vert {
-      stroke: #0d0d20;
-      stroke-width: 0.5;
-      fill: none;
-      animation: gridPulse 6s ease-in-out infinite;
-    }
-    @keyframes gridPulse {
-      0%,100% { stroke-opacity: 0.4; }
-      50% { stroke-opacity: 1; }
-    }
+      @keyframes aFloat1 {
+        0%   { transform: translate(0, 0) scale(1); }
+        50%  { transform: translate(60px, -30px) scale(1.15); }
+        100% { transform: translate(-40px, 40px) scale(0.9); }
+      }
+      @keyframes aFloat2 {
+        0%   { transform: translate(0, 0) scale(1); }
+        50%  { transform: translate(-50px, 35px) scale(1.1); }
+        100% { transform: translate(40px, -30px) scale(0.95); }
+      }
+      @keyframes aFloat3 {
+        0%   { transform: translate(0, 0) scale(1); }
+        50%  { transform: translate(30px, 40px) scale(1.2); }
+        100% { transform: translate(-50px, -20px) scale(0.85); }
+      }
 
-    /* ── AURORA MESH ── */
-    .mesh-a {
-      fill: none;
-      stroke: url(#meshG1);
-      stroke-width: 1;
-      opacity: 0;
-      animation: meshFade 6s ease-in-out infinite;
-    }
-    .mesh-b {
-      fill: none;
-      stroke: url(#meshG2);
-      stroke-width: 0.8;
-      opacity: 0;
-      animation: meshFade 6s ease-in-out 2s infinite;
-    }
-    .mesh-c {
-      fill: none;
-      stroke: url(#meshG3);
-      stroke-width: 0.6;
-      opacity: 0;
-      animation: meshFade 6s ease-in-out 4s infinite;
-    }
-    @keyframes meshFade {
-      0%,100% { opacity: 0; }
-      30%,70% { opacity: 0.6; }
-    }
+      /* Orbiting particles */
+      .orbit-particle {
+        animation: orbitRun 9s linear infinite;
+        transform-origin: 600px 195px;
+      }
+      .p1 { fill: #a78bfa; }
+      .p2 { fill: #22d3ee; animation-delay: -3s; }
+      .p3 { fill: #f472b6; animation-delay: -6s; }
 
-    /* ── BLOBS ── */
-    .blob-p {
-      fill: url(#blobGp);
-      animation: blobMorph1 14s ease-in-out infinite;
-      transform-origin: 220px 200px;
-    }
-    .blob-c {
-      fill: url(#blobGc);
-      animation: blobMorph2 16s ease-in-out infinite;
-      transform-origin: 900px 300px;
-    }
-    .blob-k {
-      fill: url(#blobGk);
-      animation: blobMorph3 12s ease-in-out infinite;
-      transform-origin: 600px 120px;
-    }
-    .blob-i {
-      fill: url(#blobGi);
-      animation: blobMorph1 18s ease-in-out 3s infinite reverse;
-      transform-origin: 500px 400px;
-    }
+      @keyframes orbitRun {
+        from { transform: rotate(0deg) translateX(190px) rotate(0deg); }
+        to   { transform: rotate(360deg) translateX(190px) rotate(-360deg); }
+      }
 
-    @keyframes blobMorph1 {
-      0%,100% { transform: scale(1) rotate(0deg) translate(0,0); }
-      25%  { transform: scale(1.25) rotate(8deg) translate(30px,-20px); }
-      50%  { transform: scale(0.88) rotate(-5deg) translate(-20px,30px); }
-      75%  { transform: scale(1.1) rotate(3deg) translate(15px,10px); }
-    }
-    @keyframes blobMorph2 {
-      0%,100% { transform: scale(1) rotate(0deg) translate(0,0); }
-      33%  { transform: scale(1.3) rotate(-10deg) translate(-40px,20px); }
-      66%  { transform: scale(0.8) rotate(7deg) translate(25px,-35px); }
-    }
-    @keyframes blobMorph3 {
-      0%,100% { transform: scale(1.1) rotate(5deg) translate(0,0); }
-      50%  { transform: scale(0.9) rotate(-8deg) translate(-30px,40px); }
-    }
+      /* Ambient Orbit Track (very subtle) */
+      .orbit-track {
+        fill: none; stroke: #1e1e38; stroke-width: 1; stroke-opacity: 0.4;
+        stroke-dasharray: 4 8;
+      }
 
-    /* ── SCAN LINE ── */
-    .scan {
-      fill: url(#scanG);
-      animation: scanMove 5s linear infinite;
-    }
-    @keyframes scanMove {
-      0%   { transform: translateY(-20px); opacity:0; }
-      5%   { opacity: 0.4; }
-      95%  { opacity: 0.4; }
-      100% { transform: translateY(520px); opacity:0; }
-    }
+      /* Main Name Typography */
+      .name-glow {
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-weight: 900;
+        font-size: 58px;
+        fill: url(#nameGrad);
+        letter-spacing: -1px;
+        opacity: 0.3;
+      }
+      .name-main {
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-weight: 900;
+        font-size: 58px;
+        fill: #ffffff;
+        letter-spacing: -1px;
+      }
 
-    /* ── GLITCH LAYERS ── */
-    .name-base {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 76px;
-      fill: #ffffff;
-      letter-spacing: -2px;
-    }
-    .name-glitch-1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 76px;
-      fill: #a78bfa;
-      letter-spacing: -2px;
-      opacity: 0;
-      animation: glitch1 7s steps(1) infinite;
-    }
-    .name-glitch-2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 76px;
-      fill: #22d3ee;
-      letter-spacing: -2px;
-      opacity: 0;
-      animation: glitch2 7s steps(1) infinite;
-    }
-    @keyframes glitch1 {
-      0%,95%,100% { opacity:0; transform:translate(0,0) skewX(0deg); }
-      96%  { opacity:0.8; transform:translate(-4px,2px) skewX(-3deg); clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%); }
-      97%  { opacity:0; }
-      98%  { opacity:0.6; transform:translate(3px,-1px) skewX(2deg); clip-path:polygon(0 60%,100% 60%,100% 75%,0 75%); }
-      99%  { opacity:0; }
-    }
-    @keyframes glitch2 {
-      0%,93%,100% { opacity:0; transform:translate(0,0); }
-      94%  { opacity:0.7; transform:translate(5px,-3px); clip-path:polygon(0 30%,100% 30%,100% 50%,0 50%); }
-      95%  { opacity:0; }
-      96.5%{ opacity:0.5; transform:translate(-3px,1px); clip-path:polygon(0 70%,100% 70%,100% 85%,0 85%); }
-      97%  { opacity:0; }
-    }
+      /* Accent line with moving light shimmer */
+      .accent-track {
+        stroke: #18182c; stroke-width: 1.5; stroke-linecap: round;
+      }
+      .accent-shimmer {
+        stroke: url(#lineShimmer); stroke-width: 2; stroke-linecap: round;
+        stroke-dasharray: 120 400; animation: shimmerRun 3.2s linear infinite;
+      }
+      @keyframes shimmerRun {
+        0%   { stroke-dashoffset: 520; }
+        100% { stroke-dashoffset: 0; }
+      }
 
-    /* ── NAME REVEAL ── */
-    .name-wrap {
-      opacity:0;
-      animation: nameReveal 1.4s cubic-bezier(0.22,1,0.36,1) 0.6s forwards;
-    }
-    @keyframes nameReveal {
-      from { opacity:0; transform:translateY(40px); filter:blur(12px); }
-      to   { opacity:1; transform:translateY(0);    filter:blur(0); }
-    }
+      /* Tagline */
+      .tagline {
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        fill: #8e8eb4;
+        letter-spacing: 7px;
+      }
 
-    /* ── TAGLINE CHARS ── */
-    .tag-word {
-      font-family: 'Space Mono', monospace;
-      font-size: 14px;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      fill: #3a3a5e;
-      opacity:0;
-      animation: tagReveal 0.8s ease-out forwards;
-    }
-    .tag-word-1 { animation-delay: 1.3s; }
-    .tag-word-2 { fill: #a78bfa; animation-delay: 1.6s; }
-    .tag-word-3 { animation-delay: 1.9s; }
-    .tag-word-4 { fill: #22d3ee; animation-delay: 2.2s; }
-    .tag-word-5 { animation-delay: 2.5s; }
-    .tag-word-6 { fill: #f472b6; animation-delay: 2.8s; }
-    @keyframes tagReveal {
-      from { opacity:0; transform:translateY(12px); }
-      to   { opacity:1; transform:translateY(0); }
-    }
+      /* Status Pill */
+      .status-pill {
+        fill: #0d0d18; stroke: #1e1e38; stroke-width: 1; rx: 14; ry: 14;
+      }
+      .status-dot {
+        fill: #22d3ee; animation: pulseDot 2s ease-in-out infinite;
+      }
+      .status-ring {
+        fill: none; stroke: #22d3ee; stroke-width: 1; animation: pulseRing 2s ease-out infinite;
+      }
+      @keyframes pulseDot { 0%,100% { r: 3; opacity: 0.6; } 50% { r: 4; opacity: 1; } }
+      @keyframes pulseRing { 0% { r: 3; stroke-opacity: 0.8; } 100% { r: 14; stroke-opacity: 0; } }
 
-    /* ── ACCENT BAR ── */
-    .accent-track { stroke:#111128; stroke-width:1; }
-    .accent-bar {
-      stroke: url(#accentG);
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-dasharray: 320 0;
-      opacity:0;
-      animation: barReveal 1s ease-out 1s forwards, barShimmer 3s linear 2s infinite;
-    }
-    @keyframes barReveal {
-      from { opacity:0; stroke-dasharray:0 320; }
-      to   { opacity:1; stroke-dasharray:320 0; }
-    }
-    @keyframes barShimmer {
-      0%   { stroke: url(#accentG); }
-      33%  { stroke: url(#accentG2); }
-      66%  { stroke: url(#accentG3); }
-      100% { stroke: url(#accentG); }
-    }
+      .status-text {
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-weight: 500;
+        font-size: 10.5px;
+        fill: #72729a;
+        letter-spacing: 2.5px;
+      }
 
-    /* ── STATUS PILL ── */
-    .status-pill { fill:#0d0d1a; rx:14; ry:14; stroke:#1e1e38; stroke-width:1; }
-    .status-dot  { fill:#22d3ee; animation:statusPulse 2s ease-in-out infinite; }
-    @keyframes statusPulse { 0%,100%{r:3;opacity:0.4;} 50%{r:4.5;opacity:1;} }
-    .status-ring {
-      fill:none; stroke:#22d3ee; stroke-width:1;
-      animation:ringExpand 2s ease-out infinite;
-    }
-    @keyframes ringExpand { 0%{r:4;stroke-opacity:0.8;} 100%{r:14;stroke-opacity:0;} }
-    .status-text {
-      font-family:'Space Mono',monospace; font-size:11px;
-      fill:#4a4a6a; letter-spacing:2px;
-      opacity:0; animation:fadeIn 0.5s ease-out 3.2s forwards;
-    }
-    @keyframes fadeIn { to{opacity:1;} }
+      /* Corner Brackets */
+      .bracket {
+        stroke: #a78bfa; stroke-width: 1.5; fill: none; opacity: 0.4;
+      }
+      .bracket-r  { stroke: #22d3ee; }
+      .bracket-bl { stroke: #f472b6; }
+      .bracket-br { stroke: #a78bfa; }
+    </style>
 
-    /* ── ORBITS ── */
-    .orbit-ring {
-      fill:none; stroke:#1a1a30; stroke-width:1;
-      stroke-dasharray: 8 4;
-      animation: orbitRingSpin 20s linear infinite;
-      transform-origin:600px 250px;
-    }
-    .orbit-ring2 {
-      fill:none; stroke:#161628; stroke-width:0.8;
-      stroke-dasharray: 5 6;
-      animation: orbitRingSpin 30s linear infinite reverse;
-      transform-origin:600px 250px;
-    }
-    @keyframes orbitRingSpin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
 
-    .orb-dot {
-      animation: orbDot1 20s linear infinite;
-      transform-origin:600px 250px;
-    }
-    .orb-dot2 {
-      animation: orbDot1 20s linear infinite;
-      animation-delay:-6.67s;
-      transform-origin:600px 250px;
-    }
-    .orb-dot3 {
-      animation: orbDot1 20s linear infinite;
-      animation-delay:-13.33s;
-      transform-origin:600px 250px;
-    }
-    .orb-dot-b {
-      animation: orbDot2 30s linear infinite;
-      transform-origin:600px 250px;
-    }
-    .orb-dot-b2 {
-      animation: orbDot2 30s linear infinite;
-      animation-delay:-10s;
-      transform-origin:600px 250px;
-    }
-    @keyframes orbDot1 {
-      from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
-      to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-    }
-    @keyframes orbDot2 {
-      from { transform: rotate(0deg) translateX(280px) rotate(0deg); }
-      to   { transform: rotate(360deg) translateX(280px) rotate(-360deg); }
-    }
+    <linearGradient id="lineShimmer" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#a78bfa"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
 
-    /* ── STARS / PARTICLES ── */
-    .star { fill:#fff; animation:starTwinkle 4s ease-in-out infinite; }
-    .s1{animation-delay:0s;} .s2{animation-delay:0.3s;} .s3{animation-delay:0.6s;}
-    .s4{animation-delay:0.9s;} .s5{animation-delay:1.2s;} .s6{animation-delay:1.5s;}
-    .s7{animation-delay:1.8s;} .s8{animation-delay:2.1s;} .s9{animation-delay:2.4s;}
-    .s10{animation-delay:2.7s;} .s11{animation-delay:3s;} .s12{animation-delay:3.3s;}
-    .s13{animation-delay:3.6s;} .s14{animation-delay:3.9s;} .s15{animation-delay:0.5s;}
-    @keyframes starTwinkle {
-      0%,100%{opacity:0;transform:scale(0);}
-      50%{opacity:0.8;transform:scale(1);}
-    }
+    <filter id="auroraBlur"><feGaussianBlur stdDeviation="85"/></filter>
+    <filter id="softGlow"><feGaussianBlur stdDeviation="8"/></filter>
+    <clipPath id="heroClip"><rect width="1200" height="400" rx="16"/></clipPath>
+  </defs>
 
-    /* ── CORNER BRACKETS ── */
-    .br {
-      fill:none; stroke:#a78bfa; stroke-width:1.5; stroke-linecap:square;
-      opacity:0; animation:brIn 0.5s ease-out 1.8s forwards;
-    }
-    .br2 { stroke:#22d3ee; animation-delay:2.0s; }
-    .br3 { stroke:#f472b6; animation-delay:2.2s; }
-    .br4 { stroke:#a78bfa; animation-delay:2.4s; }
-    @keyframes brIn { from{opacity:0;transform:scale(0.6);} to{opacity:0.5;transform:scale(1);} }
+  <g clip-path="url(#heroClip)">
+    <!-- Base Background -->
+    <rect width="1200" height="400" class="bg"/>
 
-    /* ── FLOATING GEOMETRIC SHAPES ── */
-    .geo1 {
-      fill:none; stroke:#a78bfa; stroke-width:0.8; opacity:0.12;
-      animation:geoFloat1 10s ease-in-out infinite;
-    }
-    .geo2 {
-      fill:none; stroke:#22d3ee; stroke-width:0.8; opacity:0.1;
-      animation:geoFloat2 13s ease-in-out infinite;
-    }
-    .geo3 {
-      fill:none; stroke:#f472b6; stroke-width:0.6; opacity:0.1;
-      animation:geoFloat3 8s ease-in-out infinite;
-    }
-    @keyframes geoFloat1 {
-      0%,100%{transform:translate(0,0) rotate(0deg);}
-      50%{transform:translate(15px,-20px) rotate(45deg);}
-    }
-    @keyframes geoFloat2 {
-      0%,100%{transform:translate(0,0) rotate(0deg);}
-      50%{transform:translate(-20px,10px) rotate(-30deg);}
-    }
-    @keyframes geoFloat3 {
-      0%,100%{transform:translate(0,0) rotate(0deg);}
-      50%{transform:translate(10px,15px) rotate(60deg);}
-    }
-  </style>
+    <!-- Silky Smooth Aurora Mesh (No noise, No pores) -->
+    <ellipse cx="240" cy="160" rx="280" ry="200" class="aurora-1" filter="url(#auroraBlur)"/>
+    <ellipse cx="960" cy="240" rx="290" ry="210" class="aurora-2" filter="url(#auroraBlur)"/>
+    <ellipse cx="600" cy="90"  rx="240" ry="170" class="aurora-3" filter="url(#auroraBlur)"/>
+    <ellipse cx="520" cy="320" rx="260" ry="190" class="aurora-4" filter="url(#auroraBlur)"/>
 
-  <!-- ── GRADIENTS ── -->
-  <radialGradient id="blobGp" cx="50%" cy="50%">
-    <stop offset="0%" stop-color="#7c3aed" stop-opacity="1"/>
-    <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
-  </radialGradient>
-  <radialGradient id="blobGc" cx="50%" cy="50%">
-    <stop offset="0%" stop-color="#0e7490" stop-opacity="1"/>
-    <stop offset="100%" stop-color="#0e7490" stop-opacity="0"/>
-  </radialGradient>
-  <radialGradient id="blobGk" cx="50%" cy="50%">
-    <stop offset="0%" stop-color="#be185d" stop-opacity="1"/>
-    <stop offset="100%" stop-color="#be185d" stop-opacity="0"/>
-  </radialGradient>
-  <radialGradient id="blobGi" cx="50%" cy="50%">
-    <stop offset="0%" stop-color="#4f46e5" stop-opacity="1"/>
-    <stop offset="100%" stop-color="#4f46e5" stop-opacity="0"/>
-  </radialGradient>
+    <!-- Orbit Track & Elegant Orbiting Satellite Particles -->
+    <circle cx="600" cy="195" r="190" class="orbit-track"/>
+    <circle cx="600" cy="195" r="3.5" class="orbit-particle p1" filter="url(#softGlow)"/>
+    <circle cx="600" cy="195" r="3.5" class="orbit-particle p1"/>
+    <circle cx="600" cy="195" r="3"   class="orbit-particle p2" filter="url(#softGlow)"/>
+    <circle cx="600" cy="195" r="3"   class="orbit-particle p2"/>
+    <circle cx="600" cy="195" r="3"   class="orbit-particle p3" filter="url(#softGlow)"/>
+    <circle cx="600" cy="195" r="3"   class="orbit-particle p3"/>
 
-  <linearGradient id="accentG"  x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%"   stop-color="#a78bfa" stop-opacity="0"/>
-    <stop offset="40%"  stop-color="#a78bfa"/>
-    <stop offset="60%"  stop-color="#22d3ee"/>
-    <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="accentG2" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%"   stop-color="#22d3ee" stop-opacity="0"/>
-    <stop offset="40%"  stop-color="#22d3ee"/>
-    <stop offset="60%"  stop-color="#f472b6"/>
-    <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="accentG3" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0%"   stop-color="#f472b6" stop-opacity="0"/>
-    <stop offset="40%"  stop-color="#f472b6"/>
-    <stop offset="60%"  stop-color="#a78bfa"/>
-    <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
-  </linearGradient>
+    <!-- Subtle Corner Brackets -->
+    <polyline points="28,54 28,28 54,28" class="bracket"/>
+    <polyline points="1146,28 1172,28 1172,54" class="bracket bracket-r"/>
+    <polyline points="28,346 28,372 54,372" class="bracket bracket-bl"/>
+    <polyline points="1146,372 1172,372 1172,346" class="bracket bracket-br"/>
 
-  <linearGradient id="meshG1" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="meshG2" x1="1" y1="0" x2="0" y2="1">
-    <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
-  </linearGradient>
-  <linearGradient id="meshG3" x1="0.5" y1="0" x2="0.5" y2="1">
-    <stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
-  </linearGradient>
+    <!-- Name & Glow -->
+    <text x="600" y="180" text-anchor="middle" class="name-glow" filter="url(#softGlow)">Vikram Singh Rathour</text>
+    <text x="600" y="180" text-anchor="middle" class="name-main">Vikram Singh Rathour</text>
 
-  <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0%"   stop-color="#a78bfa" stop-opacity="0"/>
-    <stop offset="50%"  stop-color="#a78bfa" stop-opacity="0.6"/>
-    <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
-  </linearGradient>
+    <!-- Center Accent Line with Flowing Shimmer -->
+    <line x1="420" y1="210" x2="780" y2="210" class="accent-track"/>
+    <line x1="420" y1="210" x2="780" y2="210" class="accent-shimmer"/>
 
-  <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="3" result="blur"/>
-    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-  </filter>
-  <filter id="megaBlur">
-    <feGaussianBlur stdDeviation="90"/>
-  </filter>
-  <filter id="medBlur">
-    <feGaussianBlur stdDeviation="55"/>
-  </filter>
-  <filter id="noiseFilter">
-    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
-    <feColorMatrix type="saturate" values="0"/>
-    <feBlend in="SourceGraphic" mode="overlay" result="noisy"/>
-    <feComposite in="noisy" in2="SourceGraphic" operator="in"/>
-  </filter>
+    <!-- Clean Modern Tagline -->
+    <text x="600" y="258" text-anchor="middle" class="tagline">DATA SCIENTIST  ·  ENGINEER  ·  BUILDER</text>
 
-  <clipPath id="clip">
-    <rect width="1200" height="500"/>
-  </clipPath>
-</defs>
-
-<g clip-path="url(#clip)">
-  <!-- BASE -->
-  <rect width="1200" height="500" class="bg"/>
-
-  <!-- NOISE GRAIN overlay -->
-  <rect width="1200" height="500" fill="#050508" opacity="0.6" filter="url(#noiseFilter)"/>
-
-  <!-- PERSPECTIVE GRID -->
-  <!-- horizontal -->
-  <line x1="0" y1="340" x2="1200" y2="340" class="grid-line"/>
-  <line x1="0" y1="380" x2="1200" y2="380" class="grid-line"/>
-  <line x1="0" y1="420" x2="1200" y2="420" class="grid-line"/>
-  <line x1="0" y1="460" x2="1200" y2="460" class="grid-line"/>
-  <!-- vertical fanning from vanishing point -->
-  <line x1="600" y1="340" x2="0"    y2="500" class="grid-vert"/>
-  <line x1="600" y1="340" x2="150"  y2="500" class="grid-vert"/>
-  <line x1="600" y1="340" x2="300"  y2="500" class="grid-vert"/>
-  <line x1="600" y1="340" x2="450"  y2="500" class="grid-vert"/>
-  <line x1="600" y1="340" x2="600"  y2="500" class="grid-vert"/>
-  <line x1="600" y1="340" x2="750"  y2="500" class="grid-vert"/>
-  <line x1="600" y1="340" x2="900"  y2="500" class="grid-vert"/>
-  <line x1="600" y1="340" x2="1050" y2="500" class="grid-vert"/>
-  <line x1="600" y1="340" x2="1200" y2="500" class="grid-vert"/>
-
-  <!-- AURORA BLOBS -->
-  <ellipse cx="220" cy="200" rx="300" ry="240" class="blob-p" filter="url(#megaBlur)"/>
-  <ellipse cx="950" cy="310" rx="280" ry="220" class="blob-c" filter="url(#megaBlur)"/>
-  <ellipse cx="600" cy="100" rx="200" ry="160" class="blob-k" filter="url(#medBlur)"/>
-  <ellipse cx="500" cy="420" rx="250" ry="180" class="blob-i" filter="url(#medBlur)"/>
-
-  <!-- ORBIT RINGS -->
-  <ellipse cx="600" cy="250" rx="200" ry="60" class="orbit-ring"/>
-  <ellipse cx="600" cy="250" rx="280" ry="80" class="orbit-ring2"/>
-
-  <!-- ORBIT DOTS -->
-  <circle cx="600" cy="250" r="4" fill="#a78bfa" class="orb-dot" filter="url(#glow3)"/>
-  <circle cx="600" cy="250" r="3" fill="#22d3ee" class="orb-dot2" filter="url(#glow3)"/>
-  <circle cx="600" cy="250" r="3.5" fill="#f472b6" class="orb-dot3" filter="url(#glow3)"/>
-  <circle cx="600" cy="250" r="2.5" fill="#a78bfa" class="orb-dot-b" filter="url(#glow3)"/>
-  <circle cx="600" cy="250" r="2" fill="#22d3ee" class="orb-dot-b2" filter="url(#glow3)"/>
-
-  <!-- MESH LINES -->
-  <path d="M 100,80 C 300,50 500,200 700,80 S 1000,150 1200,80" class="mesh-a"/>
-  <path d="M 0,300 C 200,250 400,350 600,280 S 900,320 1200,280" class="mesh-b"/>
-  <path d="M 0,450 C 300,400 600,480 900,420 S 1100,460 1200,440" class="mesh-c"/>
-
-  <!-- FLOATING GEOMETRY -->
-  <rect x="80" y="60" width="40" height="40" class="geo1"/>
-  <polygon points="1080,80 1110,130 1050,130" class="geo2"/>
-  <circle cx="130" cy="380" r="20" class="geo3"/>
-  <polygon points="1100,350 1130,390 1070,390" class="geo1"/>
-  <rect x="50" y="200" width="25" height="25" class="geo2"/>
-  <circle cx="1160" cy="200" r="15" class="geo3"/>
-
-  <!-- STARS -->
-  <circle cx="90" cy="55" r="1" class="star s1"/>
-  <circle cx="240" cy="130" r="1.5" class="star s2"/>
-  <circle cx="430" cy="40" r="1" class="star s3"/>
-  <circle cx="700" cy="160" r="2" class="star s4"/>
-  <circle cx="920" cy="50" r="1.5" class="star s5"/>
-  <circle cx="1100" cy="110" r="1" class="star s6"/>
-  <circle cx="160" cy="300" r="1.5" class="star s7"/>
-  <circle cx="1050" cy="280" r="1" class="star s8"/>
-  <circle cx="55" cy="170" r="1" class="star s9"/>
-  <circle cx="1160" cy="380" r="1.5" class="star s10"/>
-  <circle cx="380" cy="420" r="1" class="star s11"/>
-  <circle cx="820" cy="430" r="1.5" class="star s12"/>
-  <circle cx="500" cy="70" r="1" class="star s13"/>
-  <circle cx="770" cy="380" r="2" class="star s14"/>
-  <circle cx="330" cy="200" r="1" class="star s15"/>
-
-  <!-- SCAN LINE -->
-  <rect x="0" y="0" width="1200" height="12" class="scan"/>
-
-  <!-- CORNER BRACKETS -->
-  <polyline points="28,58 28,28 58,28" class="br"/>
-  <polyline points="1172,28 1172,58 1142,28" stroke="#22d3ee" class="br br2" style="stroke:#22d3ee"/>
-  <polyline points="28,472 28,442 58,472" stroke="#f472b6" class="br br3" style="stroke:#f472b6"/>
-  <polyline points="1172,472 1172,442 1142,472" class="br br4"/>
-
-  <!-- ── MAIN TEXT ── -->
-  <g class="name-wrap">
-    <!-- Glow duplicate -->
-    <text x="600" y="220" text-anchor="middle" class="name-base" filter="url(#megaBlur)" opacity="0.4">Vikram Singh Rathour</text>
-    <!-- Glitch layers -->
-    <text x="600" y="220" text-anchor="middle" class="name-glitch-1">Vikram Singh Rathour</text>
-    <text x="600" y="220" text-anchor="middle" class="name-glitch-2">Vikram Singh Rathour</text>
-    <!-- Base -->
-    <text x="600" y="220" text-anchor="middle" class="name-base">Vikram Singh Rathour</text>
+    <!-- Status Indicator Pill -->
+    <g transform="translate(465, 304)">
+      <rect x="0" y="0" width="270" height="30" class="status-pill"/>
+      <circle cx="22" cy="15" r="3" class="status-ring"/>
+      <circle cx="22" cy="15" r="3" class="status-dot"/>
+      <text x="38" y="19" class="status-text">AVAILABLE FOR COLLABORATION</text>
+    </g>
   </g>
-
-  <!-- ACCENT LINE -->
-  <line x1="440" y1="248" x2="760" y2="248" class="accent-track"/>
-  <line x1="440" y1="248" x2="760" y2="248" class="accent-bar"/>
-
-  <!-- TAGLINE -->
-  <g>
-    <text x="356" y="286" class="tag-word tag-word-1">Data</text>
-    <text x="407" y="286" class="tag-word tag-word-2">Scientist</text>
-    <text x="495" y="286" class="tag-word tag-word-3">·</text>
-    <text x="515" y="286" class="tag-word tag-word-4">Engineer</text>
-    <text x="600" y="286" class="tag-word tag-word-5">·</text>
-    <text x="619" y="286" class="tag-word tag-word-6">Builder</text>
-  </g>
-
-  <!-- STATUS PILL -->
-  <g transform="translate(480, 320)" opacity="0" style="animation:fadeIn 0.5s ease-out 3.2s forwards">
-    <rect x="0" y="0" width="240" height="28" rx="14" class="status-pill"/>
-    <circle cx="20" cy="14" r="0" class="status-ring"/>
-    <circle cx="20" cy="14" r="3" class="status-dot"/>
-    <text x="36" y="18" class="status-text">AVAILABLE FOR COLLAB</text>
-  </g>
-</g>
 </svg>

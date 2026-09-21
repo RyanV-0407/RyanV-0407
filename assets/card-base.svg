@@ -1,127 +1,90 @@
 <svg viewBox="0 0 580 220" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap');
 
-      .bg-rect { fill: #07070f; rx: 16; ry: 16; }
-      .bg-grid { stroke: #121226; stroke-width: 0.6; stroke-dasharray: 2 4; }
+      .card-fill { fill: #0c0c16; rx: 20; ry: 20; }
       
-      .border-glow {
-        fill: none; rx: 16; ry: 16;
-        stroke: url(#cardBorderGrad3);
-        stroke-width: 1.5;
-        stroke-dasharray: 200 600;
-        animation: borderSpin 8s linear infinite;
-        animation-delay: -4s;
-      }
       .border-base {
-        fill: none; rx: 16; ry: 16;
-        stroke: #16162e;
-        stroke-width: 1;
+        fill: none; rx: 20; ry: 20;
+        stroke: #18182c;
+        stroke-width: 1.2;
       }
-      @keyframes borderSpin {
-        0% { stroke-dashoffset: 0; }
-        100% { stroke-dashoffset: -800; }
+      .border-laser {
+        fill: none; rx: 20; ry: 20;
+        stroke: url(#laserGrad3);
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-dasharray: 200 1350;
+        animation: laserTravel 7s linear infinite;
+        animation-delay: -4.6s;
+      }
+      @keyframes laserTravel {
+        from { stroke-dashoffset: 0; }
+        to   { stroke-dashoffset: -1550; }
       }
 
-      .hud-tag {
-        font-family: 'Space Mono', monospace; font-weight: 700; font-size: 9.5px;
-        fill: #f472b6; letter-spacing: 2px;
+      .card-glow {
+        fill: #f472b6; opacity: 0.07;
+        animation: glowBreathe 4.5s ease-in-out infinite;
       }
-      .title {
-        font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px;
-        fill: #ffffff; letter-spacing: -0.5px;
-      }
-      .body-text {
-        font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 13.5px;
-        fill: #9494b8; line-height: 1.6;
-      }
-      .body-highlight { fill: #f472b6; font-weight: 600; }
+      @keyframes glowBreathe { 0%,100% { opacity: 0.05; r: 85; } 50% { opacity: 0.11; r: 105; } }
 
-      .corner { stroke: #f472b6; stroke-width: 1.5; fill: none; }
-      
-      .status-pill {
-        fill: #121226; stroke: #2a2a50; stroke-width: 0.8; rx: 10; ry: 10;
+      .icon { font-size: 24px; }
+
+      .label {
+        font-family: 'Inter', -apple-system, sans-serif; font-weight: 700; font-size: 15px;
+        fill: #f472b6; letter-spacing: 0.5px;
       }
-      .status-dot { fill: #f472b6; animation: pulseDot 2s ease-in-out infinite; }
-      @keyframes pulseDot { 0%,100%{opacity:0.3;r:2.5;} 50%{opacity:1;r:3.5;} }
-      
-      .icon-box {
-        fill: url(#iconBg3); rx: 10; ry: 10;
-        stroke: #f472b6; stroke-width: 0.8; stroke-opacity: 0.4;
+      .label2 {
+        font-family: 'Inter', -apple-system, sans-serif; font-weight: 700; font-size: 15px;
+        fill: #a78bfa; letter-spacing: 0.5px;
       }
+      .text {
+        font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 13px;
+        fill: #9898b0;
+      }
+      .divider { stroke: #1e1e38; stroke-width: 0.8; stroke-dasharray: 4 4; }
+
+      .corner-dot { fill: #f472b6; opacity: 0.35; }
     </style>
-    
-    <linearGradient id="cardBorderGrad3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f472b6"/>
-      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#f472b6"/>
+
+    <linearGradient id="laserGrad3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#f472b6"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
     </linearGradient>
 
-    <linearGradient id="iconBg3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.03"/>
-    </linearGradient>
-
-    <radialGradient id="cardGlow3" cx="0.1" cy="0.1" r="0.8">
-      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#07070f" stop-opacity="0"/>
-    </radialGradient>
+    <filter id="blur3"><feGaussianBlur stdDeviation="35"/></filter>
   </defs>
 
-  <!-- Background with ambient glow -->
-  <rect x="2" y="2" width="576" height="216" class="bg-rect"/>
-  <rect x="2" y="2" width="576" height="216" fill="url(#cardGlow3)" rx="16" ry="16"/>
+  <!-- Card Body -->
+  <rect x="2" y="2" width="576" height="216" class="card-fill"/>
+  <circle cx="60" cy="60" r="90" class="card-glow" filter="url(#blur3)"/>
   
-  <!-- Subtle cyber grid -->
-  <line x1="28" y1="52" x2="552" y2="52" class="bg-grid"/>
-  <line x1="28" y1="168" x2="552" y2="168" class="bg-grid"/>
-
-  <!-- Static & glowing animated borders -->
+  <!-- Borders: Static base + Smooth Moving Laser Beam -->
   <rect x="2" y="2" width="576" height="216" class="border-base"/>
-  <rect x="2" y="2" width="576" height="216" class="border-glow"/>
+  <rect x="2" y="2" width="576" height="216" class="border-laser"/>
 
-  <!-- Futuristic Corner HUD brackets -->
-  <path d="M 12 24 L 12 12 L 24 12" class="corner"/>
-  <path d="M 568 24 L 568 12 L 556 12" class="corner"/>
-  <path d="M 12 196 L 12 208 L 24 208" class="corner"/>
-  <path d="M 568 196 L 568 208 L 556 208" class="corner"/>
+  <!-- Subtle Corner Dots -->
+  <circle cx="20" cy="20" r="2" class="corner-dot"/>
+  <circle cx="560" cy="20" r="2" class="corner-dot"/>
+  <circle cx="20" cy="200" r="2" class="corner-dot"/>
+  <circle cx="560" cy="200" r="2" class="corner-dot"/>
 
-  <!-- Header Section -->
-  <g transform="translate(28, 20)">
-    <!-- Icon Container -->
-    <rect x="0" y="0" width="34" height="34" class="icon-box"/>
-    <text x="17" y="23" font-family="'Space Mono', monospace" font-size="16" fill="#f472b6" text-anchor="middle">📍</text>
+  <!-- Content Part 1: Base -->
+  <text x="38" y="52" class="icon">📍</text>
+  <text x="74" y="49" class="label">Base</text>
+  <text x="38" y="80" class="text">India · Remote-first · Open to global opportunities</text>
 
-    <!-- Header Text -->
-    <text x="46" y="14" class="hud-tag">LOCATION // 03</text>
-    <text x="46" y="32" class="title">Base &amp; Nexus</text>
+  <!-- Divider -->
+  <line x1="38" y1="104" x2="542" y2="104" class="divider"/>
 
-    <!-- Status pill -->
-    <rect x="400" y="4" width="124" height="22" class="status-pill"/>
-    <circle cx="414" cy="15" r="3" class="status-dot"/>
-    <text x="424" y="18.5" class="hud-tag" fill="#f472b6" font-size="8.5">LOC::ONLINE</text>
-  </g>
-
-  <!-- Body Content -->
-  <g transform="translate(28, 80)">
-    <text x="0" y="18" class="body-text">
-      Stationed in <tspan class="body-highlight">India</tspan> — operating <tspan class="body-highlight">Remote-First</tspan> globally.
-    </text>
-    <text x="0" y="40" class="body-text">
-      Seamless collaboration across time zones with async rigor,
-    </text>
-    <text x="0" y="62" class="body-text">
-      open to exceptional worldwide opportunities, research initiatives,
-    </text>
-    <text x="0" y="84" class="body-text">
-      and high-velocity software engineering teams.
-    </text>
-  </g>
-
-  <!-- Bottom mini metadata bar -->
-  <g transform="translate(28, 188)">
-    <circle cx="4" cy="4" r="2" fill="#f472b6"/>
-    <text x="14" y="7" class="hud-tag" fill="#585880">NEXUS :: UTC+05:30 · ASYNC_FIRST · GLOBAL_COLLAB</text>
-  </g>
+  <!-- Content Part 2: Principle -->
+  <text x="38" y="138" class="icon">💡</text>
+  <text x="74" y="135" class="label2">Principle</text>
+  <text x="38" y="166" class="text">Build something worth shipping. Keep the code clean,</text>
+  <text x="38" y="188" class="text">the architecture scalable, and the UI breathtaking.</text>
 </svg>
