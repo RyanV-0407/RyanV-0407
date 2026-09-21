@@ -21,7 +21,7 @@
 <!--                      01 // ABOUT                           -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/section-about.svg" width="100%" alt="01 // About"/>
+<img src="assets/section-about.svg?v=music" width="100%" alt="01 // About"/>
 
 <br/>
 
@@ -39,7 +39,7 @@
 <!--                      02 // STACK                           -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/section-stack.svg" width="100%" alt="02 // Stack"/>
+<img src="assets/section-stack.svg?v=music" width="100%" alt="02 // Stack"/>
 
 <br/>
 
@@ -51,7 +51,7 @@
 <!--                    03 // PROJECTS                          -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/section-projects.svg" width="100%" alt="03 // Projects"/>
+<img src="assets/section-projects.svg?v=music" width="100%" alt="03 // Projects"/>
 
 <br/>
 
@@ -77,7 +77,7 @@
 <!--                    04 // ACTIVITY                          -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/section-activity.svg" width="100%" alt="04 // Activity"/>
+<img src="assets/section-activity.svg?v=music" width="100%" alt="04 // Activity"/>
 
 <br/>
 
