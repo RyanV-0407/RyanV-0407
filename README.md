@@ -30,7 +30,8 @@
 
 <br/>
 
-<img src="assets/card-base.svg" width="49%" alt="Base & Principle"/>
+<img src="assets/card-base.svg" width="49%" alt="Base & Location"/>
+<img src="assets/card-philosophy.svg" width="49%" alt="Philosophy & Ethos"/>
 
 <br/><br/>
 

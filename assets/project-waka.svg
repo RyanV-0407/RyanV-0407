@@ -1,36 +1,103 @@
-<svg viewBox="0 0 580 180" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 580 185" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap');
-      .c-bg { fill: #0c0c16; }
-      .c-border { fill: none; stroke: url(#pBorder3); stroke-width: 1.5; rx: 18; ry: 18; stroke-dasharray: 6 4; animation: bdr 11s linear infinite; }
-      @keyframes bdr { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -100; } }
-      .c-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; fill: #22d3ee; }
-      .c-desc { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 12.5px; fill: #8888a8; }
-      .c-tag-bg { fill: #13131f; rx: 10; ry: 10; }
-      .c-tag { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 10px; fill: #22d3ee; letter-spacing: 1px; }
-      .c-icon { font-size: 22px; }
-      .c-glow { fill: #22d3ee; opacity: 0.05; animation: glow 4.5s ease-in-out infinite; }
-      @keyframes glow { 0%,100% { opacity: 0.03; } 50% { opacity: 0.08; } }
-      .c-arrow { font-family: 'Inter', sans-serif; font-size: 18px; fill: #3a3a55; animation: arrowPulse 2s ease-in-out infinite; }
-      @keyframes arrowPulse { 0%,100% { transform: translateX(0); opacity: 0.3; } 50% { transform: translateX(4px); opacity: 0.7; } }
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+
+      .card-bg { fill: #07070f; rx: 14; ry: 14; }
+      .card-border { fill: none; stroke: #16162e; stroke-width: 1; rx: 14; ry: 14; }
+      .card-glow {
+        fill: none; stroke: url(#pBrd3); stroke-width: 1.5; rx: 14; ry: 14;
+        stroke-dasharray: 120 450; animation: pFlow3 6s linear infinite;
+        animation-delay: -3s;
+      }
+      @keyframes pFlow3 { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -570; } }
+
+      .p-icon-box { fill: #241020; stroke: #f472b6; stroke-width: 0.8; stroke-opacity: 0.5; rx: 10; ry: 10; }
+      .p-tag-mono { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 9px; fill: #f472b6; letter-spacing: 2px; }
+      .p-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; fill: #ffffff; letter-spacing: -0.3px; }
+      .p-desc { font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 13px; fill: #9494b8; line-height: 1.5; }
+      
+      .status-badge { fill: #0e1224; stroke: #10b981; stroke-width: 0.8; rx: 10; ry: 10; }
+      .status-text { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 8.5px; fill: #10b981; letter-spacing: 1.5px; }
+      .status-dot { fill: #10b981; animation: pPulse3 2s ease-in-out infinite; }
+      @keyframes pPulse3 { 0%,100% { opacity: 0.3; r: 2.5; } 50% { opacity: 1; r: 3.5; } }
+
+      .tag-pill { fill: #0e0e1c; stroke: #222240; stroke-width: 0.8; rx: 6; ry: 6; }
+      .tag-text { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 9.5px; fill: #d0d0ec; letter-spacing: 1px; dominant-baseline: central; }
+      .arrow { fill: #f472b6; animation: arrowSlide 2s ease-in-out infinite; }
+      @keyframes arrowSlide { 0%,100% { transform: translateX(0); opacity: 0.6; } 50% { transform: translateX(4px); opacity: 1; } }
+
+      .corner { stroke: #f472b6; stroke-width: 1.2; fill: none; }
     </style>
-    <linearGradient id="pBorder3"><stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.5"/><stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0.3"/></linearGradient>
-    <filter id="pBlur3"><feGaussianBlur stdDeviation="35"/></filter>
+    
+    <linearGradient id="pBrd3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f472b6"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+
+    <radialGradient id="pAmbient3" cx="0.1" cy="0.1" r="0.8">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#07070f" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <rect x="2" y="2" width="576" height="176" rx="18" class="c-bg"/>
-  <circle cx="520" cy="40" r="80" class="c-glow" filter="url(#pBlur3)"/>
-  <rect x="2" y="2" width="576" height="176" class="c-border"/>
-  <text x="38" y="48" class="c-icon">📊</text>
-  <text x="70" y="46" class="c-title">WakaTime Dashboard</text>
-  <text x="540" y="46" class="c-arrow">→</text>
-  <text x="38" y="80" class="c-desc">A beautiful, real-time coding activity dashboard</text>
-  <text x="38" y="100" class="c-desc">that visualizes WakaTime metrics with interactive</text>
-  <text x="38" y="120" class="c-desc">charts and detailed productivity insights.</text>
-  <rect x="38" y="138" width="100" height="24" class="c-tag-bg"/>
-  <text x="88" y="154" class="c-tag" text-anchor="middle">DASHBOARD</text>
-  <rect x="147" y="138" width="55" height="24" class="c-tag-bg"/>
-  <text x="174" y="154" class="c-tag" text-anchor="middle">API</text>
-  <rect x="211" y="138" width="55" height="24" class="c-tag-bg"/>
-  <text x="238" y="154" class="c-tag" text-anchor="middle">VIZ</text>
+
+  <rect x="2" y="2" width="576" height="181" class="card-bg"/>
+  <rect x="2" y="2" width="576" height="181" fill="url(#pAmbient3)" rx="14" ry="14"/>
+  <rect x="2" y="2" width="576" height="181" class="card-border"/>
+  <rect x="2" y="2" width="576" height="181" class="card-glow"/>
+
+  <!-- Corner Brackets -->
+  <path d="M 10 20 L 10 10 L 20 10" class="corner"/>
+  <path d="M 570 20 L 570 10 L 560 10" class="corner"/>
+  <path d="M 10 165 L 10 175 L 20 175" class="corner"/>
+  <path d="M 570 165 L 570 175 L 560 175" class="corner"/>
+
+  <!-- Top Header Bar -->
+  <g transform="translate(24, 18)">
+    <rect x="0" y="0" width="34" height="34" class="p-icon-box"/>
+    <text x="17" y="22" font-family="'Space Mono', monospace" font-size="16" fill="#f472b6" text-anchor="middle">⚡</text>
+
+    <text x="44" y="13" class="p-tag-mono">SYS::TELEMETRY // 03</text>
+    <text x="44" y="31" class="p-title">WakaTime Dashboard</text>
+
+    <!-- Live Status Badge -->
+    <rect x="390" y="4" width="124" height="22" class="status-badge"/>
+    <circle cx="404" cy="15" r="3" class="status-dot"/>
+    <text x="414" y="18" class="status-text">SYNC::ACTIVE</text>
+
+    <!-- Arrow icon -->
+    <g class="arrow" transform="translate(528, 12)">
+      <path d="M 0 5 L 8 5 M 5 2 L 8 5 L 5 8" stroke="#f472b6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Project Summary -->
+  <g transform="translate(24, 74)">
+    <text x="0" y="16" class="p-desc">Automated developer productivity telemetry engine ingesting IDE heartbeats,</text>
+    <text x="0" y="36" class="p-desc">analyzing deep work duration, velocity metrics, and language allocations.</text>
+  </g>
+
+  <!-- Tech Badges -->
+  <g transform="translate(24, 136)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="95" height="26" class="tag-pill" stroke="#f472b6" stroke-opacity="0.4"/>
+    <circle cx="12" cy="13" r="2.5" fill="#f472b6"/>
+    <text x="24" y="13" class="tag-text">TELEMETRY</text>
+
+    <!-- Pill 2 -->
+    <rect x="105" y="0" width="85" height="26" class="tag-pill" stroke="#22d3ee" stroke-opacity="0.4"/>
+    <circle cx="117" cy="13" r="2.5" fill="#22d3ee"/>
+    <text x="129" y="13" class="tag-text">NEXT.JS</text>
+
+    <!-- Pill 3 -->
+    <rect x="200" y="0" width="85" height="26" class="tag-pill" stroke="#a78bfa" stroke-opacity="0.4"/>
+    <circle cx="212" cy="13" r="2.5" fill="#a78bfa"/>
+    <text x="224" y="13" class="tag-text">API REST</text>
+
+    <!-- Pill 4 -->
+    <rect x="295" y="0" width="90" height="26" class="tag-pill"/>
+    <circle cx="307" cy="13" r="2.5" fill="#10b981"/>
+    <text x="319" y="13" class="tag-text">DASHBOARD</text>
+  </g>
 </svg>

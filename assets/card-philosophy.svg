@@ -8,11 +8,11 @@
       
       .border-glow {
         fill: none; rx: 16; ry: 16;
-        stroke: url(#cardBorderGrad3);
+        stroke: url(#cardBorderGrad4);
         stroke-width: 1.5;
         stroke-dasharray: 200 600;
         animation: borderSpin 8s linear infinite;
-        animation-delay: -4s;
+        animation-delay: -6s;
       }
       .border-base {
         fill: none; rx: 16; ry: 16;
@@ -26,7 +26,7 @@
 
       .hud-tag {
         font-family: 'Space Mono', monospace; font-weight: 700; font-size: 9.5px;
-        fill: #f472b6; letter-spacing: 2px;
+        fill: #10b981; letter-spacing: 2px;
       }
       .title {
         font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px;
@@ -36,42 +36,42 @@
         font-family: 'Space Grotesk', sans-serif; font-weight: 400; font-size: 13.5px;
         fill: #9494b8; line-height: 1.6;
       }
-      .body-highlight { fill: #f472b6; font-weight: 600; }
+      .body-highlight { fill: #10b981; font-weight: 600; }
 
-      .corner { stroke: #f472b6; stroke-width: 1.5; fill: none; }
+      .corner { stroke: #10b981; stroke-width: 1.5; fill: none; }
       
       .status-pill {
         fill: #121226; stroke: #2a2a50; stroke-width: 0.8; rx: 10; ry: 10;
       }
-      .status-dot { fill: #f472b6; animation: pulseDot 2s ease-in-out infinite; }
+      .status-dot { fill: #10b981; animation: pulseDot 2s ease-in-out infinite; }
       @keyframes pulseDot { 0%,100%{opacity:0.3;r:2.5;} 50%{opacity:1;r:3.5;} }
       
       .icon-box {
-        fill: url(#iconBg3); rx: 10; ry: 10;
-        stroke: #f472b6; stroke-width: 0.8; stroke-opacity: 0.4;
+        fill: url(#iconBg4); rx: 10; ry: 10;
+        stroke: #10b981; stroke-width: 0.8; stroke-opacity: 0.4;
       }
     </style>
     
-    <linearGradient id="cardBorderGrad3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f472b6"/>
-      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#f472b6"/>
+    <linearGradient id="cardBorderGrad4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#10b981"/>
     </linearGradient>
 
-    <linearGradient id="iconBg3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.03"/>
+    <linearGradient id="iconBg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.03"/>
     </linearGradient>
 
-    <radialGradient id="cardGlow3" cx="0.1" cy="0.1" r="0.8">
-      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.12"/>
+    <radialGradient id="cardGlow4" cx="0.1" cy="0.1" r="0.8">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.12"/>
       <stop offset="100%" stop-color="#07070f" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
   <!-- Background with ambient glow -->
   <rect x="2" y="2" width="576" height="216" class="bg-rect"/>
-  <rect x="2" y="2" width="576" height="216" fill="url(#cardGlow3)" rx="16" ry="16"/>
+  <rect x="2" y="2" width="576" height="216" fill="url(#cardGlow4)" rx="16" ry="16"/>
   
   <!-- Subtle cyber grid -->
   <line x1="28" y1="52" x2="552" y2="52" class="bg-grid"/>
@@ -91,37 +91,37 @@
   <g transform="translate(28, 20)">
     <!-- Icon Container -->
     <rect x="0" y="0" width="34" height="34" class="icon-box"/>
-    <text x="17" y="23" font-family="'Space Mono', monospace" font-size="16" fill="#f472b6" text-anchor="middle">📍</text>
+    <text x="17" y="23" font-family="'Space Mono', monospace" font-size="16" fill="#10b981" text-anchor="middle">💡</text>
 
     <!-- Header Text -->
-    <text x="46" y="14" class="hud-tag">LOCATION // 03</text>
-    <text x="46" y="32" class="title">Base &amp; Nexus</text>
+    <text x="46" y="14" class="hud-tag">ETHOS // 04</text>
+    <text x="46" y="32" class="title">Core Philosophy</text>
 
     <!-- Status pill -->
     <rect x="400" y="4" width="124" height="22" class="status-pill"/>
     <circle cx="414" cy="15" r="3" class="status-dot"/>
-    <text x="424" y="18.5" class="hud-tag" fill="#f472b6" font-size="8.5">LOC::ONLINE</text>
+    <text x="424" y="18.5" class="hud-tag" fill="#10b981" font-size="8.5">STANDARD::100%</text>
   </g>
 
   <!-- Body Content -->
   <g transform="translate(28, 80)">
     <text x="0" y="18" class="body-text">
-      Stationed in <tspan class="body-highlight">India</tspan> — operating <tspan class="body-highlight">Remote-First</tspan> globally.
+      <tspan class="body-highlight">Build something worth shipping.</tspan> Unyielding focus on
     </text>
     <text x="0" y="40" class="body-text">
-      Seamless collaboration across time zones with async rigor,
+      clean architecture, uncompromising performance, and intuitive
     </text>
     <text x="0" y="62" class="body-text">
-      open to exceptional worldwide opportunities, research initiatives,
+      interfaces that transform raw complex machine intelligence
     </text>
     <text x="0" y="84" class="body-text">
-      and high-velocity software engineering teams.
+      into unforgettable digital experiences.
     </text>
   </g>
 
   <!-- Bottom mini metadata bar -->
   <g transform="translate(28, 188)">
-    <circle cx="4" cy="4" r="2" fill="#f472b6"/>
-    <text x="14" y="7" class="hud-tag" fill="#585880">NEXUS :: UTC+05:30 · ASYNC_FIRST · GLOBAL_COLLAB</text>
+    <circle cx="4" cy="4" r="2" fill="#10b981"/>
+    <text x="14" y="7" class="hud-tag" fill="#585880">PRINCIPLE :: CRAFT · SCALABILITY · RADICAL_EXCELLENCE</text>
   </g>
 </svg>

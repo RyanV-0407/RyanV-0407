@@ -1,321 +1,499 @@
-<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&amp;display=swap');
+<svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    /* ── FONTS ── */
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&amp;family=Space+Mono:wght@400;700&amp;display=swap');
 
-      /* ── Animated gradient background ── */
-      .bg { fill: #07070c; }
+    /* ── NOISE TEXTURE (SVG filter) ── */
 
-      /* Morphing aurora blobs */
-      .aurora1 {
-        fill: url(#auroraG1);
-        opacity: 0.6;
-        animation: morph1 12s ease-in-out infinite, drift1 16s ease-in-out infinite;
-        transform-origin: center;
-      }
-      .aurora2 {
-        fill: url(#auroraG2);
-        opacity: 0.5;
-        animation: morph2 14s ease-in-out infinite, drift2 18s ease-in-out infinite;
-        transform-origin: center;
-      }
-      .aurora3 {
-        fill: url(#auroraG3);
-        opacity: 0.4;
-        animation: morph3 10s ease-in-out infinite, drift3 14s ease-in-out infinite;
-        transform-origin: center;
-      }
-      .aurora4 {
-        fill: url(#auroraG4);
-        opacity: 0.3;
-        animation: morph1 16s ease-in-out infinite reverse, drift2 20s ease-in-out infinite reverse;
-        transform-origin: center;
-      }
+    /* ── BG ── */
+    .bg { fill: #050508; }
 
-      @keyframes morph1 {
-        0%, 100% { transform: scale(1) rotate(0deg); }
-        25% { transform: scale(1.15) rotate(3deg); }
-        50% { transform: scale(0.95) rotate(-2deg); }
-        75% { transform: scale(1.1) rotate(1deg); }
-      }
-      @keyframes morph2 {
-        0%, 100% { transform: scale(1) rotate(0deg); }
-        33% { transform: scale(1.2) rotate(-4deg); }
-        66% { transform: scale(0.9) rotate(3deg); }
-      }
-      @keyframes morph3 {
-        0%, 100% { transform: scale(1.05) rotate(2deg); }
-        50% { transform: scale(0.95) rotate(-3deg); }
-      }
-      @keyframes drift1 {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(60px, -40px); }
-      }
-      @keyframes drift2 {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(-70px, 30px); }
-      }
-      @keyframes drift3 {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(40px, 50px); }
-      }
+    /* ── GRID (perspective) ── */
+    .grid-line {
+      stroke: #0f0f24;
+      stroke-width: 0.8;
+      fill: none;
+    }
+    .grid-vert {
+      stroke: #0d0d20;
+      stroke-width: 0.5;
+      fill: none;
+      animation: gridPulse 6s ease-in-out infinite;
+    }
+    @keyframes gridPulse {
+      0%,100% { stroke-opacity: 0.4; }
+      50% { stroke-opacity: 1; }
+    }
 
-      /* Animated grid */
-      .grid-h, .grid-v {
-        stroke: #ffffff;
-        stroke-width: 0.3;
-        opacity: 0;
-        animation: gridFade 4s ease-in-out infinite;
-      }
-      .grid-h:nth-child(1) { animation-delay: 0s; }
-      .grid-h:nth-child(2) { animation-delay: 0.5s; }
-      .grid-h:nth-child(3) { animation-delay: 1s; }
-      .grid-v:nth-child(4) { animation-delay: 0.3s; }
-      .grid-v:nth-child(5) { animation-delay: 0.8s; }
-      .grid-v:nth-child(6) { animation-delay: 1.3s; }
+    /* ── AURORA MESH ── */
+    .mesh-a {
+      fill: none;
+      stroke: url(#meshG1);
+      stroke-width: 1;
+      opacity: 0;
+      animation: meshFade 6s ease-in-out infinite;
+    }
+    .mesh-b {
+      fill: none;
+      stroke: url(#meshG2);
+      stroke-width: 0.8;
+      opacity: 0;
+      animation: meshFade 6s ease-in-out 2s infinite;
+    }
+    .mesh-c {
+      fill: none;
+      stroke: url(#meshG3);
+      stroke-width: 0.6;
+      opacity: 0;
+      animation: meshFade 6s ease-in-out 4s infinite;
+    }
+    @keyframes meshFade {
+      0%,100% { opacity: 0; }
+      30%,70% { opacity: 0.6; }
+    }
 
-      @keyframes gridFade {
-        0%, 100% { opacity: 0.02; }
-        50% { opacity: 0.08; }
-      }
+    /* ── BLOBS ── */
+    .blob-p {
+      fill: url(#blobGp);
+      animation: blobMorph1 14s ease-in-out infinite;
+      transform-origin: 220px 200px;
+    }
+    .blob-c {
+      fill: url(#blobGc);
+      animation: blobMorph2 16s ease-in-out infinite;
+      transform-origin: 900px 300px;
+    }
+    .blob-k {
+      fill: url(#blobGk);
+      animation: blobMorph3 12s ease-in-out infinite;
+      transform-origin: 600px 120px;
+    }
+    .blob-i {
+      fill: url(#blobGi);
+      animation: blobMorph1 18s ease-in-out 3s infinite reverse;
+      transform-origin: 500px 400px;
+    }
 
-      /* Scanning line */
-      .scanline {
-        fill: url(#scanGrad);
-        opacity: 0.15;
-        animation: scan 6s linear infinite;
-      }
-      @keyframes scan {
-        0% { transform: translateY(-10px); }
-        100% { transform: translateY(410px); }
-      }
+    @keyframes blobMorph1 {
+      0%,100% { transform: scale(1) rotate(0deg) translate(0,0); }
+      25%  { transform: scale(1.25) rotate(8deg) translate(30px,-20px); }
+      50%  { transform: scale(0.88) rotate(-5deg) translate(-20px,30px); }
+      75%  { transform: scale(1.1) rotate(3deg) translate(15px,10px); }
+    }
+    @keyframes blobMorph2 {
+      0%,100% { transform: scale(1) rotate(0deg) translate(0,0); }
+      33%  { transform: scale(1.3) rotate(-10deg) translate(-40px,20px); }
+      66%  { transform: scale(0.8) rotate(7deg) translate(25px,-35px); }
+    }
+    @keyframes blobMorph3 {
+      0%,100% { transform: scale(1.1) rotate(5deg) translate(0,0); }
+      50%  { transform: scale(0.9) rotate(-8deg) translate(-30px,40px); }
+    }
 
-      /* Name with glow */
-      .name {
-        font-family: 'Inter', sans-serif;
-        font-weight: 900;
-        font-size: 68px;
-        fill: #ffffff;
-        opacity: 0;
-        animation: nameReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
-      }
-      .name-glow {
-        font-family: 'Inter', sans-serif;
-        font-weight: 900;
-        font-size: 68px;
-        fill: none;
-        stroke: url(#nameGlowGrad);
-        stroke-width: 1;
-        opacity: 0;
-        animation: glowPulse 3s ease-in-out 1.5s infinite, nameReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
-      }
+    /* ── SCAN LINE ── */
+    .scan {
+      fill: url(#scanG);
+      animation: scanMove 5s linear infinite;
+    }
+    @keyframes scanMove {
+      0%   { transform: translateY(-20px); opacity:0; }
+      5%   { opacity: 0.4; }
+      95%  { opacity: 0.4; }
+      100% { transform: translateY(520px); opacity:0; }
+    }
 
-      @keyframes nameReveal {
-        from { opacity: 0; transform: translateY(30px); filter: blur(8px); }
-        to { opacity: 1; transform: translateY(0); filter: blur(0); }
-      }
-      @keyframes glowPulse {
-        0%, 100% { opacity: 0.3; stroke-width: 1; }
-        50% { opacity: 0.8; stroke-width: 2; }
-      }
+    /* ── GLITCH LAYERS ── */
+    .name-base {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 76px;
+      fill: #ffffff;
+      letter-spacing: -2px;
+    }
+    .name-glitch-1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 76px;
+      fill: #a78bfa;
+      letter-spacing: -2px;
+      opacity: 0;
+      animation: glitch1 7s steps(1) infinite;
+    }
+    .name-glitch-2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 76px;
+      fill: #22d3ee;
+      letter-spacing: -2px;
+      opacity: 0;
+      animation: glitch2 7s steps(1) infinite;
+    }
+    @keyframes glitch1 {
+      0%,95%,100% { opacity:0; transform:translate(0,0) skewX(0deg); }
+      96%  { opacity:0.8; transform:translate(-4px,2px) skewX(-3deg); clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%); }
+      97%  { opacity:0; }
+      98%  { opacity:0.6; transform:translate(3px,-1px) skewX(2deg); clip-path:polygon(0 60%,100% 60%,100% 75%,0 75%); }
+      99%  { opacity:0; }
+    }
+    @keyframes glitch2 {
+      0%,93%,100% { opacity:0; transform:translate(0,0); }
+      94%  { opacity:0.7; transform:translate(5px,-3px); clip-path:polygon(0 30%,100% 30%,100% 50%,0 50%); }
+      95%  { opacity:0; }
+      96.5%{ opacity:0.5; transform:translate(-3px,1px); clip-path:polygon(0 70%,100% 70%,100% 85%,0 85%); }
+      97%  { opacity:0; }
+    }
 
-      /* Tagline */
-      .tagline {
-        font-family: 'Inter', sans-serif;
-        font-weight: 300;
-        font-size: 18px;
-        fill: #7d7d99;
-        letter-spacing: 8px;
-        opacity: 0;
-        animation: nameReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
-      }
+    /* ── NAME REVEAL ── */
+    .name-wrap {
+      opacity:0;
+      animation: nameReveal 1.4s cubic-bezier(0.22,1,0.36,1) 0.6s forwards;
+    }
+    @keyframes nameReveal {
+      from { opacity:0; transform:translateY(40px); filter:blur(12px); }
+      to   { opacity:1; transform:translateY(0);    filter:blur(0); }
+    }
 
-      /* Accent line with shimmer */
-      .accent-line-bg {
-        stroke: #1e1e38;
-        stroke-width: 1;
-      }
-      .accent-line {
-        stroke: url(#shimmerGrad);
-        stroke-width: 2;
-        stroke-linecap: round;
-        opacity: 0;
-        animation: lineExpand 1s ease-out 0.8s forwards;
-      }
-      @keyframes lineExpand {
-        from { opacity: 0; stroke-dasharray: 0 400; }
-        to { opacity: 1; stroke-dasharray: 400 0; }
-      }
-      .shimmer-move {
-        animation: shimmerSlide 3s linear infinite;
-      }
-      @keyframes shimmerSlide {
-        0% { transform: translateX(-400px); }
-        100% { transform: translateX(400px); }
-      }
+    /* ── TAGLINE CHARS ── */
+    .tag-word {
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      fill: #3a3a5e;
+      opacity:0;
+      animation: tagReveal 0.8s ease-out forwards;
+    }
+    .tag-word-1 { animation-delay: 1.3s; }
+    .tag-word-2 { fill: #a78bfa; animation-delay: 1.6s; }
+    .tag-word-3 { animation-delay: 1.9s; }
+    .tag-word-4 { fill: #22d3ee; animation-delay: 2.2s; }
+    .tag-word-5 { animation-delay: 2.5s; }
+    .tag-word-6 { fill: #f472b6; animation-delay: 2.8s; }
+    @keyframes tagReveal {
+      from { opacity:0; transform:translateY(12px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
 
-      /* Orbiting particles */
-      .orbit-particle {
-        fill: #a78bfa;
-        animation: orbit 8s linear infinite;
-        transform-origin: 600px 200px;
-      }
-      .orbit-particle:nth-child(2) { fill: #22d3ee; animation-delay: -2.67s; }
-      .orbit-particle:nth-child(3) { fill: #f472b6; animation-delay: -5.33s; }
-      @keyframes orbit {
-        from { transform: rotate(0deg) translateX(180px) rotate(0deg); }
-        to { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
-      }
+    /* ── ACCENT BAR ── */
+    .accent-track { stroke:#111128; stroke-width:1; }
+    .accent-bar {
+      stroke: url(#accentG);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 320 0;
+      opacity:0;
+      animation: barReveal 1s ease-out 1s forwards, barShimmer 3s linear 2s infinite;
+    }
+    @keyframes barReveal {
+      from { opacity:0; stroke-dasharray:0 320; }
+      to   { opacity:1; stroke-dasharray:320 0; }
+    }
+    @keyframes barShimmer {
+      0%   { stroke: url(#accentG); }
+      33%  { stroke: url(#accentG2); }
+      66%  { stroke: url(#accentG3); }
+      100% { stroke: url(#accentG); }
+    }
 
-      /* Star particles */
-      .star {
-        fill: #ffffff;
-        animation: twinkle 3s ease-in-out infinite;
-      }
-      .star:nth-child(1) { animation-delay: 0s; }
-      .star:nth-child(2) { animation-delay: 0.4s; }
-      .star:nth-child(3) { animation-delay: 0.8s; }
-      .star:nth-child(4) { animation-delay: 1.2s; }
-      .star:nth-child(5) { animation-delay: 1.6s; }
-      .star:nth-child(6) { animation-delay: 2.0s; }
-      .star:nth-child(7) { animation-delay: 2.4s; }
-      .star:nth-child(8) { animation-delay: 0.2s; }
-      .star:nth-child(9) { animation-delay: 0.6s; }
-      .star:nth-child(10) { animation-delay: 1.0s; }
-      .star:nth-child(11) { animation-delay: 1.4s; }
-      .star:nth-child(12) { animation-delay: 1.8s; }
+    /* ── STATUS PILL ── */
+    .status-pill { fill:#0d0d1a; rx:14; ry:14; stroke:#1e1e38; stroke-width:1; }
+    .status-dot  { fill:#22d3ee; animation:statusPulse 2s ease-in-out infinite; }
+    @keyframes statusPulse { 0%,100%{r:3;opacity:0.4;} 50%{r:4.5;opacity:1;} }
+    .status-ring {
+      fill:none; stroke:#22d3ee; stroke-width:1;
+      animation:ringExpand 2s ease-out infinite;
+    }
+    @keyframes ringExpand { 0%{r:4;stroke-opacity:0.8;} 100%{r:14;stroke-opacity:0;} }
+    .status-text {
+      font-family:'Space Mono',monospace; font-size:11px;
+      fill:#4a4a6a; letter-spacing:2px;
+      opacity:0; animation:fadeIn 0.5s ease-out 3.2s forwards;
+    }
+    @keyframes fadeIn { to{opacity:1;} }
 
-      @keyframes twinkle {
-        0%, 100% { opacity: 0; transform: scale(0); }
-        50% { opacity: 0.9; transform: scale(1); }
-      }
+    /* ── ORBITS ── */
+    .orbit-ring {
+      fill:none; stroke:#1a1a30; stroke-width:1;
+      stroke-dasharray: 8 4;
+      animation: orbitRingSpin 20s linear infinite;
+      transform-origin:600px 250px;
+    }
+    .orbit-ring2 {
+      fill:none; stroke:#161628; stroke-width:0.8;
+      stroke-dasharray: 5 6;
+      animation: orbitRingSpin 30s linear infinite reverse;
+      transform-origin:600px 250px;
+    }
+    @keyframes orbitRingSpin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 
-      /* Corner brackets */
-      .bracket {
-        stroke: #a78bfa;
-        stroke-width: 1.5;
-        fill: none;
-        opacity: 0;
-        animation: bracketIn 0.6s ease-out 1.5s forwards;
-      }
-      .bracket-r { stroke: #22d3ee; animation-delay: 1.7s; }
-      .bracket-bl { stroke: #f472b6; animation-delay: 1.9s; }
-      .bracket-br { stroke: #a78bfa; animation-delay: 2.1s; }
+    .orb-dot {
+      animation: orbDot1 20s linear infinite;
+      transform-origin:600px 250px;
+    }
+    .orb-dot2 {
+      animation: orbDot1 20s linear infinite;
+      animation-delay:-6.67s;
+      transform-origin:600px 250px;
+    }
+    .orb-dot3 {
+      animation: orbDot1 20s linear infinite;
+      animation-delay:-13.33s;
+      transform-origin:600px 250px;
+    }
+    .orb-dot-b {
+      animation: orbDot2 30s linear infinite;
+      transform-origin:600px 250px;
+    }
+    .orb-dot-b2 {
+      animation: orbDot2 30s linear infinite;
+      animation-delay:-10s;
+      transform-origin:600px 250px;
+    }
+    @keyframes orbDot1 {
+      from { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+      to   { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+    }
+    @keyframes orbDot2 {
+      from { transform: rotate(0deg) translateX(280px) rotate(0deg); }
+      to   { transform: rotate(360deg) translateX(280px) rotate(-360deg); }
+    }
 
-      @keyframes bracketIn {
-        from { opacity: 0; transform: scale(0.5); }
-        to { opacity: 0.5; transform: scale(1); }
-      }
+    /* ── STARS / PARTICLES ── */
+    .star { fill:#fff; animation:starTwinkle 4s ease-in-out infinite; }
+    .s1{animation-delay:0s;} .s2{animation-delay:0.3s;} .s3{animation-delay:0.6s;}
+    .s4{animation-delay:0.9s;} .s5{animation-delay:1.2s;} .s6{animation-delay:1.5s;}
+    .s7{animation-delay:1.8s;} .s8{animation-delay:2.1s;} .s9{animation-delay:2.4s;}
+    .s10{animation-delay:2.7s;} .s11{animation-delay:3s;} .s12{animation-delay:3.3s;}
+    .s13{animation-delay:3.6s;} .s14{animation-delay:3.9s;} .s15{animation-delay:0.5s;}
+    @keyframes starTwinkle {
+      0%,100%{opacity:0;transform:scale(0);}
+      50%{opacity:0.8;transform:scale(1);}
+    }
 
-      /* Status indicator */
-      .status-dot {
-        fill: #22d3ee;
-        animation: statusPulse 2s ease-in-out infinite;
-      }
-      .status-text {
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        font-size: 11px;
-        fill: #4a4a6a;
-        letter-spacing: 3px;
-        opacity: 0;
-        animation: fadeIn 0.5s ease-out 2.5s forwards;
-      }
-      @keyframes statusPulse {
-        0%, 100% { opacity: 0.4; r: 3; }
-        50% { opacity: 1; r: 4; }
-      }
-      @keyframes fadeIn { to { opacity: 1; } }
-    </style>
+    /* ── CORNER BRACKETS ── */
+    .br {
+      fill:none; stroke:#a78bfa; stroke-width:1.5; stroke-linecap:square;
+      opacity:0; animation:brIn 0.5s ease-out 1.8s forwards;
+    }
+    .br2 { stroke:#22d3ee; animation-delay:2.0s; }
+    .br3 { stroke:#f472b6; animation-delay:2.2s; }
+    .br4 { stroke:#a78bfa; animation-delay:2.4s; }
+    @keyframes brIn { from{opacity:0;transform:scale(0.6);} to{opacity:0.5;transform:scale(1);} }
 
-    <!-- Gradients -->
-    <radialGradient id="auroraG1" cx="50%" cy="50%"><stop offset="0%" style="stop-color:#7c3aed"/><stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0"/></radialGradient>
-    <radialGradient id="auroraG2" cx="50%" cy="50%"><stop offset="0%" style="stop-color:#0891b2"/><stop offset="100%" style="stop-color:#0891b2;stop-opacity:0"/></radialGradient>
-    <radialGradient id="auroraG3" cx="50%" cy="50%"><stop offset="0%" style="stop-color:#db2777"/><stop offset="100%" style="stop-color:#db2777;stop-opacity:0"/></radialGradient>
-    <radialGradient id="auroraG4" cx="50%" cy="50%"><stop offset="0%" style="stop-color:#4f46e5"/><stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0"/></radialGradient>
+    /* ── FLOATING GEOMETRIC SHAPES ── */
+    .geo1 {
+      fill:none; stroke:#a78bfa; stroke-width:0.8; opacity:0.12;
+      animation:geoFloat1 10s ease-in-out infinite;
+    }
+    .geo2 {
+      fill:none; stroke:#22d3ee; stroke-width:0.8; opacity:0.1;
+      animation:geoFloat2 13s ease-in-out infinite;
+    }
+    .geo3 {
+      fill:none; stroke:#f472b6; stroke-width:0.6; opacity:0.1;
+      animation:geoFloat3 8s ease-in-out infinite;
+    }
+    @keyframes geoFloat1 {
+      0%,100%{transform:translate(0,0) rotate(0deg);}
+      50%{transform:translate(15px,-20px) rotate(45deg);}
+    }
+    @keyframes geoFloat2 {
+      0%,100%{transform:translate(0,0) rotate(0deg);}
+      50%{transform:translate(-20px,10px) rotate(-30deg);}
+    }
+    @keyframes geoFloat3 {
+      0%,100%{transform:translate(0,0) rotate(0deg);}
+      50%{transform:translate(10px,15px) rotate(60deg);}
+    }
+  </style>
 
-    <linearGradient id="nameGlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#a78bfa"/><stop offset="50%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#f472b6"/>
-    </linearGradient>
-    <linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0"/><stop offset="50%" style="stop-color:#a78bfa;stop-opacity:1"/><stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0"/>
-    </linearGradient>
-    <linearGradient id="shimmerGrad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0"/><stop offset="40%" style="stop-color:#a78bfa"/><stop offset="50%" style="stop-color:#ffffff"/><stop offset="60%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0"/>
-    </linearGradient>
+  <!-- ── GRADIENTS ── -->
+  <radialGradient id="blobGp" cx="50%" cy="50%">
+    <stop offset="0%" stop-color="#7c3aed" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="blobGc" cx="50%" cy="50%">
+    <stop offset="0%" stop-color="#0e7490" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#0e7490" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="blobGk" cx="50%" cy="50%">
+    <stop offset="0%" stop-color="#be185d" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#be185d" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="blobGi" cx="50%" cy="50%">
+    <stop offset="0%" stop-color="#4f46e5" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#4f46e5" stop-opacity="0"/>
+  </radialGradient>
 
-    <filter id="megaBlur"><feGaussianBlur stdDeviation="80"/></filter>
-    <filter id="softGlow"><feGaussianBlur stdDeviation="3"/></filter>
-    <clipPath id="bannerClip"><rect width="1200" height="400" rx="0"/></clipPath>
-  </defs>
+  <linearGradient id="accentG"  x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#a78bfa" stop-opacity="0"/>
+    <stop offset="40%"  stop-color="#a78bfa"/>
+    <stop offset="60%"  stop-color="#22d3ee"/>
+    <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="accentG2" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#22d3ee" stop-opacity="0"/>
+    <stop offset="40%"  stop-color="#22d3ee"/>
+    <stop offset="60%"  stop-color="#f472b6"/>
+    <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="accentG3" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#f472b6" stop-opacity="0"/>
+    <stop offset="40%"  stop-color="#f472b6"/>
+    <stop offset="60%"  stop-color="#a78bfa"/>
+    <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+  </linearGradient>
 
-  <g clip-path="url(#bannerClip)">
+  <linearGradient id="meshG1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="meshG2" x1="1" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="meshG3" x1="0.5" y1="0" x2="0.5" y2="1">
+    <stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+  </linearGradient>
+
+  <linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%"   stop-color="#a78bfa" stop-opacity="0"/>
+    <stop offset="50%"  stop-color="#a78bfa" stop-opacity="0.6"/>
+    <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+  </linearGradient>
+
+  <filter id="glow3" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="megaBlur">
+    <feGaussianBlur stdDeviation="90"/>
+  </filter>
+  <filter id="medBlur">
+    <feGaussianBlur stdDeviation="55"/>
+  </filter>
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feBlend in="SourceGraphic" mode="overlay" result="noisy"/>
+    <feComposite in="noisy" in2="SourceGraphic" operator="in"/>
+  </filter>
+
+  <clipPath id="clip">
+    <rect width="1200" height="500"/>
+  </clipPath>
+</defs>
+
+<g clip-path="url(#clip)">
+  <!-- BASE -->
+  <rect width="1200" height="500" class="bg"/>
+
+  <!-- NOISE GRAIN overlay -->
+  <rect width="1200" height="500" fill="#050508" opacity="0.6" filter="url(#noiseFilter)"/>
+
+  <!-- PERSPECTIVE GRID -->
+  <!-- horizontal -->
+  <line x1="0" y1="340" x2="1200" y2="340" class="grid-line"/>
+  <line x1="0" y1="380" x2="1200" y2="380" class="grid-line"/>
+  <line x1="0" y1="420" x2="1200" y2="420" class="grid-line"/>
+  <line x1="0" y1="460" x2="1200" y2="460" class="grid-line"/>
+  <!-- vertical fanning from vanishing point -->
+  <line x1="600" y1="340" x2="0"    y2="500" class="grid-vert"/>
+  <line x1="600" y1="340" x2="150"  y2="500" class="grid-vert"/>
+  <line x1="600" y1="340" x2="300"  y2="500" class="grid-vert"/>
+  <line x1="600" y1="340" x2="450"  y2="500" class="grid-vert"/>
+  <line x1="600" y1="340" x2="600"  y2="500" class="grid-vert"/>
+  <line x1="600" y1="340" x2="750"  y2="500" class="grid-vert"/>
+  <line x1="600" y1="340" x2="900"  y2="500" class="grid-vert"/>
+  <line x1="600" y1="340" x2="1050" y2="500" class="grid-vert"/>
+  <line x1="600" y1="340" x2="1200" y2="500" class="grid-vert"/>
+
+  <!-- AURORA BLOBS -->
+  <ellipse cx="220" cy="200" rx="300" ry="240" class="blob-p" filter="url(#megaBlur)"/>
+  <ellipse cx="950" cy="310" rx="280" ry="220" class="blob-c" filter="url(#megaBlur)"/>
+  <ellipse cx="600" cy="100" rx="200" ry="160" class="blob-k" filter="url(#medBlur)"/>
+  <ellipse cx="500" cy="420" rx="250" ry="180" class="blob-i" filter="url(#medBlur)"/>
+
+  <!-- ORBIT RINGS -->
+  <ellipse cx="600" cy="250" rx="200" ry="60" class="orbit-ring"/>
+  <ellipse cx="600" cy="250" rx="280" ry="80" class="orbit-ring2"/>
+
+  <!-- ORBIT DOTS -->
+  <circle cx="600" cy="250" r="4" fill="#a78bfa" class="orb-dot" filter="url(#glow3)"/>
+  <circle cx="600" cy="250" r="3" fill="#22d3ee" class="orb-dot2" filter="url(#glow3)"/>
+  <circle cx="600" cy="250" r="3.5" fill="#f472b6" class="orb-dot3" filter="url(#glow3)"/>
+  <circle cx="600" cy="250" r="2.5" fill="#a78bfa" class="orb-dot-b" filter="url(#glow3)"/>
+  <circle cx="600" cy="250" r="2" fill="#22d3ee" class="orb-dot-b2" filter="url(#glow3)"/>
+
+  <!-- MESH LINES -->
+  <path d="M 100,80 C 300,50 500,200 700,80 S 1000,150 1200,80" class="mesh-a"/>
+  <path d="M 0,300 C 200,250 400,350 600,280 S 900,320 1200,280" class="mesh-b"/>
+  <path d="M 0,450 C 300,400 600,480 900,420 S 1100,460 1200,440" class="mesh-c"/>
+
+  <!-- FLOATING GEOMETRY -->
+  <rect x="80" y="60" width="40" height="40" class="geo1"/>
+  <polygon points="1080,80 1110,130 1050,130" class="geo2"/>
+  <circle cx="130" cy="380" r="20" class="geo3"/>
+  <polygon points="1100,350 1130,390 1070,390" class="geo1"/>
+  <rect x="50" y="200" width="25" height="25" class="geo2"/>
+  <circle cx="1160" cy="200" r="15" class="geo3"/>
+
+  <!-- STARS -->
+  <circle cx="90" cy="55" r="1" class="star s1"/>
+  <circle cx="240" cy="130" r="1.5" class="star s2"/>
+  <circle cx="430" cy="40" r="1" class="star s3"/>
+  <circle cx="700" cy="160" r="2" class="star s4"/>
+  <circle cx="920" cy="50" r="1.5" class="star s5"/>
+  <circle cx="1100" cy="110" r="1" class="star s6"/>
+  <circle cx="160" cy="300" r="1.5" class="star s7"/>
+  <circle cx="1050" cy="280" r="1" class="star s8"/>
+  <circle cx="55" cy="170" r="1" class="star s9"/>
+  <circle cx="1160" cy="380" r="1.5" class="star s10"/>
+  <circle cx="380" cy="420" r="1" class="star s11"/>
+  <circle cx="820" cy="430" r="1.5" class="star s12"/>
+  <circle cx="500" cy="70" r="1" class="star s13"/>
+  <circle cx="770" cy="380" r="2" class="star s14"/>
+  <circle cx="330" cy="200" r="1" class="star s15"/>
+
+  <!-- SCAN LINE -->
+  <rect x="0" y="0" width="1200" height="12" class="scan"/>
+
+  <!-- CORNER BRACKETS -->
+  <polyline points="28,58 28,28 58,28" class="br"/>
+  <polyline points="1172,28 1172,58 1142,28" stroke="#22d3ee" class="br br2" style="stroke:#22d3ee"/>
+  <polyline points="28,472 28,442 58,472" stroke="#f472b6" class="br br3" style="stroke:#f472b6"/>
+  <polyline points="1172,472 1172,442 1142,472" class="br br4"/>
+
+  <!-- ── MAIN TEXT ── -->
+  <g class="name-wrap">
+    <!-- Glow duplicate -->
+    <text x="600" y="220" text-anchor="middle" class="name-base" filter="url(#megaBlur)" opacity="0.4">Vikram Singh Rathour</text>
+    <!-- Glitch layers -->
+    <text x="600" y="220" text-anchor="middle" class="name-glitch-1">Vikram Singh Rathour</text>
+    <text x="600" y="220" text-anchor="middle" class="name-glitch-2">Vikram Singh Rathour</text>
     <!-- Base -->
-    <rect width="1200" height="400" class="bg"/>
-
-    <!-- Animated grid -->
-    <g>
-      <line x1="0" y1="100" x2="1200" y2="100" class="grid-h"/>
-      <line x1="0" y1="200" x2="1200" y2="200" class="grid-h"/>
-      <line x1="0" y1="300" x2="1200" y2="300" class="grid-h"/>
-      <line x1="300" y1="0" x2="300" y2="400" class="grid-v"/>
-      <line x1="600" y1="0" x2="600" y2="400" class="grid-v"/>
-      <line x1="900" y1="0" x2="900" y2="400" class="grid-v"/>
-    </g>
-
-    <!-- Aurora blobs -->
-    <ellipse cx="200" cy="150" rx="280" ry="220" class="aurora1" filter="url(#megaBlur)"/>
-    <ellipse cx="950" cy="280" rx="260" ry="200" class="aurora2" filter="url(#megaBlur)"/>
-    <ellipse cx="600" cy="80" rx="200" ry="160" class="aurora3" filter="url(#megaBlur)"/>
-    <ellipse cx="500" cy="350" rx="240" ry="180" class="aurora4" filter="url(#megaBlur)"/>
-
-    <!-- Scan line -->
-    <rect x="0" y="0" width="1200" height="8" class="scanline"/>
-
-    <!-- Twinkle stars -->
-    <g>
-      <circle cx="120" cy="60" r="1.5" class="star"/>
-      <circle cx="310" cy="330" r="1" class="star"/>
-      <circle cx="480" cy="45" r="1.5" class="star"/>
-      <circle cx="720" cy="350" r="1" class="star"/>
-      <circle cx="980" cy="70" r="2" class="star"/>
-      <circle cx="1100" cy="300" r="1" class="star"/>
-      <circle cx="180" cy="270" r="1.5" class="star"/>
-      <circle cx="850" cy="130" r="1" class="star"/>
-      <circle cx="60" cy="180" r="1" class="star"/>
-      <circle cx="1140" cy="160" r="1.5" class="star"/>
-      <circle cx="400" cy="280" r="1" class="star"/>
-      <circle cx="670" cy="90" r="1.5" class="star"/>
-    </g>
-
-    <!-- Orbiting dots -->
-    <g>
-      <circle cx="600" cy="200" r="3" class="orbit-particle"/>
-      <circle cx="600" cy="200" r="2.5" class="orbit-particle"/>
-      <circle cx="600" cy="200" r="2" class="orbit-particle"/>
-    </g>
-
-    <!-- Corner brackets -->
-    <polyline points="25,55 25,25 55,25" class="bracket"/>
-    <polyline points="1145,25 1175,25 1175,55" class="bracket bracket-r"/>
-    <polyline points="25,345 25,375 55,375" class="bracket bracket-bl"/>
-    <polyline points="1145,375 1175,375 1175,345" class="bracket bracket-br"/>
-
-    <!-- Main text -->
-    <text x="600" y="185" text-anchor="middle" class="name-glow" filter="url(#softGlow)">Vikram Singh Rathour</text>
-    <text x="600" y="185" text-anchor="middle" class="name">Vikram Singh Rathour</text>
-
-    <!-- Accent line -->
-    <line x1="400" y1="215" x2="800" y2="215" class="accent-line-bg"/>
-    <g class="shimmer-move"><line x1="400" y1="215" x2="800" y2="215" class="accent-line"/></g>
-
-    <!-- Tagline -->
-    <text x="600" y="265" text-anchor="middle" class="tagline">DATA SCIENTIST  ·  ENGINEER  ·  BUILDER</text>
-
-    <!-- Status indicator -->
-    <g transform="translate(540, 310)">
-      <circle cx="0" cy="0" r="3" class="status-dot"/>
-      <text x="14" y="4" class="status-text">AVAILABLE FOR COLLABORATION</text>
-    </g>
+    <text x="600" y="220" text-anchor="middle" class="name-base">Vikram Singh Rathour</text>
   </g>
+
+  <!-- ACCENT LINE -->
+  <line x1="440" y1="248" x2="760" y2="248" class="accent-track"/>
+  <line x1="440" y1="248" x2="760" y2="248" class="accent-bar"/>
+
+  <!-- TAGLINE -->
+  <g>
+    <text x="356" y="286" class="tag-word tag-word-1">Data</text>
+    <text x="407" y="286" class="tag-word tag-word-2">Scientist</text>
+    <text x="495" y="286" class="tag-word tag-word-3">·</text>
+    <text x="515" y="286" class="tag-word tag-word-4">Engineer</text>
+    <text x="600" y="286" class="tag-word tag-word-5">·</text>
+    <text x="619" y="286" class="tag-word tag-word-6">Builder</text>
+  </g>
+
+  <!-- STATUS PILL -->
+  <g transform="translate(480, 320)" opacity="0" style="animation:fadeIn 0.5s ease-out 3.2s forwards">
+    <rect x="0" y="0" width="240" height="28" rx="14" class="status-pill"/>
+    <circle cx="20" cy="14" r="0" class="status-ring"/>
+    <circle cx="20" cy="14" r="3" class="status-dot"/>
+    <text x="36" y="18" class="status-text">AVAILABLE FOR COLLAB</text>
+  </g>
+</g>
 </svg>

@@ -1,27 +1,46 @@
-<svg viewBox="0 0 1200 50" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&amp;display=swap');
-      .section-num { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 18px; fill: url(#numGrad2); letter-spacing: 2px; }
-      .section-slash { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 18px; fill: #2a2a45; }
-      .section-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; fill: #e0e0f0; letter-spacing: 5px; text-transform: uppercase; }
-      .line-bg { stroke: #13131f; stroke-width: 1; }
-      .line-shimmer { stroke: url(#shimmer2); stroke-width: 2; stroke-linecap: round; animation: shimmer 3.5s linear infinite; }
-      @keyframes shimmer { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }
-      .dot { fill: #22d3ee; animation: dotPulse 2s ease-in-out infinite; }
-      @keyframes dotPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
-    </style>
-    <linearGradient id="numGrad2"><stop offset="0%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#f472b6"/></linearGradient>
-    <linearGradient id="shimmer2" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0"/><stop offset="30%" style="stop-color:#22d3ee;stop-opacity:0.8"/>
-      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1"/><stop offset="70%" style="stop-color:#f472b6;stop-opacity:0.8"/>
-      <stop offset="100%" style="stop-color:#f472b6;stop-opacity:0"/>
-    </linearGradient>
-  </defs>
-  <circle cx="22" cy="30" r="3" class="dot"/>
-  <text x="38" y="36" class="section-num">02</text>
-  <text x="68" y="36" class="section-slash">//</text>
-  <text x="100" y="36" class="section-title">Stack</text>
-  <line x1="220" y1="32" x2="1180" y2="32" class="line-bg"/>
-  <line x1="220" y1="32" x2="1180" y2="32" class="line-shimmer" stroke-dasharray="100 900"/>
+<svg viewBox="0 0 1200 64" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&amp;display=swap');
+    .num { font-family:'Space Mono',monospace; font-weight:700; font-size:11px; fill:url(#ng2); letter-spacing:4px; }
+    .title { font-family:'Space Mono',monospace; font-weight:700; font-size:13px; fill:#d0d0f0; letter-spacing:8px; }
+    .slash { font-family:'Space Mono',monospace; font-weight:700; font-size:13px; fill:#2a2a45; }
+    .bar { fill:url(#barG2); animation:barAnim 1.2s ease-in-out infinite; }
+    .b1{animation-duration:1.0s;} .b2{animation-duration:1.3s;animation-delay:0.1s;}
+    .b3{animation-duration:0.9s;animation-delay:0.2s;} .b4{animation-duration:1.4s;animation-delay:0.3s;}
+    .b5{animation-duration:1.1s;animation-delay:0.05s;} .b6{animation-duration:0.8s;animation-delay:0.15s;}
+    .b7{animation-duration:1.5s;animation-delay:0.25s;} .b8{animation-duration:1.0s;animation-delay:0.35s;}
+    @keyframes barAnim { 0%,100%{transform:scaleY(0.3);opacity:0.3;} 50%{transform:scaleY(1);opacity:0.9;} }
+    .pulse-dot { fill:#22d3ee; animation:dp 2s ease-in-out infinite; }
+    .pulse-ring { fill:none; stroke:#22d3ee; stroke-width:1; animation:dr 2s ease-out infinite; }
+    @keyframes dp { 0%,100%{r:3;opacity:0.4;} 50%{r:4;opacity:1;} }
+    @keyframes dr { 0%{r:3;stroke-opacity:0.8;} 100%{r:18;stroke-opacity:0;} }
+    .line-base { stroke:#111128; stroke-width:1; }
+    .line-glow { stroke:url(#ls2); stroke-width:1.5; stroke-linecap:round; stroke-dasharray:80 900; animation:lineFlow 3.5s linear infinite; }
+    @keyframes lineFlow { from{stroke-dashoffset:980;} to{stroke-dashoffset:0;} }
+  </style>
+  <linearGradient id="ng2"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#f472b6"/></linearGradient>
+  <linearGradient id="barG2" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#22d3ee" stop-opacity="0.2"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient>
+  <linearGradient id="ls2" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/><stop offset="40%" stop-color="#22d3ee"/>
+    <stop offset="50%" stop-color="#fff" stop-opacity="0.8"/><stop offset="60%" stop-color="#f472b6"/>
+    <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<circle cx="22" cy="32" r="3" class="pulse-ring"/>
+<circle cx="22" cy="32" r="3" class="pulse-dot"/>
+<text x="40" y="27" class="num">02</text>
+<text x="40" y="44" class="title">STACK <tspan class="slash">//</tspan></text>
+<g transform="translate(165, 14)" style="transform-box:fill-box;transform-origin:center bottom;">
+  <rect x="0"  y="0" width="3" height="36" rx="1.5" class="bar b1" style="transform-origin:center bottom;"/>
+  <rect x="7"  y="0" width="3" height="36" rx="1.5" class="bar b2" style="transform-origin:center bottom;"/>
+  <rect x="14" y="0" width="3" height="36" rx="1.5" class="bar b3" style="transform-origin:center bottom;"/>
+  <rect x="21" y="0" width="3" height="36" rx="1.5" class="bar b4" style="transform-origin:center bottom;"/>
+  <rect x="28" y="0" width="3" height="36" rx="1.5" class="bar b5" style="transform-origin:center bottom;"/>
+  <rect x="35" y="0" width="3" height="36" rx="1.5" class="bar b6" style="transform-origin:center bottom;"/>
+  <rect x="42" y="0" width="3" height="36" rx="1.5" class="bar b7" style="transform-origin:center bottom;"/>
+  <rect x="49" y="0" width="3" height="36" rx="1.5" class="bar b8" style="transform-origin:center bottom;"/>
+</g>
+<line x1="235" y1="32" x2="1180" y2="32" class="line-base"/>
+<line x1="235" y1="32" x2="1180" y2="32" class="line-glow"/>
 </svg>

@@ -1,57 +1,99 @@
-<svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 110" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Space+Mono:wght@700&amp;display=swap');
 
-      .footer-text {
-        font-family: 'Inter', sans-serif; font-weight: 300; font-size: 14px;
-        fill: url(#footerTextGrad); letter-spacing: 6px;
-        opacity: 0; animation: fadeUp 1s ease-out 0.5s forwards;
+      .footer-quote {
+        font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px;
+        fill: url(#quoteGrad); letter-spacing: 6px;
       }
-      @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      .footer-sub {
+        font-family: 'Space Mono', monospace; font-weight: 700; font-size: 9.5px;
+        fill: #4c4c70; letter-spacing: 4px;
+      }
 
-      .line-left, .line-right {
-        stroke-width: 1; stroke-linecap: round;
-      }
-      .line-left { stroke: url(#footerLineL); animation: extendLeft 1.5s ease-out forwards; }
-      .line-right { stroke: url(#footerLineR); animation: extendRight 1.5s ease-out forwards; }
-      @keyframes extendLeft { from { stroke-dasharray: 0 500; } to { stroke-dasharray: 500 0; } }
-      @keyframes extendRight { from { stroke-dasharray: 0 500; } to { stroke-dasharray: 500 0; } }
+      /* Conduits */
+      .line-left, .line-right { stroke-width: 1; fill: none; }
+      .line-left { stroke: url(#fLineL); }
+      .line-right { stroke: url(#fLineR); }
 
-      .center-diamond {
-        fill: none; stroke: url(#diamondGrad); stroke-width: 1.5;
-        animation: diamondSpin 8s linear infinite;
-        transform-origin: 600px 28px;
+      .glow-packet-l {
+        stroke: url(#pktL); stroke-width: 2; stroke-linecap: round;
+        stroke-dasharray: 60 450; animation: pktFlowL 3s linear infinite;
       }
-      @keyframes diamondSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      .glow-packet-r {
+        stroke: url(#pktR); stroke-width: 2; stroke-linecap: round;
+        stroke-dasharray: 60 450; animation: pktFlowR 3s linear infinite;
+      }
+      @keyframes pktFlowL { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 510; } }
+      @keyframes pktFlowR { 0% { stroke-dashoffset: 510; } 100% { stroke-dashoffset: 0; } }
 
-      .center-dot {
-        fill: #f472b6;
-        animation: centerPulse 2s ease-in-out infinite;
+      /* Core reactor */
+      .core-ring {
+        fill: none; stroke: url(#coreGrad); stroke-width: 1.5;
+        animation: coreSpin 6s linear infinite;
+        transform-origin: 600px 30px;
       }
-      @keyframes centerPulse { 0%,100% { opacity: 0.3; r: 2; } 50% { opacity: 1; r: 3.5; } }
+      .core-ring-2 {
+        fill: none; stroke: #22d3ee; stroke-width: 1; stroke-dasharray: 4 6;
+        animation: coreSpinRev 10s linear infinite;
+        transform-origin: 600px 30px;
+      }
+      @keyframes coreSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      @keyframes coreSpinRev { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
 
-      .sub-text {
-        font-family: 'Inter', sans-serif; font-weight: 400; font-size: 11px;
-        fill: #3a3a55; letter-spacing: 2px;
-        opacity: 0; animation: fadeUp 1s ease-out 1s forwards;
+      .core-dot {
+        fill: #f472b6; animation: corePulse 2s ease-in-out infinite;
       }
+      @keyframes corePulse { 0%,100% { r: 3; opacity: 0.6; } 50% { r: 5; opacity: 1; } }
     </style>
-    <linearGradient id="footerTextGrad"><stop offset="0%" style="stop-color:#a78bfa"/><stop offset="50%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#f472b6"/></linearGradient>
-    <linearGradient id="footerLineL" x1="1" y1="0" x2="0" y2="0"><stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0.6"/><stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0"/></linearGradient>
-    <linearGradient id="footerLineR" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" style="stop-color:#f472b6;stop-opacity:0.6"/><stop offset="100%" style="stop-color:#f472b6;stop-opacity:0"/></linearGradient>
-    <linearGradient id="diamondGrad"><stop offset="0%" style="stop-color:#a78bfa"/><stop offset="50%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#f472b6"/></linearGradient>
+
+    <linearGradient id="quoteGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+
+    <linearGradient id="fLineL" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fLineR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="pktL" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#fff"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pktR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#fff"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="coreGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
   </defs>
 
-  <!-- Lines extending from center -->
-  <line x1="560" y1="28" x2="100" y2="28" class="line-left"/>
-  <line x1="640" y1="28" x2="1100" y2="28" class="line-right"/>
+  <!-- Left / Right Conduits with animated energy packets -->
+  <line x1="560" y1="30" x2="60" y2="30" class="line-left"/>
+  <line x1="560" y1="30" x2="60" y2="30" class="line-left glow-packet-l"/>
 
-  <!-- Center diamond -->
-  <rect x="593" y="21" width="14" height="14" rx="2" class="center-diamond"/>
-  <circle cx="600" cy="28" r="3" class="center-dot"/>
+  <line x1="640" y1="30" x2="1140" y2="30" class="line-right"/>
+  <line x1="640" y1="30" x2="1140" y2="30" class="line-right glow-packet-r"/>
 
-  <!-- Text -->
-  <text x="600" y="68" text-anchor="middle" class="footer-text">LET'S BUILD SOMETHING WORTH SHIPPING</text>
-  <text x="600" y="88" text-anchor="middle" class="sub-text">vikram singh rathour · 2026</text>
+  <!-- Center Energy Core -->
+  <circle cx="600" cy="30" r="14" class="core-ring"/>
+  <circle cx="600" cy="30" r="18" class="core-ring-2"/>
+  <circle cx="600" cy="30" r="3.5" class="core-dot"/>
+
+  <!-- Text Hierarchy -->
+  <text x="600" y="70" text-anchor="middle" class="footer-quote">LET'S BUILD SOMETHING WORTH SHIPPING</text>
+  <text x="600" y="92" text-anchor="middle" class="footer-sub">VIKRAM SINGH RATHOUR // ALL SYSTEMS NOMINAL · 2026</text>
 </svg>
