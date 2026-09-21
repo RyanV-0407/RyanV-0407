@@ -81,12 +81,21 @@
 
 <br/>
 
-<img src="https://github-readme-stats-extended.vercel.app/api?username=RyanV-0407&show_icons=true&include_all_commits=true&hide=prs,issues,contribs&hide_rank=false&bg_color=145,141432aa,0a0a1eaa&border_color=ffffff28&title_color=22d3ee&icon_color=a78bfa&text_color=e2e8f0&border_radius=20" width="49%" alt="GitHub stats"/>
-<img src="https://github-readme-stats-extended.vercel.app/api/top-langs/?username=RyanV-0407&layout=compact&card_width=514&bg_color=145,141432aa,0a0a1eaa&border_color=ffffff28&title_color=f472b6&icon_color=22d3ee&text_color=e2e8f0&border_radius=20" width="49%" alt="Top languages"/>
+<a href="https://github.com/RyanV-0407?tab=overview">
+  <img src="assets/activity-contributions.svg?v=1" width="49%" alt="Global Contributions"/>
+</a>
+<a href="https://github.com/RyanV-0407?tab=repositories">
+  <img src="assets/activity-commits.svg?v=1" width="49%" alt="Production Commits"/>
+</a>
 
 <br/>
 
-<img src="https://streak-stats.demolab.com?user=RyanV-0407&background=0e0e22&border=ffffff28&stroke=ffffff28&ring=22d3ee&fire=f472b6&currStreakNum=ffffff&currStreakLabel=22d3ee&sideNums=ffffff&sideLabels=a78bfa&dates=94a3b8&border_radius=20" width="99%" alt="Streak"/>
+<a href="https://github.com/RyanV-0407">
+  <img src="assets/activity-streak.svg?v=1" width="49%" alt="Dev Streak"/>
+</a>
+<a href="https://github.com/RyanV-0407">
+  <img src="assets/activity-languages.svg?v=1" width="49%" alt="Language Spectrum"/>
+</a>
 
 <br/><br/>
 

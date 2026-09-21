@@ -1,0 +1,116 @@
+<svg viewBox="0 0 580 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&amp;display=swap');
+
+      .card-fill { fill: #0c0c16; rx: 20; ry: 20; }
+      .border-base {
+        fill: none; rx: 20; ry: 20;
+        stroke: #18182c; stroke-width: 1.2;
+      }
+      .border-laser {
+        fill: none; rx: 20; ry: 20;
+        stroke: url(#laserGrad1); stroke-width: 2;
+        stroke-linecap: round; stroke-dasharray: 200 1350;
+        animation: laserTravel 7s linear infinite;
+      }
+      @keyframes laserTravel {
+        from { stroke-dashoffset: 0; }
+        to   { stroke-dashoffset: -1550; }
+      }
+      .card-glow {
+        fill: #22d3ee; opacity: 0.08;
+        animation: glowBreathe 4s ease-in-out infinite;
+      }
+      @keyframes glowBreathe { 0%,100% { opacity: 0.05; r: 85; } 50% { opacity: 0.12; r: 105; } }
+      .label {
+        font-family: 'Space Mono', 'Inter', monospace; font-weight: 700; font-size: 13px;
+        fill: #22d3ee; letter-spacing: 1.5px;
+      }
+      .metric-num {
+        font-family: 'Inter', -apple-system, sans-serif; font-weight: 900; font-size: 42px;
+        fill: #ffffff; letter-spacing: -1px;
+      }
+      .badge-txt {
+        font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700;
+        fill: #22d3ee; letter-spacing: 0.8px;
+      }
+      .desc {
+        font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; font-size: 13px;
+        fill: #9898b0; line-height: 1.6;
+      }
+    </style>
+
+    <linearGradient id="laserGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="numGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle class="card-glow" cx="90" cy="110" r="90" filter="url(#glow)"/>
+
+  <!-- Card Background -->
+  <rect class="card-fill" x="2" y="2" width="576" height="216"/>
+
+  <!-- Base Border -->
+  <rect class="border-base" x="2" y="2" width="576" height="216"/>
+
+  <!-- Animated Laser Border -->
+  <rect class="border-laser" x="2" y="2" width="576" height="216" filter="url(#glow)"/>
+
+  <!-- Header: Icon & Category -->
+  <g transform="translate(30, 26)">
+    <!-- Icon Circle -->
+    <rect x="0" y="0" width="38" height="38" rx="10" fill="#081e28" stroke="#164e63" stroke-width="1"/>
+    <text x="11" y="26" font-size="18">⚡</text>
+
+    <!-- Title & Badge -->
+    <text class="label" x="52" y="24">GLOBAL CONTRIBUTIONS</text>
+
+    <!-- Badge -->
+    <rect x="400" y="6" width="118" height="24" rx="12" fill="#0c232f" stroke="#22d3ee" stroke-opacity="0.3" stroke-width="1"/>
+    <circle cx="414" cy="18" r="3.5" fill="#22d3ee"/>
+    <text class="badge-txt" x="424" y="21.5">ALL-TIME</text>
+  </g>
+
+  <!-- Big Metric Value -->
+  <g transform="translate(30, 85)">
+    <text class="metric-num" x="0" y="42" fill="url(#numGrad1)">776<tspan font-size="28" fill="#22d3ee">+</tspan></text>
+    <text font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#22d3ee" x="140" y="22" letter-spacing="1">ACTIVITY STREAMS</text>
+    <text font-family="'Inter', sans-serif" font-size="11.5" fill="#64748b" x="140" y="40">Sep 2023 – Present</text>
+  </g>
+
+  <!-- Mini Animated Frequency Visualizer Bar -->
+  <g transform="translate(360, 102)">
+    <rect x="0" y="0" width="4" height="22" rx="2" fill="#22d3ee"><animate attributeName="height" values="8;22;12;20;8" dur="1.2s" repeatCount="indefinite"/><animate attributeName="y" values="14;0;10;2;14" dur="1.2s" repeatCount="indefinite"/></rect>
+    <rect x="8" y="0" width="4" height="22" rx="2" fill="#38bdf8"><animate attributeName="height" values="18;6;22;10;18" dur="1.5s" repeatCount="indefinite"/><animate attributeName="y" values="4;16;0;12;4" dur="1.5s" repeatCount="indefinite"/></rect>
+    <rect x="16" y="0" width="4" height="22" rx="2" fill="#60a5fa"><animate attributeName="height" values="10;20;8;22;10" dur="1.1s" repeatCount="indefinite"/><animate attributeName="y" values="12;2;14;0;12" dur="1.1s" repeatCount="indefinite"/></rect>
+    <rect x="24" y="0" width="4" height="22" rx="2" fill="#818cf8"><animate attributeName="height" values="22;12;18;6;22" dur="1.4s" repeatCount="indefinite"/><animate attributeName="y" values="0;10;4;16;0" dur="1.4s" repeatCount="indefinite"/></rect>
+    <rect x="32" y="0" width="4" height="22" rx="2" fill="#a78bfa"><animate attributeName="height" values="14;22;6;16;14" dur="1.3s" repeatCount="indefinite"/><animate attributeName="y" values="8;0;16;6;8" dur="1.3s" repeatCount="indefinite"/></rect>
+    <rect x="40" y="0" width="4" height="22" rx="2" fill="#22d3ee"><animate attributeName="height" values="8;18;22;10;8" dur="1.6s" repeatCount="indefinite"/><animate attributeName="y" values="14;4;0;12;14" dur="1.6s" repeatCount="indefinite"/></rect>
+  </g>
+
+  <!-- Description Text -->
+  <text class="desc" x="30" y="165">
+    Consistent engineering output across open-source repositories, deep
+  </text>
+  <text class="desc" x="30" y="187">
+    learning pipelines, model weights, and system integrations.
+  </text>
+</svg>
