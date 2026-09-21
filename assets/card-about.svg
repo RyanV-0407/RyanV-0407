@@ -73,8 +73,8 @@
   <text x="38" y="60" class="icon">👨‍💻</text>
   <text x="80" y="56" class="label">The Builder</text>
   
-  <text x="38" y="98" class="text">I'm <tspan class="highlight">Vikram</tspan> — a Computer Science undergrad working</text>
-  <text x="38" y="122" class="text">across <tspan class="highlight">Machine Learning, AI</tspan>, and software engineering,</text>
-  <text x="38" y="146" class="text">building practical systems from idea to deployment with</text>
-  <text x="38" y="170" class="text">clean architecture and high-velocity craft.</text>
+  <text x="38" y="98" class="text">I'm <tspan class="highlight">Vikram</tspan> — a Computer Science undergraduate majoring</text>
+  <text x="38" y="122" class="text">in <tspan class="highlight">Machine Learning &amp; AI</tspan>, obsessed with neural architectures,</text>
+  <text x="38" y="146" class="text">deep learning models, and building intelligent systems</text>
+  <text x="38" y="170" class="text">from mathematical foundations to real-world deployment.</text>
 </svg>

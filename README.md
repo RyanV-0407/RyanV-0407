@@ -4,7 +4,7 @@
 <!--                    ANIMATED HERO BANNER                    -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/hero.svg?v=aiml" alt="Vikram Singh Rathour — Machine Learning · AI · Software Engineer" width="100%"/>
+<img src="assets/hero.svg?v=mlcore" alt="Vikram Singh Rathour — Machine Learning · Deep Learning · AI Builder" width="100%"/>
 
 <br/>
 
@@ -25,12 +25,12 @@
 
 <br/>
 
-<img src="assets/card-about.svg?v=aiml" width="49%" alt="About"/>
+<img src="assets/card-about.svg?v=mlcore" width="49%" alt="About"/>
 <img src="assets/card-focus.svg" width="49%" alt="Currently exploring"/>
 
 <br/>
 
-<img src="assets/card-base.svg" width="49%" alt="Base & Nexus"/>
+<img src="assets/card-base.svg?v=mlcore" width="49%" alt="Base & Nexus"/>
 <img src="assets/card-principle.svg" width="49%" alt="Core Principle"/>
 
 <br/><br/>
