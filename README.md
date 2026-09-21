@@ -101,6 +101,8 @@
 
 <br/>
 
+<a href="https://vikram0407.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0b0b12" alt="Portfolio"/></a>
+&nbsp;
 <a href="https://www.linkedin.com/in/vikram-singh-r0407"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0b0b12" alt="LinkedIn"/></a>
 &nbsp;
 <a href="https://www.instagram.com/the_ryan.v/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=0b0b12" alt="Instagram"/></a>
