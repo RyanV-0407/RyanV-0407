@@ -1,12 +1,12 @@
-<svg viewBox="0 0 1200 130" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 165" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&amp;display=swap');
 
       /* Pill base */
       .pill {
-        rx: 22; ry: 22; fill: #0c0c16;
-        stroke: #1e1e38; stroke-width: 1;
+        rx: 19; ry: 19; fill: #0c0c16;
+        stroke: #1e1e38; stroke-width: 1.2;
       }
       .pill-text {
         font-family: 'Inter', -apple-system, sans-serif; font-weight: 600; font-size: 13px;
@@ -14,13 +14,13 @@
       }
 
       /* Glow variants */
-      .glow-p { stroke: #a78bfa; stroke-opacity: 0.5; animation: pillGlow 3s ease-in-out infinite; }
-      .glow-c { stroke: #22d3ee; stroke-opacity: 0.5; animation: pillGlow 3s ease-in-out infinite; animation-delay: 1s; }
-      .glow-k { stroke: #f472b6; stroke-opacity: 0.5; animation: pillGlow 3s ease-in-out infinite; animation-delay: 2s; }
+      .glow-p { stroke: #a78bfa; stroke-opacity: 0.55; animation: pillGlow 3s ease-in-out infinite; }
+      .glow-c { stroke: #22d3ee; stroke-opacity: 0.55; animation: pillGlow 3s ease-in-out infinite; animation-delay: 1s; }
+      .glow-k { stroke: #f472b6; stroke-opacity: 0.55; animation: pillGlow 3s ease-in-out infinite; animation-delay: 2s; }
 
       @keyframes pillGlow {
-        0%, 100% { stroke-opacity: 0.25; }
-        50% { stroke-opacity: 0.8; }
+        0%, 100% { stroke-opacity: 0.3; }
+        50%      { stroke-opacity: 0.9; }
       }
 
       /* Dot indicators */
@@ -31,16 +31,16 @@
 
       /* Row labels */
       .row-label {
-        font-family: 'Inter', -apple-system, sans-serif; font-weight: 700; font-size: 10px;
-        fill: #3a3a55; letter-spacing: 3px; text-transform: uppercase;
+        font-family: 'Inter', -apple-system, sans-serif; font-weight: 700; font-size: 10.5px;
+        fill: #4a4a6e; letter-spacing: 3px; text-transform: uppercase;
       }
     </style>
   </defs>
 
   <!-- Row 1: Languages and Frameworks -->
-  <text x="30" y="30" class="row-label">LANGUAGES &amp; FRAMEWORKS</text>
+  <text x="30" y="24" class="row-label">LANGUAGES &amp; FRAMEWORKS</text>
 
-  <g transform="translate(30, 38)">
+  <g transform="translate(30, 32)">
     <rect x="0" y="0" width="105" height="38" class="pill glow-p"/>
     <circle cx="22" cy="19" r="4" class="dot-p"/><text x="65" y="19" class="pill-text">Python</text>
 
@@ -67,9 +67,9 @@
   </g>
 
   <!-- Row 2: Infrastructure and ML -->
-  <text x="30" y="102" class="row-label">INFRASTRUCTURE &amp; ML</text>
+  <text x="30" y="96" class="row-label">INFRASTRUCTURE &amp; ML</text>
 
-  <g transform="translate(30, 108)">
+  <g transform="translate(30, 104)">
     <rect x="0" y="0" width="120" height="38" class="pill glow-c"/>
     <circle cx="22" cy="19" r="4" class="dot-c"/><text x="72" y="19" class="pill-text">PostgreSQL</text>
 
