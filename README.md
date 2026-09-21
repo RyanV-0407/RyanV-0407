@@ -81,12 +81,12 @@
 
 <br/>
 
-<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=RyanV-0407&show_icons=true&hide_rank=false&bg_color=0d0d18&border_color=1e1e38&title_color=a78bfa&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="GitHub stats"/>
-<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=RyanV-0407&layout=compact&bg_color=0d0d18&border_color=1e1e38&title_color=f472b6&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="Top languages"/>
+<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=RyanV-0407&show_icons=true&include_all_commits=true&hide_rank=false&bg_color=30,070714,0d0d22,12122c&border_color=25254d&title_color=22d3ee&icon_color=a78bfa&text_color=e2e8f0&border_radius=18" width="49%" alt="GitHub stats"/>
+<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=RyanV-0407&layout=compact&card_width=369&bg_color=30,070714,0d0d22,12122c&border_color=25254d&title_color=f472b6&icon_color=22d3ee&text_color=e2e8f0&border_radius=18" width="49%" alt="Top languages"/>
 
 <br/>
 
-<img src="https://streak-stats.demolab.com?user=RyanV-0407&background=0d0d18&border=1e1e38&stroke=1e1e38&ring=a78bfa&fire=f472b6&currStreakNum=ffffff&currStreakLabel=a78bfa&sideNums=ffffff&sideLabels=9898b0&dates=5a5a78&border_radius=16" width="70%" alt="Streak"/>
+<img src="https://streak-stats.demolab.com?user=RyanV-0407&background=080814&border=25254d&stroke=25254d&ring=22d3ee&fire=f472b6&currStreakNum=ffffff&currStreakLabel=22d3ee&sideNums=ffffff&sideLabels=a78bfa&dates=64748b&border_radius=18" width="99%" alt="Streak"/>
 
 <br/><br/>
 
