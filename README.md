@@ -81,16 +81,12 @@
 
 <br/>
 
-<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=RyanV-0407&show_icons=true&hide_rank=false&bg_color=0d0d18&border_color=1e1e38&title_color=a78bfa&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="GitHub stats"/>
-<img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=RyanV-0407&layout=compact&bg_color=0d0d18&border_color=1e1e38&title_color=f472b6&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="Top languages"/>
+<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=RyanV-0407&show_icons=true&hide_rank=false&bg_color=0d0d18&border_color=1e1e38&title_color=a78bfa&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="GitHub stats"/>
+<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=RyanV-0407&layout=compact&bg_color=0d0d18&border_color=1e1e38&title_color=f472b6&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="Top languages"/>
 
 <br/>
 
 <img src="https://streak-stats.demolab.com?user=RyanV-0407&background=0d0d18&border=1e1e38&stroke=1e1e38&ring=a78bfa&fire=f472b6&currStreakNum=ffffff&currStreakLabel=a78bfa&sideNums=ffffff&sideLabels=9898b0&dates=5a5a78&border_radius=16" width="70%" alt="Streak"/>
-
-<br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=RyanV-0407&bg_color=07070c&color=a78bfa&line=22d3ee&point=ffffff&area=true&area_color=a78bfa&hide_border=true" width="100%" alt="Contribution graph"/>
 
 <br/><br/>
 
