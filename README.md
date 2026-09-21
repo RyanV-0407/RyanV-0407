@@ -81,20 +81,14 @@
 
 <br/>
 
-<a href="https://github.com/RyanV-0407?tab=overview">
-  <img src="assets/activity-contributions.svg?v=1" width="49%" alt="Global Contributions"/>
-</a>
-<a href="https://github.com/RyanV-0407?tab=repositories">
-  <img src="assets/activity-commits.svg?v=1" width="49%" alt="Production Commits"/>
+<a href="https://github.com/RyanV-0407">
+  <img src="https://raw.githubusercontent.com/RyanV-0407/RyanV-0407/output/github-snake-dark.svg" width="100%" alt="GitHub Contribution Snake"/>
 </a>
 
 <br/>
 
 <a href="https://github.com/RyanV-0407">
-  <img src="assets/activity-streak.svg?v=1" width="49%" alt="Dev Streak"/>
-</a>
-<a href="https://github.com/RyanV-0407">
-  <img src="assets/activity-languages.svg?v=1" width="49%" alt="Language Spectrum"/>
+  <img src="https://streak-stats.demolab.com?user=RyanV-0407&background=0a0a18&border=ffffff20&stroke=ffffff20&ring=22d3ee&fire=f472b6&currStreakNum=ffffff&currStreakLabel=22d3ee&sideNums=ffffff&sideLabels=a78bfa&dates=94a3b8&border_radius=16" width="99%" alt="GitHub Streak Stats"/>
 </a>
 
 <br/><br/>
