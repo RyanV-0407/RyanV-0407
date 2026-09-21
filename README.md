@@ -56,19 +56,19 @@
 <br/>
 
 <a href="https://github.com/RyanV-0407/GPA_ADVISOR">
-  <img src="assets/project-gpa.svg" width="49%" alt="GPA Advisor Agent"/>
+  <img src="assets/project-gpa.svg?v=grad" width="49%" alt="GPA Advisor Agent"/>
 </a>
-<a href="https://github.com/RyanV-0407/Music-Recommendation-using-ML">
-  <img src="assets/project-music.svg" width="49%" alt="Music Recommender"/>
+<a href="https://github.com/RyanV-0407/AquaSight">
+  <img src="assets/project-aquasight.svg?v=1" width="49%" alt="AquaSight Marine Vision"/>
 </a>
 
 <br/>
 
-<a href="https://github.com/RyanV-0407/wakatime-dashboard">
-  <img src="assets/project-waka.svg" width="49%" alt="WakaTime Dashboard"/>
+<a href="https://github.com/RyanV-0407/Grid_Forecasting_system-Multi-Horizon-Energy-Demand-Prediction-System">
+  <img src="assets/project-grid.svg?v=1" width="49%" alt="Grid Demand Forecasting System"/>
 </a>
-<a href="https://github.com/RyanV-0407/Event-Reminder-System">
-  <img src="assets/project-event.svg" width="49%" alt="Event Reminder System"/>
+<a href="https://github.com/RyanV-0407/Music-Recommendation-using-ML">
+  <img src="assets/project-music.svg?v=1" width="49%" alt="Music Recommendation using ML"/>
 </a>
 
 <br/><br/>

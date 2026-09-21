@@ -10,11 +10,11 @@
       }
       .c-border-laser {
         fill: none; rx: 18; ry: 18;
-        stroke: url(#pLaser3); stroke-width: 2; stroke-linecap: round;
-        stroke-dasharray: 180 1300; animation: pLaserRun3 7s linear infinite;
+        stroke: url(#pLaserGrid); stroke-width: 2; stroke-linecap: round;
+        stroke-dasharray: 180 1300; animation: pLaserRunGrid 7s linear infinite;
         animation-delay: -3.5s;
       }
-      @keyframes pLaserRun3 {
+      @keyframes pLaserRunGrid {
         from { stroke-dashoffset: 0; }
         to   { stroke-dashoffset: -1480; }
       }
@@ -23,14 +23,14 @@
       .c-desc { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 13px; fill: #9898b0; line-height: 1.6; }
       
       .c-tag-bg { fill: #121224; stroke: #1e1e38; stroke-width: 0.8; rx: 8; ry: 8; }
-      .c-tag { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 10px; fill: #f472b6; letter-spacing: 1px; }
+      .c-tag { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 10px; fill: #10b981; letter-spacing: 1px; }
       
       .c-icon { font-size: 24px; }
-      .c-glow { fill: #f472b6; opacity: 0.06; animation: pGlow 4s ease-in-out infinite; }
+      .c-glow { fill: #10b981; opacity: 0.06; animation: pGlow 4s ease-in-out infinite; }
       @keyframes pGlow { 0%,100% { opacity: 0.04; r: 70; } 50% { opacity: 0.09; r: 90; } }
 
       .c-arrow {
-        font-family: 'Inter', sans-serif; font-size: 18px; fill: #f472b6;
+        font-family: 'Inter', sans-serif; font-size: 18px; fill: #10b981;
         animation: arrowShift 2s ease-in-out infinite;
       }
       @keyframes arrowShift {
@@ -39,37 +39,40 @@
       }
     </style>
     
-    <linearGradient id="pLaser3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f472b6" stop-opacity="0"/>
-      <stop offset="40%" stop-color="#f472b6"/>
+    <linearGradient id="pLaserGrid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#10b981"/>
       <stop offset="50%" stop-color="#ffffff"/>
       <stop offset="60%" stop-color="#22d3ee"/>
       <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
     </linearGradient>
 
-    <filter id="pBlur3"><feGaussianBlur stdDeviation="35"/></filter>
+    <filter id="pBlurGrid"><feGaussianBlur stdDeviation="35"/></filter>
   </defs>
 
   <rect x="2" y="2" width="576" height="176" class="c-bg"/>
-  <circle cx="520" cy="40" r="80" class="c-glow" filter="url(#pBlur3)"/>
+  <circle cx="520" cy="40" r="80" class="c-glow" filter="url(#pBlurGrid)"/>
   
   <rect x="2" y="2" width="576" height="176" class="c-border-base"/>
   <rect x="2" y="2" width="576" height="176" class="c-border-laser"/>
 
   <text x="36" y="48" class="c-icon">⚡</text>
-  <text x="72" y="46" class="c-title">WakaTime Dashboard</text>
+  <text x="72" y="46" class="c-title">Grid Demand Forecasting System</text>
   <text x="536" y="46" class="c-arrow">→</text>
 
-  <text x="36" y="80" class="c-desc">Real-time developer velocity and coding statistics</text>
-  <text x="36" y="102" class="c-desc">dashboard ingesting WakaTime heartbeats to visualize coding</text>
-  <text x="36" y="124" class="c-desc">activity, language trends, and deep work productivity metrics.</text>
+  <text x="36" y="80" class="c-desc">Multi-horizon energy demand prediction system leveraging deep</text>
+  <text x="36" y="102" class="c-desc">learning time-series neural networks and sequential models</text>
+  <text x="36" y="124" class="c-desc">to forecast electrical grid load dynamics and demand surges.</text>
 
   <rect x="36" y="140" width="95" height="24" class="c-tag-bg"/>
-  <text x="83" y="156" class="c-tag" text-anchor="middle">TELEMETRY</text>
+  <text x="83" y="156" class="c-tag" text-anchor="middle">TIME SERIES</text>
 
   <rect x="139" y="140" width="75" height="24" class="c-tag-bg"/>
-  <text x="176" y="156" class="c-tag" text-anchor="middle">NEXT.JS</text>
+  <text x="176" y="156" class="c-tag" text-anchor="middle">PYTHON</text>
 
-  <rect x="222" y="140" width="50" height="24" class="c-tag-bg"/>
-  <text x="247" y="156" class="c-tag" text-anchor="middle">API</text>
+  <rect x="222" y="140" width="115" height="24" class="c-tag-bg"/>
+  <text x="279" y="156" class="c-tag" text-anchor="middle">DEEP LEARNING</text>
+
+  <rect x="345" y="140" width="90" height="24" class="c-tag-bg"/>
+  <text x="390" y="156" class="c-tag" text-anchor="middle">ENERGY ML</text>
 </svg>

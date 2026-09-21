@@ -1,0 +1,78 @@
+<svg viewBox="0 0 580 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap');
+      .c-bg { fill: #0c0c16; rx: 18; ry: 18; }
+      
+      .c-border-base {
+        fill: none; rx: 18; ry: 18;
+        stroke: #18182c; stroke-width: 1.2;
+      }
+      .c-border-laser {
+        fill: none; rx: 18; ry: 18;
+        stroke: url(#pLaserAqua); stroke-width: 2; stroke-linecap: round;
+        stroke-dasharray: 180 1300; animation: pLaserRunAqua 7s linear infinite;
+        animation-delay: -1.75s;
+      }
+      @keyframes pLaserRunAqua {
+        from { stroke-dashoffset: 0; }
+        to   { stroke-dashoffset: -1480; }
+      }
+
+      .c-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; fill: #ffffff; }
+      .c-desc { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 13px; fill: #9898b0; line-height: 1.6; }
+      
+      .c-tag-bg { fill: #121224; stroke: #1e1e38; stroke-width: 0.8; rx: 8; ry: 8; }
+      .c-tag { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 10px; fill: #22d3ee; letter-spacing: 1px; }
+      
+      .c-icon { font-size: 24px; }
+      .c-glow { fill: #22d3ee; opacity: 0.06; animation: pGlow 4s ease-in-out infinite; }
+      @keyframes pGlow { 0%,100% { opacity: 0.04; r: 70; } 50% { opacity: 0.09; r: 90; } }
+
+      .c-arrow {
+        font-family: 'Inter', sans-serif; font-size: 18px; fill: #22d3ee;
+        animation: arrowShift 2s ease-in-out infinite;
+      }
+      @keyframes arrowShift {
+        0%,100% { transform: translateX(0); opacity: 0.4; }
+        50%     { transform: translateX(5px); opacity: 1; }
+      }
+    </style>
+    
+    <linearGradient id="pLaserAqua" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#22d3ee"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="pBlurAqua"><feGaussianBlur stdDeviation="35"/></filter>
+  </defs>
+
+  <rect x="2" y="2" width="576" height="176" class="c-bg"/>
+  <circle cx="520" cy="40" r="80" class="c-glow" filter="url(#pBlurAqua)"/>
+  
+  <rect x="2" y="2" width="576" height="176" class="c-border-base"/>
+  <rect x="2" y="2" width="576" height="176" class="c-border-laser"/>
+
+  <text x="36" y="48" class="c-icon">🌊</text>
+  <text x="72" y="46" class="c-title">AquaSight</text>
+  <text x="536" y="46" class="c-arrow">→</text>
+
+  <text x="36" y="80" class="c-desc">Cinematic marine computer vision system powered by YOLOv8</text>
+  <text x="36" y="102" class="c-desc">deep learning models for real-time aquatic object detection,</text>
+  <text x="36" y="124" class="c-desc">bounding-box telemetry, and classification matrix analytics.</text>
+
+  <rect x="36" y="140" width="125" height="24" class="c-tag-bg"/>
+  <text x="98" y="156" class="c-tag" text-anchor="middle">COMPUTER VISION</text>
+
+  <rect x="169" y="140" width="75" height="24" class="c-tag-bg"/>
+  <text x="206" y="156" class="c-tag" text-anchor="middle">YOLOV8</text>
+
+  <rect x="252" y="140" width="115" height="24" class="c-tag-bg"/>
+  <text x="309" y="156" class="c-tag" text-anchor="middle">DEEP LEARNING</text>
+
+  <rect x="375" y="140" width="80" height="24" class="c-tag-bg"/>
+  <text x="415" y="156" class="c-tag" text-anchor="middle">PYTORCH</text>
+</svg>

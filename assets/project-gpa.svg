@@ -55,20 +55,23 @@
   <rect x="2" y="2" width="576" height="176" class="c-border-base"/>
   <rect x="2" y="2" width="576" height="176" class="c-border-laser"/>
 
-  <text x="36" y="48" class="c-icon">🤖</text>
+  <text x="36" y="48" class="c-icon">🎓</text>
   <text x="72" y="46" class="c-title">GPA Advisor Agent</text>
   <text x="536" y="46" class="c-arrow">→</text>
 
-  <text x="36" y="80" class="c-desc">An intelligent AI agent that analyzes academic</text>
-  <text x="36" y="102" class="c-desc">performance and provides personalized GPA improvement</text>
-  <text x="36" y="124" class="c-desc">strategies and intelligent course recommendations.</text>
+  <text x="36" y="80" class="c-desc">AI-powered academic trajectory planner using deterministic math</text>
+  <text x="36" y="102" class="c-desc">engines and memory-aware LLMs to compute credit-weighted</text>
+  <text x="36" y="124" class="c-desc">projections and personalized course recommendations.</text>
 
-  <rect x="36" y="140" width="50" height="24" class="c-tag-bg"/>
-  <text x="61" y="156" class="c-tag" text-anchor="middle">AI</text>
+  <rect x="36" y="140" width="85" height="24" class="c-tag-bg"/>
+  <text x="78" y="156" class="c-tag" text-anchor="middle">AI AGENT</text>
 
-  <rect x="94" y="140" width="80" height="24" class="c-tag-bg"/>
-  <text x="134" y="156" class="c-tag" text-anchor="middle">PYTHON</text>
+  <rect x="129" y="140" width="75" height="24" class="c-tag-bg"/>
+  <text x="166" y="156" class="c-tag" text-anchor="middle">PYTHON</text>
 
-  <rect x="182" y="140" width="55" height="24" class="c-tag-bg"/>
-  <text x="209" y="156" class="c-tag" text-anchor="middle">ML</text>
+  <rect x="212" y="140" width="55" height="24" class="c-tag-bg"/>
+  <text x="239" y="156" class="c-tag" text-anchor="middle">LLM</text>
+
+  <rect x="275" y="140" width="85" height="24" class="c-tag-bg"/>
+  <text x="317" y="156" class="c-tag" text-anchor="middle">STREAMLIT</text>
 </svg>
