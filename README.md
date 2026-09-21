@@ -30,7 +30,8 @@
 
 <br/>
 
-<img src="assets/card-base.svg" width="49%" alt="Base & Principle"/>
+<img src="assets/card-base.svg" width="49%" alt="Base & Nexus"/>
+<img src="assets/card-principle.svg" width="49%" alt="Core Principle"/>
 
 <br/><br/>
 

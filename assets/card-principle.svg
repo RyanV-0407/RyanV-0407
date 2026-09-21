@@ -12,12 +12,12 @@
       }
       .border-laser {
         fill: none; rx: 20; ry: 20;
-        stroke: url(#laserGrad3);
+        stroke: url(#laserGrad4);
         stroke-width: 2;
         stroke-linecap: round;
         stroke-dasharray: 200 1350;
         animation: laserTravel 7s linear infinite;
-        animation-delay: -4.6s;
+        animation-delay: -5.8s;
       }
       @keyframes laserTravel {
         from { stroke-dashoffset: 0; }
@@ -25,7 +25,7 @@
       }
 
       .card-glow {
-        fill: #f472b6; opacity: 0.07;
+        fill: #10b981; opacity: 0.07;
         animation: glowBreathe 4.5s ease-in-out infinite;
       }
       @keyframes glowBreathe { 0%,100% { opacity: 0.05; r: 85; } 50% { opacity: 0.11; r: 105; } }
@@ -34,7 +34,7 @@
 
       .label {
         font-family: 'Inter', -apple-system, sans-serif; font-weight: 700; font-size: 16px;
-        fill: #f472b6; letter-spacing: 0.5px;
+        fill: #10b981; letter-spacing: 0.5px;
       }
       .text {
         font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: 13.5px;
@@ -42,23 +42,23 @@
       }
       .highlight { font-weight: 600; fill: #ffffff; }
 
-      .corner-dot { fill: #f472b6; opacity: 0.35; }
+      .corner-dot { fill: #10b981; opacity: 0.35; }
     </style>
 
-    <linearGradient id="laserGrad3" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f472b6" stop-opacity="0"/>
-      <stop offset="40%" stop-color="#f472b6"/>
+    <linearGradient id="laserGrad4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#10b981"/>
       <stop offset="50%" stop-color="#ffffff"/>
-      <stop offset="60%" stop-color="#a78bfa"/>
-      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
     </linearGradient>
 
-    <filter id="blur3"><feGaussianBlur stdDeviation="35"/></filter>
+    <filter id="blur4"><feGaussianBlur stdDeviation="35"/></filter>
   </defs>
 
   <!-- Card Body -->
   <rect x="2" y="2" width="576" height="216" class="card-fill"/>
-  <circle cx="60" cy="60" r="90" class="card-glow" filter="url(#blur3)"/>
+  <circle cx="60" cy="60" r="90" class="card-glow" filter="url(#blur4)"/>
   
   <!-- Borders: Static base + Smooth Moving Laser Beam -->
   <rect x="2" y="2" width="576" height="216" class="border-base"/>
@@ -71,11 +71,11 @@
   <circle cx="560" cy="200" r="2" class="corner-dot"/>
 
   <!-- Content -->
-  <text x="38" y="60" class="icon">📍</text>
-  <text x="80" y="56" class="label">Base &amp; Nexus</text>
+  <text x="38" y="60" class="icon">💡</text>
+  <text x="80" y="56" class="label">Core Principle</text>
   
-  <text x="38" y="98" class="text">Stationed in <tspan class="highlight">India</tspan> — operating <tspan class="highlight">Remote-First</tspan> globally.</text>
-  <text x="38" y="122" class="text">Seamless collaboration across time zones with async rigor.</text>
-  <text x="38" y="146" class="text">Always open to high-impact engineering roles, research</text>
-  <text x="38" y="170" class="text">collaborations, and ambitious international teams.</text>
+  <text x="38" y="98" class="text"><tspan class="highlight">Build something worth shipping.</tspan> Deep commitment to</text>
+  <text x="38" y="122" class="text">clean architecture, scalable codebases, and intuitive interfaces</text>
+  <text x="38" y="146" class="text">that turn raw data and machine intelligence into reliable,</text>
+  <text x="38" y="170" class="text">polished products people genuinely love to use.</text>
 </svg>
