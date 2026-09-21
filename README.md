@@ -81,25 +81,12 @@
 
 <br/>
 
-<img src="assets/activity.svg?v=telemetry" width="100%" alt="System Telemetry & Activity"/>
+<img src="https://github-readme-stats-eight-theta.vercel.app/api?username=RyanV-0407&show_icons=true&include_all_commits=true&hide=prs,issues,contribs&hide_rank=false&bg_color=080811&border_color=1c1c36&title_color=22d3ee&icon_color=a78bfa&text_color=94a3b8&border_radius=16" width="49%" alt="GitHub stats"/>
+<img src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=RyanV-0407&layout=compact&card_width=495&bg_color=080811&border_color=1c1c36&title_color=f472b6&icon_color=22d3ee&text_color=94a3b8&border_radius=16" width="49%" alt="Top languages"/>
 
 <br/>
 
-<a href="https://github.com/RyanV-0407?tab=overview&from=2026-01-01">
-  <img src="https://img.shields.io/badge/GLOBAL_ACTIVITY-776%2B_CONTRIBUTIONS-22d3ee?style=for-the-badge&logo=github&logoColor=white&labelColor=080814" alt="Contributions"/>
-</a>
-&nbsp;
-<a href="https://github.com/RyanV-0407">
-  <img src="https://img.shields.io/badge/LIFETIME_COMMITS-288%2B_PUSHED-f472b6?style=for-the-badge&logo=git&logoColor=white&labelColor=080814" alt="Commits"/>
-</a>
-&nbsp;
-<a href="https://github.com/RyanV-0407">
-  <img src="https://img.shields.io/badge/SYSTEM_STREAK-ACTIVE_%E2%9A%A1-a78bfa?style=for-the-badge&logo=sparkles&logoColor=white&labelColor=080814" alt="Streak"/>
-</a>
-&nbsp;
-<a href="https://github.com/RyanV-0407">
-  <img src="https://komarev.com/ghpvc/?username=RyanV-0407&label=LIVE+TELEMETRY+VIEWS&color=38bdf8&style=for-the-badge&labelColor=080814" alt="Live Telemetry Views"/>
-</a>
+<img src="https://streak-stats.demolab.com?user=RyanV-0407&background=080811&border=1c1c36&stroke=1c1c36&ring=22d3ee&fire=f472b6&currStreakNum=ffffff&currStreakLabel=22d3ee&sideNums=ffffff&sideLabels=a78bfa&dates=64748b&border_radius=16" width="99%" alt="Streak"/>
 
 <br/><br/>
 
