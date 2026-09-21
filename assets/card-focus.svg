@@ -1,22 +1,61 @@
-<svg viewBox="0 0 580 200" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 580 220" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap');
-      .card-bg { fill: #0d0d18; rx: 16; ry: 16; }
-      .card-border { fill: none; stroke: #1e1e38; stroke-width: 1; rx: 16; ry: 16; }
-      .card-icon { font-size: 28px; }
-      .card-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; fill: #22d3ee; }
-      .card-text { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 13px; fill: #9898b0; line-height: 1.6; }
-      .card-accent { fill: #22d3ee; opacity: 0.06; }
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap');
+
+      .card-fill { fill: #0c0c16; rx: 20; ry: 20; }
+      .card-border {
+        fill: none; rx: 20; ry: 20;
+        stroke: url(#borderGrad2);
+        stroke-width: 1.5;
+        stroke-dasharray: 8 4;
+        animation: borderRotate 14s linear infinite;
+      }
+      @keyframes borderRotate { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -120; } }
+
+      .card-glow {
+        fill: #22d3ee; opacity: 0.06;
+        animation: glowBreathe 5s ease-in-out infinite;
+      }
+      @keyframes glowBreathe { 0%,100% { opacity: 0.04; r: 90; } 50% { opacity: 0.1; r: 110; } }
+
+      .icon { font-size: 32px; opacity: 0; animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards; }
+      @keyframes popIn { from { opacity: 0; transform: scale(0) translateY(10px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+
+      .label {
+        font-family: 'Inter', sans-serif; font-weight: 700; font-size: 16px;
+        fill: #22d3ee; letter-spacing: 1px;
+        opacity: 0; animation: slideIn 0.6s ease-out 0.3s forwards;
+      }
+      .text {
+        font-family: 'Inter', sans-serif; font-weight: 300; font-size: 13.5px;
+        fill: #9898b0;
+        opacity: 0; animation: slideIn 0.6s ease-out 0.5s forwards;
+      }
+      @keyframes slideIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+      .corner-dot { fill: #22d3ee; opacity: 0.3; }
     </style>
+    <linearGradient id="borderGrad2">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#f472b6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.6"/>
+    </linearGradient>
+    <filter id="blur2"><feGaussianBlur stdDeviation="40"/></filter>
   </defs>
-  <rect width="580" height="200" class="card-bg"/>
-  <rect width="580" height="200" class="card-border"/>
-  <circle cx="50" cy="50" r="80" class="card-accent"/>
-  <text x="35" y="50" class="card-icon">🔭</text>
-  <text x="75" y="48" class="card-label">Currently Exploring</text>
-  <text x="35" y="85" class="card-text">Deep learning architectures and transformer</text>
-  <text x="35" y="108" class="card-text">models, scalable data pipelines for production,</text>
-  <text x="35" y="131" class="card-text">and integrating AI/ML into real-world products</text>
-  <text x="35" y="154" class="card-text">that solve meaningful problems.</text>
+
+  <rect x="2" y="2" width="576" height="216" class="card-fill"/>
+  <circle cx="60" cy="60" r="100" class="card-glow" filter="url(#blur2)"/>
+  <rect x="2" y="2" width="576" height="216" class="card-border"/>
+
+  <circle cx="20" cy="20" r="2" class="corner-dot"/>
+  <circle cx="560" cy="20" r="2" class="corner-dot"/>
+  <circle cx="20" cy="200" r="2" class="corner-dot"/>
+  <circle cx="560" cy="200" r="2" class="corner-dot"/>
+
+  <text x="38" y="62" class="icon">🔭</text>
+  <text x="82" y="58" class="label">Currently Exploring</text>
+  <text x="38" y="100" class="text">Deep learning architectures and transformer</text>
+  <text x="38" y="124" class="text">models, scalable data pipelines for production,</text>
+  <text x="38" y="148" class="text">and integrating AI/ML into real-world products</text>
+  <text x="38" y="172" class="text">that solve meaningful problems at scale.</text>
 </svg>

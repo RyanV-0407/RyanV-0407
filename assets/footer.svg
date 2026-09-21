@@ -1,40 +1,57 @@
-<svg viewBox="0 0 1200 80" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 100" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap');
 
       .footer-text {
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        fill: #5a5a78;
-        letter-spacing: 3px;
+        font-family: 'Inter', sans-serif; font-weight: 300; font-size: 14px;
+        fill: url(#footerTextGrad); letter-spacing: 6px;
+        opacity: 0; animation: fadeUp 1s ease-out 0.5s forwards;
       }
-      .footer-line {
-        stroke: url(#footerGrad);
-        stroke-width: 1;
-        opacity: 0.3;
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+      .line-left, .line-right {
+        stroke-width: 1; stroke-linecap: round;
       }
-      .footer-heart {
-        font-family: 'Inter', sans-serif;
-        font-size: 14px;
+      .line-left { stroke: url(#footerLineL); animation: extendLeft 1.5s ease-out forwards; }
+      .line-right { stroke: url(#footerLineR); animation: extendRight 1.5s ease-out forwards; }
+      @keyframes extendLeft { from { stroke-dasharray: 0 500; } to { stroke-dasharray: 500 0; } }
+      @keyframes extendRight { from { stroke-dasharray: 0 500; } to { stroke-dasharray: 500 0; } }
+
+      .center-diamond {
+        fill: none; stroke: url(#diamondGrad); stroke-width: 1.5;
+        animation: diamondSpin 8s linear infinite;
+        transform-origin: 600px 28px;
+      }
+      @keyframes diamondSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+      .center-dot {
         fill: #f472b6;
-        animation: pulse 2s ease-in-out infinite;
+        animation: centerPulse 2s ease-in-out infinite;
       }
-      @keyframes pulse {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
+      @keyframes centerPulse { 0%,100% { opacity: 0.3; r: 2; } 50% { opacity: 1; r: 3.5; } }
+
+      .sub-text {
+        font-family: 'Inter', sans-serif; font-weight: 400; font-size: 11px;
+        fill: #3a3a55; letter-spacing: 2px;
+        opacity: 0; animation: fadeUp 1s ease-out 1s forwards;
       }
     </style>
-    <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0" />
-      <stop offset="30%" style="stop-color:#a78bfa;stop-opacity:1" />
-      <stop offset="70%" style="stop-color:#22d3ee;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#f472b6;stop-opacity:0" />
-    </linearGradient>
+    <linearGradient id="footerTextGrad"><stop offset="0%" style="stop-color:#a78bfa"/><stop offset="50%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#f472b6"/></linearGradient>
+    <linearGradient id="footerLineL" x1="1" y1="0" x2="0" y2="0"><stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0.6"/><stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0"/></linearGradient>
+    <linearGradient id="footerLineR" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" style="stop-color:#f472b6;stop-opacity:0.6"/><stop offset="100%" style="stop-color:#f472b6;stop-opacity:0"/></linearGradient>
+    <linearGradient id="diamondGrad"><stop offset="0%" style="stop-color:#a78bfa"/><stop offset="50%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#f472b6"/></linearGradient>
   </defs>
 
-  <line x1="100" y1="20" x2="1100" y2="20" class="footer-line"/>
-  <text x="600" y="55" text-anchor="middle" class="footer-text">LET'S BUILD SOMETHING WORTH SHIPPING</text>
-  <text x="600" y="75" text-anchor="middle" class="footer-heart">♥</text>
+  <!-- Lines extending from center -->
+  <line x1="560" y1="28" x2="100" y2="28" class="line-left"/>
+  <line x1="640" y1="28" x2="1100" y2="28" class="line-right"/>
+
+  <!-- Center diamond -->
+  <rect x="593" y="21" width="14" height="14" rx="2" class="center-diamond"/>
+  <circle cx="600" cy="28" r="3" class="center-dot"/>
+
+  <!-- Text -->
+  <text x="600" y="68" text-anchor="middle" class="footer-text">LET'S BUILD SOMETHING WORTH SHIPPING</text>
+  <text x="600" y="88" text-anchor="middle" class="sub-text">vikram singh rathour · 2026</text>
 </svg>

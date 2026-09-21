@@ -1,38 +1,46 @@
 <svg viewBox="0 0 1200 50" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&amp;display=swap');
-      .section-bg { fill: transparent; }
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&amp;display=swap');
       .section-num {
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        font-size: 16px;
-        fill: #a78bfa;
-        letter-spacing: 2px;
+        font-family: 'Inter', sans-serif; font-weight: 900; font-size: 18px;
+        fill: url(#numGrad); letter-spacing: 2px;
+      }
+      .section-slash {
+        font-family: 'Inter', sans-serif; font-weight: 900; font-size: 18px;
+        fill: #2a2a45; letter-spacing: 2px;
       }
       .section-title {
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        font-size: 16px;
-        fill: #e0e0f0;
-        letter-spacing: 4px;
-        text-transform: uppercase;
+        font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px;
+        fill: #e0e0f0; letter-spacing: 5px; text-transform: uppercase;
       }
-      .section-line {
-        stroke: url(#lineGrad);
-        stroke-width: 1.5;
-        opacity: 0.4;
+      .line-bg { stroke: #13131f; stroke-width: 1; }
+      .line-shimmer {
+        stroke: url(#shimmer1);
+        stroke-width: 2;
+        stroke-linecap: round;
+        animation: shimmer 3s linear infinite;
       }
+      @keyframes shimmer {
+        0% { stroke-dashoffset: 1000; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .dot { fill: #a78bfa; animation: dotPulse 2s ease-in-out infinite; }
+      @keyframes dotPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
     </style>
-    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0" />
-      <stop offset="20%" style="stop-color:#a78bfa;stop-opacity:1" />
-      <stop offset="80%" style="stop-color:#22d3ee;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0" />
+    <linearGradient id="numGrad"><stop offset="0%" style="stop-color:#a78bfa"/><stop offset="100%" style="stop-color:#22d3ee"/></linearGradient>
+    <linearGradient id="shimmer1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0"/>
+      <stop offset="30%" style="stop-color:#a78bfa;stop-opacity:0.8"/>
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1"/>
+      <stop offset="70%" style="stop-color:#22d3ee;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="50" class="section-bg"/>
-  <text x="30" y="32" class="section-num">01</text>
-  <text x="70" y="32" class="section-title">// About</text>
-  <line x1="240" y1="30" x2="1170" y2="30" class="section-line"/>
+  <circle cx="22" cy="30" r="3" class="dot"/>
+  <text x="38" y="36" class="section-num">01</text>
+  <text x="68" y="36" class="section-slash">//</text>
+  <text x="100" y="36" class="section-title">About</text>
+  <line x1="220" y1="32" x2="1180" y2="32" class="line-bg"/>
+  <line x1="220" y1="32" x2="1180" y2="32" class="line-shimmer" stroke-dasharray="100 900"/>
 </svg>

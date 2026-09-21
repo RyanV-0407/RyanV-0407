@@ -1,178 +1,321 @@
 <svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&amp;display=swap');
 
+      /* ── Animated gradient background ── */
       .bg { fill: #07070c; }
 
-      /* Gradient mesh blobs */
-      .blob1 {
-        fill: url(#grad1);
+      /* Morphing aurora blobs */
+      .aurora1 {
+        fill: url(#auroraG1);
+        opacity: 0.6;
+        animation: morph1 12s ease-in-out infinite, drift1 16s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .aurora2 {
+        fill: url(#auroraG2);
         opacity: 0.5;
-        animation: float1 8s ease-in-out infinite;
+        animation: morph2 14s ease-in-out infinite, drift2 18s ease-in-out infinite;
+        transform-origin: center;
       }
-      .blob2 {
-        fill: url(#grad2);
+      .aurora3 {
+        fill: url(#auroraG3);
         opacity: 0.4;
-        animation: float2 10s ease-in-out infinite;
+        animation: morph3 10s ease-in-out infinite, drift3 14s ease-in-out infinite;
+        transform-origin: center;
       }
-      .blob3 {
-        fill: url(#grad3);
-        opacity: 0.35;
-        animation: float3 12s ease-in-out infinite;
-      }
-
-      @keyframes float1 {
-        0%, 100% { transform: translate(0, 0) scale(1); }
-        50% { transform: translate(40px, -30px) scale(1.1); }
-      }
-      @keyframes float2 {
-        0%, 100% { transform: translate(0, 0) scale(1); }
-        50% { transform: translate(-50px, 20px) scale(1.15); }
-      }
-      @keyframes float3 {
-        0%, 100% { transform: translate(0, 0) scale(1); }
-        50% { transform: translate(30px, 40px) scale(1.05); }
+      .aurora4 {
+        fill: url(#auroraG4);
+        opacity: 0.3;
+        animation: morph1 16s ease-in-out infinite reverse, drift2 20s ease-in-out infinite reverse;
+        transform-origin: center;
       }
 
-      /* Grid lines */
-      .grid-line {
-        stroke: #1a1a2e;
-        stroke-width: 0.5;
-        fill: none;
+      @keyframes morph1 {
+        0%, 100% { transform: scale(1) rotate(0deg); }
+        25% { transform: scale(1.15) rotate(3deg); }
+        50% { transform: scale(0.95) rotate(-2deg); }
+        75% { transform: scale(1.1) rotate(1deg); }
+      }
+      @keyframes morph2 {
+        0%, 100% { transform: scale(1) rotate(0deg); }
+        33% { transform: scale(1.2) rotate(-4deg); }
+        66% { transform: scale(0.9) rotate(3deg); }
+      }
+      @keyframes morph3 {
+        0%, 100% { transform: scale(1.05) rotate(2deg); }
+        50% { transform: scale(0.95) rotate(-3deg); }
+      }
+      @keyframes drift1 {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(60px, -40px); }
+      }
+      @keyframes drift2 {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(-70px, 30px); }
+      }
+      @keyframes drift3 {
+        0%, 100% { transform: translate(0, 0); }
+        50% { transform: translate(40px, 50px); }
       }
 
-      /* Name text */
+      /* Animated grid */
+      .grid-h, .grid-v {
+        stroke: #ffffff;
+        stroke-width: 0.3;
+        opacity: 0;
+        animation: gridFade 4s ease-in-out infinite;
+      }
+      .grid-h:nth-child(1) { animation-delay: 0s; }
+      .grid-h:nth-child(2) { animation-delay: 0.5s; }
+      .grid-h:nth-child(3) { animation-delay: 1s; }
+      .grid-v:nth-child(4) { animation-delay: 0.3s; }
+      .grid-v:nth-child(5) { animation-delay: 0.8s; }
+      .grid-v:nth-child(6) { animation-delay: 1.3s; }
+
+      @keyframes gridFade {
+        0%, 100% { opacity: 0.02; }
+        50% { opacity: 0.08; }
+      }
+
+      /* Scanning line */
+      .scanline {
+        fill: url(#scanGrad);
+        opacity: 0.15;
+        animation: scan 6s linear infinite;
+      }
+      @keyframes scan {
+        0% { transform: translateY(-10px); }
+        100% { transform: translateY(410px); }
+      }
+
+      /* Name with glow */
       .name {
         font-family: 'Inter', sans-serif;
         font-weight: 900;
-        font-size: 72px;
+        font-size: 68px;
         fill: #ffffff;
         opacity: 0;
-        animation: fadeSlideUp 1s ease-out 0.3s forwards;
+        animation: nameReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
       }
+      .name-glow {
+        font-family: 'Inter', sans-serif;
+        font-weight: 900;
+        font-size: 68px;
+        fill: none;
+        stroke: url(#nameGlowGrad);
+        stroke-width: 1;
+        opacity: 0;
+        animation: glowPulse 3s ease-in-out 1.5s infinite, nameReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+      }
+
+      @keyframes nameReveal {
+        from { opacity: 0; transform: translateY(30px); filter: blur(8px); }
+        to { opacity: 1; transform: translateY(0); filter: blur(0); }
+      }
+      @keyframes glowPulse {
+        0%, 100% { opacity: 0.3; stroke-width: 1; }
+        50% { opacity: 0.8; stroke-width: 2; }
+      }
+
+      /* Tagline */
       .tagline {
         font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        fill: #8b8ba3;
-        letter-spacing: 6px;
+        font-weight: 300;
+        font-size: 18px;
+        fill: #7d7d99;
+        letter-spacing: 8px;
         opacity: 0;
-        animation: fadeSlideUp 1s ease-out 0.7s forwards;
+        animation: nameReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 1s forwards;
+      }
+
+      /* Accent line with shimmer */
+      .accent-line-bg {
+        stroke: #1e1e38;
+        stroke-width: 1;
       }
       .accent-line {
-        stroke: url(#accentGrad);
-        stroke-width: 3;
+        stroke: url(#shimmerGrad);
+        stroke-width: 2;
         stroke-linecap: round;
         opacity: 0;
-        animation: expandLine 0.8s ease-out 0.5s forwards;
+        animation: lineExpand 1s ease-out 0.8s forwards;
+      }
+      @keyframes lineExpand {
+        from { opacity: 0; stroke-dasharray: 0 400; }
+        to { opacity: 1; stroke-dasharray: 400 0; }
+      }
+      .shimmer-move {
+        animation: shimmerSlide 3s linear infinite;
+      }
+      @keyframes shimmerSlide {
+        0% { transform: translateX(-400px); }
+        100% { transform: translateX(400px); }
       }
 
-      @keyframes fadeSlideUp {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-      @keyframes expandLine {
-        from { opacity: 0; stroke-dasharray: 0 200; }
-        to { opacity: 1; stroke-dasharray: 200 0; }
-      }
-
-      /* Floating particles */
-      .particle {
+      /* Orbiting particles */
+      .orbit-particle {
         fill: #a78bfa;
-        opacity: 0;
-        animation: sparkle 4s ease-in-out infinite;
+        animation: orbit 8s linear infinite;
+        transform-origin: 600px 200px;
       }
-      .particle:nth-child(2) { animation-delay: 0.5s; fill: #22d3ee; }
-      .particle:nth-child(3) { animation-delay: 1s; fill: #f472b6; }
-      .particle:nth-child(4) { animation-delay: 1.5s; fill: #a78bfa; }
-      .particle:nth-child(5) { animation-delay: 2s; fill: #22d3ee; }
-      .particle:nth-child(6) { animation-delay: 2.5s; fill: #f472b6; }
-      .particle:nth-child(7) { animation-delay: 0.8s; fill: #a78bfa; }
-      .particle:nth-child(8) { animation-delay: 1.3s; fill: #22d3ee; }
-
-      @keyframes sparkle {
-        0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
-        50% { opacity: 0.7; transform: translateY(-15px) scale(1); }
+      .orbit-particle:nth-child(2) { fill: #22d3ee; animation-delay: -2.67s; }
+      .orbit-particle:nth-child(3) { fill: #f472b6; animation-delay: -5.33s; }
+      @keyframes orbit {
+        from { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+        to { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
       }
 
-      /* Corner accents */
-      .corner {
+      /* Star particles */
+      .star {
+        fill: #ffffff;
+        animation: twinkle 3s ease-in-out infinite;
+      }
+      .star:nth-child(1) { animation-delay: 0s; }
+      .star:nth-child(2) { animation-delay: 0.4s; }
+      .star:nth-child(3) { animation-delay: 0.8s; }
+      .star:nth-child(4) { animation-delay: 1.2s; }
+      .star:nth-child(5) { animation-delay: 1.6s; }
+      .star:nth-child(6) { animation-delay: 2.0s; }
+      .star:nth-child(7) { animation-delay: 2.4s; }
+      .star:nth-child(8) { animation-delay: 0.2s; }
+      .star:nth-child(9) { animation-delay: 0.6s; }
+      .star:nth-child(10) { animation-delay: 1.0s; }
+      .star:nth-child(11) { animation-delay: 1.4s; }
+      .star:nth-child(12) { animation-delay: 1.8s; }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: 0; transform: scale(0); }
+        50% { opacity: 0.9; transform: scale(1); }
+      }
+
+      /* Corner brackets */
+      .bracket {
         stroke: #a78bfa;
         stroke-width: 1.5;
         fill: none;
         opacity: 0;
-        animation: fadeIn 0.5s ease-out 1s forwards;
+        animation: bracketIn 0.6s ease-out 1.5s forwards;
       }
-      @keyframes fadeIn {
-        to { opacity: 0.4; }
+      .bracket-r { stroke: #22d3ee; animation-delay: 1.7s; }
+      .bracket-bl { stroke: #f472b6; animation-delay: 1.9s; }
+      .bracket-br { stroke: #a78bfa; animation-delay: 2.1s; }
+
+      @keyframes bracketIn {
+        from { opacity: 0; transform: scale(0.5); }
+        to { opacity: 0.5; transform: scale(1); }
       }
+
+      /* Status indicator */
+      .status-dot {
+        fill: #22d3ee;
+        animation: statusPulse 2s ease-in-out infinite;
+      }
+      .status-text {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        fill: #4a4a6a;
+        letter-spacing: 3px;
+        opacity: 0;
+        animation: fadeIn 0.5s ease-out 2.5s forwards;
+      }
+      @keyframes statusPulse {
+        0%, 100% { opacity: 0.4; r: 3; }
+        50% { opacity: 1; r: 4; }
+      }
+      @keyframes fadeIn { to { opacity: 1; } }
     </style>
 
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    <!-- Gradients -->
+    <radialGradient id="auroraG1" cx="50%" cy="50%"><stop offset="0%" style="stop-color:#7c3aed"/><stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0"/></radialGradient>
+    <radialGradient id="auroraG2" cx="50%" cy="50%"><stop offset="0%" style="stop-color:#0891b2"/><stop offset="100%" style="stop-color:#0891b2;stop-opacity:0"/></radialGradient>
+    <radialGradient id="auroraG3" cx="50%" cy="50%"><stop offset="0%" style="stop-color:#db2777"/><stop offset="100%" style="stop-color:#db2777;stop-opacity:0"/></radialGradient>
+    <radialGradient id="auroraG4" cx="50%" cy="50%"><stop offset="0%" style="stop-color:#4f46e5"/><stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0"/></radialGradient>
+
+    <linearGradient id="nameGlowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a78bfa"/><stop offset="50%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#f472b6"/>
     </linearGradient>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    <linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0"/><stop offset="50%" style="stop-color:#a78bfa;stop-opacity:1"/><stop offset="100%" style="stop-color:#a78bfa;stop-opacity:0"/>
     </linearGradient>
-    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f472b6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#a78bfa" />
-      <stop offset="50%" style="stop-color:#22d3ee" />
-      <stop offset="100%" style="stop-color:#f472b6" />
+    <linearGradient id="shimmerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0"/><stop offset="40%" style="stop-color:#a78bfa"/><stop offset="50%" style="stop-color:#ffffff"/><stop offset="60%" style="stop-color:#22d3ee"/><stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0"/>
     </linearGradient>
 
-    <filter id="blur1">
-      <feGaussianBlur stdDeviation="60" />
-    </filter>
-    <filter id="blur2">
-      <feGaussianBlur stdDeviation="50" />
-    </filter>
+    <filter id="megaBlur"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="softGlow"><feGaussianBlur stdDeviation="3"/></filter>
+    <clipPath id="bannerClip"><rect width="1200" height="400" rx="0"/></clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="400" class="bg"/>
+  <g clip-path="url(#bannerClip)">
+    <!-- Base -->
+    <rect width="1200" height="400" class="bg"/>
 
-  <!-- Subtle grid -->
-  <g opacity="0.3">
-    <line x1="0" y1="100" x2="1200" y2="100" class="grid-line"/>
-    <line x1="0" y1="200" x2="1200" y2="200" class="grid-line"/>
-    <line x1="0" y1="300" x2="1200" y2="300" class="grid-line"/>
-    <line x1="300" y1="0" x2="300" y2="400" class="grid-line"/>
-    <line x1="600" y1="0" x2="600" y2="400" class="grid-line"/>
-    <line x1="900" y1="0" x2="900" y2="400" class="grid-line"/>
+    <!-- Animated grid -->
+    <g>
+      <line x1="0" y1="100" x2="1200" y2="100" class="grid-h"/>
+      <line x1="0" y1="200" x2="1200" y2="200" class="grid-h"/>
+      <line x1="0" y1="300" x2="1200" y2="300" class="grid-h"/>
+      <line x1="300" y1="0" x2="300" y2="400" class="grid-v"/>
+      <line x1="600" y1="0" x2="600" y2="400" class="grid-v"/>
+      <line x1="900" y1="0" x2="900" y2="400" class="grid-v"/>
+    </g>
+
+    <!-- Aurora blobs -->
+    <ellipse cx="200" cy="150" rx="280" ry="220" class="aurora1" filter="url(#megaBlur)"/>
+    <ellipse cx="950" cy="280" rx="260" ry="200" class="aurora2" filter="url(#megaBlur)"/>
+    <ellipse cx="600" cy="80" rx="200" ry="160" class="aurora3" filter="url(#megaBlur)"/>
+    <ellipse cx="500" cy="350" rx="240" ry="180" class="aurora4" filter="url(#megaBlur)"/>
+
+    <!-- Scan line -->
+    <rect x="0" y="0" width="1200" height="8" class="scanline"/>
+
+    <!-- Twinkle stars -->
+    <g>
+      <circle cx="120" cy="60" r="1.5" class="star"/>
+      <circle cx="310" cy="330" r="1" class="star"/>
+      <circle cx="480" cy="45" r="1.5" class="star"/>
+      <circle cx="720" cy="350" r="1" class="star"/>
+      <circle cx="980" cy="70" r="2" class="star"/>
+      <circle cx="1100" cy="300" r="1" class="star"/>
+      <circle cx="180" cy="270" r="1.5" class="star"/>
+      <circle cx="850" cy="130" r="1" class="star"/>
+      <circle cx="60" cy="180" r="1" class="star"/>
+      <circle cx="1140" cy="160" r="1.5" class="star"/>
+      <circle cx="400" cy="280" r="1" class="star"/>
+      <circle cx="670" cy="90" r="1.5" class="star"/>
+    </g>
+
+    <!-- Orbiting dots -->
+    <g>
+      <circle cx="600" cy="200" r="3" class="orbit-particle"/>
+      <circle cx="600" cy="200" r="2.5" class="orbit-particle"/>
+      <circle cx="600" cy="200" r="2" class="orbit-particle"/>
+    </g>
+
+    <!-- Corner brackets -->
+    <polyline points="25,55 25,25 55,25" class="bracket"/>
+    <polyline points="1145,25 1175,25 1175,55" class="bracket bracket-r"/>
+    <polyline points="25,345 25,375 55,375" class="bracket bracket-bl"/>
+    <polyline points="1145,375 1175,375 1175,345" class="bracket bracket-br"/>
+
+    <!-- Main text -->
+    <text x="600" y="185" text-anchor="middle" class="name-glow" filter="url(#softGlow)">Vikram Singh Rathour</text>
+    <text x="600" y="185" text-anchor="middle" class="name">Vikram Singh Rathour</text>
+
+    <!-- Accent line -->
+    <line x1="400" y1="215" x2="800" y2="215" class="accent-line-bg"/>
+    <g class="shimmer-move"><line x1="400" y1="215" x2="800" y2="215" class="accent-line"/></g>
+
+    <!-- Tagline -->
+    <text x="600" y="265" text-anchor="middle" class="tagline">DATA SCIENTIST  ·  ENGINEER  ·  BUILDER</text>
+
+    <!-- Status indicator -->
+    <g transform="translate(540, 310)">
+      <circle cx="0" cy="0" r="3" class="status-dot"/>
+      <text x="14" y="4" class="status-text">AVAILABLE FOR COLLABORATION</text>
+    </g>
   </g>
-
-  <!-- Gradient mesh blobs -->
-  <ellipse cx="250" cy="180" rx="250" ry="200" class="blob1" filter="url(#blur1)"/>
-  <ellipse cx="900" cy="250" rx="220" ry="180" class="blob2" filter="url(#blur2)"/>
-  <ellipse cx="600" cy="100" rx="180" ry="150" class="blob3" filter="url(#blur1)"/>
-
-  <!-- Floating particles -->
-  <g>
-    <circle cx="150" cy="80" r="2" class="particle"/>
-    <circle cx="350" cy="320" r="2.5" class="particle"/>
-    <circle cx="500" cy="60" r="1.5" class="particle"/>
-    <circle cx="750" cy="340" r="2" class="particle"/>
-    <circle cx="950" cy="90" r="3" class="particle"/>
-    <circle cx="1050" cy="280" r="2" class="particle"/>
-    <circle cx="200" cy="250" r="1.5" class="particle"/>
-    <circle cx="850" cy="150" r="2.5" class="particle"/>
-  </g>
-
-  <!-- Corner brackets -->
-  <polyline points="30,60 30,30 60,30" class="corner"/>
-  <polyline points="1140,30 1170,30 1170,60" class="corner"/>
-  <polyline points="30,340 30,370 60,370" class="corner"/>
-  <polyline points="1140,370 1170,370 1170,340" class="corner"/>
-
-  <!-- Main text -->
-  <text x="600" y="180" text-anchor="middle" class="name">Vikram Singh Rathour</text>
-  <line x1="450" y1="210" x2="750" y2="210" class="accent-line"/>
-  <text x="600" y="260" text-anchor="middle" class="tagline">DATA SCIENTIST  ·  ENGINEER  ·  BUILDER</text>
 </svg>

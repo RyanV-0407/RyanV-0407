@@ -1,104 +1,97 @@
-<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1200 130" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&amp;display=swap');
 
-      .tech-bg { fill: #0d0d18; }
-      .tech-border { fill: none; stroke: #1e1e38; stroke-width: 1; rx: 16; ry: 16; }
-
-      .tech-pill {
-        rx: 20;
-        ry: 20;
-        fill: #12121f;
-        stroke: #2a2a45;
-        stroke-width: 1;
+      /* Pill base */
+      .pill {
+        rx: 22; ry: 22; fill: #0c0c16;
+        stroke: #1e1e38; stroke-width: 1;
       }
-      .tech-text {
-        font-family: 'Inter', sans-serif;
-        font-weight: 600;
-        font-size: 13px;
-        fill: #c0c0dc;
-        text-anchor: middle;
-        dominant-baseline: central;
+      .pill-text {
+        font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px;
+        fill: #c0c0dc; text-anchor: middle; dominant-baseline: central;
       }
 
-      .glow-purple { stroke: #a78bfa; stroke-opacity: 0.4; }
-      .glow-cyan { stroke: #22d3ee; stroke-opacity: 0.4; }
-      .glow-pink { stroke: #f472b6; stroke-opacity: 0.4; }
+      /* Glow variants */
+      .glow-p { stroke: #a78bfa; stroke-opacity: 0.5; animation: pillGlow 3s ease-in-out infinite; }
+      .glow-c { stroke: #22d3ee; stroke-opacity: 0.5; animation: pillGlow 3s ease-in-out infinite; animation-delay: 1s; }
+      .glow-k { stroke: #f472b6; stroke-opacity: 0.5; animation: pillGlow 3s ease-in-out infinite; animation-delay: 2s; }
 
-      .dot-purple { fill: #a78bfa; }
-      .dot-cyan { fill: #22d3ee; }
-      .dot-pink { fill: #f472b6; }
+      @keyframes pillGlow {
+        0%, 100% { stroke-opacity: 0.2; filter: none; }
+        50% { stroke-opacity: 0.7; filter: drop-shadow(0 0 6px currentColor); }
+      }
+
+      /* Dot indicators */
+      .dot-p { fill: #a78bfa; animation: dotFlash 2s ease-in-out infinite; }
+      .dot-c { fill: #22d3ee; animation: dotFlash 2s ease-in-out infinite; animation-delay: 0.5s; }
+      .dot-k { fill: #f472b6; animation: dotFlash 2s ease-in-out infinite; animation-delay: 1s; }
+      @keyframes dotFlash { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+      /* Row labels */
+      .row-label {
+        font-family: 'Inter', sans-serif; font-weight: 700; font-size: 10px;
+        fill: #3a3a55; letter-spacing: 3px; text-transform: uppercase;
+      }
     </style>
   </defs>
 
-  <!-- Row 1: Core languages & frameworks -->
-  <g transform="translate(30, 20)">
-    <rect x="0" y="0" width="100" height="36" class="tech-pill glow-purple"/>
-    <circle cx="20" cy="18" r="4" class="dot-purple"/>
-    <text x="60" y="18" class="tech-text">Python</text>
+  <!-- Row 1: Languages & Frameworks -->
+  <text x="30" y="30" class="row-label">LANGUAGES</text>
 
-    <rect x="115" y="0" width="120" height="36" class="tech-pill glow-purple"/>
-    <circle cx="135" cy="18" r="4" class="dot-purple"/>
-    <text x="185" y="18" class="tech-text">TypeScript</text>
+  <g transform="translate(30, 38)">
+    <rect x="0" y="0" width="105" height="38" class="pill glow-p"/>
+    <circle cx="22" cy="19" r="4" class="dot-p"/><text x="65" y="19" class="pill-text">Python</text>
 
-    <rect x="250" y="0" width="120" height="36" class="tech-pill glow-purple"/>
-    <circle cx="270" cy="18" r="4" class="dot-purple"/>
-    <text x="320" y="18" class="tech-text">JavaScript</text>
+    <rect x="115" y="0" width="125" height="38" class="pill glow-p"/>
+    <circle cx="137" cy="19" r="4" class="dot-p"/><text x="190" y="19" class="pill-text">TypeScript</text>
 
-    <rect x="385" y="0" width="90" height="36" class="tech-pill glow-cyan"/>
-    <circle cx="405" cy="18" r="4" class="dot-cyan"/>
-    <text x="440" y="18" class="tech-text">React</text>
+    <rect x="250" y="0" width="125" height="38" class="pill glow-p"/>
+    <circle cx="272" cy="19" r="4" class="dot-p"/><text x="325" y="19" class="pill-text">JavaScript</text>
 
-    <rect x="490" y="0" width="100" height="36" class="tech-pill glow-cyan"/>
-    <circle cx="510" cy="18" r="4" class="dot-cyan"/>
-    <text x="550" y="18" class="tech-text">Next.js</text>
+    <rect x="385" y="0" width="90" height="38" class="pill glow-c"/>
+    <circle cx="405" cy="19" r="4" class="dot-c"/><text x="440" y="19" class="pill-text">React</text>
 
-    <rect x="605" y="0" width="100" height="36" class="tech-pill glow-cyan"/>
-    <circle cx="625" cy="18" r="4" class="dot-cyan"/>
-    <text x="665" y="18" class="tech-text">Node.js</text>
+    <rect x="485" y="0" width="100" height="38" class="pill glow-c"/>
+    <circle cx="507" cy="19" r="4" class="dot-c"/><text x="545" y="19" class="pill-text">Next.js</text>
 
-    <rect x="720" y="0" width="100" height="36" class="tech-pill glow-pink"/>
-    <circle cx="740" cy="18" r="4" class="dot-pink"/>
-    <text x="780" y="18" class="tech-text">Tailwind</text>
+    <rect x="595" y="0" width="100" height="38" class="pill glow-c"/>
+    <circle cx="617" cy="19" r="4" class="dot-c"/><text x="655" y="19" class="pill-text">Node.js</text>
 
-    <rect x="835" y="0" width="100" height="36" class="tech-pill glow-pink"/>
-    <circle cx="855" cy="18" r="4" class="dot-pink"/>
-    <text x="895" y="18" class="tech-text">Figma</text>
+    <rect x="705" y="0" width="105" height="38" class="pill glow-k"/>
+    <circle cx="727" cy="19" r="4" class="dot-k"/><text x="770" y="19" class="pill-text">Tailwind</text>
+
+    <rect x="820" y="0" width="90" height="38" class="pill glow-k"/>
+    <circle cx="842" cy="19" r="4" class="dot-k"/><text x="875" y="19" class="pill-text">Figma</text>
   </g>
 
-  <!-- Row 2: Infra & tools -->
-  <g transform="translate(30, 68)">
-    <rect x="0" y="0" width="120" height="36" class="tech-pill glow-cyan"/>
-    <circle cx="20" cy="18" r="4" class="dot-cyan"/>
-    <text x="70" y="18" class="tech-text">PostgreSQL</text>
+  <!-- Row 2: Infra & ML -->
+  <text x="30" y="102" class="row-label">INFRASTRUCTURE &amp; ML</text>
 
-    <rect x="135" y="0" width="90" height="36" class="tech-pill glow-cyan"/>
-    <circle cx="155" cy="18" r="4" class="dot-cyan"/>
-    <text x="190" y="18" class="tech-text">MySQL</text>
+  <g transform="translate(30, 108)">
+    <rect x="0" y="0" width="120" height="38" class="pill glow-c"/>
+    <circle cx="22" cy="19" r="4" class="dot-c"/><text x="72" y="19" class="pill-text">PostgreSQL</text>
 
-    <rect x="240" y="0" width="100" height="36" class="tech-pill glow-purple"/>
-    <circle cx="260" cy="18" r="4" class="dot-purple"/>
-    <text x="300" y="18" class="tech-text">Docker</text>
+    <rect x="130" y="0" width="95" height="38" class="pill glow-c"/>
+    <circle cx="152" cy="19" r="4" class="dot-c"/><text x="188" y="19" class="pill-text">MySQL</text>
 
-    <rect x="355" y="0" width="80" height="36" class="tech-pill glow-purple"/>
-    <circle cx="375" cy="18" r="4" class="dot-purple"/>
-    <text x="405" y="18" class="tech-text">AWS</text>
+    <rect x="235" y="0" width="100" height="38" class="pill glow-p"/>
+    <circle cx="257" cy="19" r="4" class="dot-p"/><text x="295" y="19" class="pill-text">Docker</text>
 
-    <rect x="450" y="0" width="70" height="36" class="tech-pill glow-pink"/>
-    <circle cx="465" cy="18" r="4" class="dot-pink"/>
-    <text x="495" y="18" class="tech-text">Git</text>
+    <rect x="345" y="0" width="80" height="38" class="pill glow-p"/>
+    <circle cx="365" cy="19" r="4" class="dot-p"/><text x="395" y="19" class="pill-text">AWS</text>
 
-    <rect x="535" y="0" width="90" height="36" class="tech-pill glow-pink"/>
-    <circle cx="555" cy="18" r="4" class="dot-pink"/>
-    <text x="590" y="18" class="tech-text">Linux</text>
+    <rect x="435" y="0" width="75" height="38" class="pill glow-k"/>
+    <circle cx="452" cy="19" r="4" class="dot-k"/><text x="483" y="19" class="pill-text">Git</text>
 
-    <rect x="640" y="0" width="120" height="36" class="tech-pill glow-purple"/>
-    <circle cx="660" cy="18" r="4" class="dot-purple"/>
-    <text x="710" y="18" class="tech-text">TensorFlow</text>
+    <rect x="520" y="0" width="85" height="38" class="pill glow-k"/>
+    <circle cx="540" cy="19" r="4" class="dot-k"/><text x="573" y="19" class="pill-text">Linux</text>
 
-    <rect x="775" y="0" width="110" height="36" class="tech-pill glow-cyan"/>
-    <circle cx="795" cy="18" r="4" class="dot-cyan"/>
-    <text x="840" y="18" class="tech-text">PyTorch</text>
+    <rect x="615" y="0" width="125" height="38" class="pill glow-p"/>
+    <circle cx="637" cy="19" r="4" class="dot-p"/><text x="690" y="19" class="pill-text">TensorFlow</text>
+
+    <rect x="750" y="0" width="105" height="38" class="pill glow-c"/>
+    <circle cx="772" cy="19" r="4" class="dot-c"/><text x="813" y="19" class="pill-text">PyTorch</text>
   </g>
 </svg>
