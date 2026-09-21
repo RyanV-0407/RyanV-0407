@@ -73,8 +73,8 @@
   <text x="38" y="60" class="icon">👨‍💻</text>
   <text x="80" y="56" class="label">The Builder</text>
   
-  <text x="38" y="98" class="text">I'm <tspan class="highlight">Vikram</tspan> — a Data Scientist and Software Engineer</text>
-  <text x="38" y="122" class="text">passionate about building scalable ML systems, intelligent</text>
-  <text x="38" y="146" class="text">applications, and clean, beautiful digital experiences</text>
-  <text x="38" y="170" class="text">that make a genuine, long-lasting impact.</text>
+  <text x="38" y="98" class="text">I'm <tspan class="highlight">Vikram</tspan> — a Computer Science undergrad working</text>
+  <text x="38" y="122" class="text">across <tspan class="highlight">Machine Learning, AI</tspan>, and software engineering,</text>
+  <text x="38" y="146" class="text">building practical systems from idea to deployment with</text>
+  <text x="38" y="170" class="text">clean architecture and high-velocity craft.</text>
 </svg>

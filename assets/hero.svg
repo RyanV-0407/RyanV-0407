@@ -83,7 +83,7 @@
         font-weight: 600;
         font-size: 13px;
         fill: #8e8eb4;
-        letter-spacing: 7px;
+        letter-spacing: 5px;
       }
 
       /* Status Pill */
@@ -169,7 +169,7 @@
     <line x1="420" y1="210" x2="780" y2="210" class="accent-shimmer"/>
 
     <!-- Clean Modern Tagline -->
-    <text x="600" y="258" text-anchor="middle" class="tagline">DATA SCIENTIST  ·  ENGINEER  ·  BUILDER</text>
+    <text x="600" y="258" text-anchor="middle" class="tagline">AI / ML  ·  SOFTWARE ENGINEER  ·  BUILDER</text>
 
     <!-- Status Indicator Pill -->
     <g transform="translate(465, 304)">
