@@ -55,17 +55,19 @@
 <br/>
 
 <a href="https://github.com/RyanV-0407/GPA_ADVISOR">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=RyanV-0407&repo=GPA_ADVISOR&bg_color=0d0d18&border_color=1e1e38&title_color=a78bfa&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="GPA Advisor Agent"/>
+  <img src="assets/project-gpa.svg" width="49%" alt="GPA Advisor Agent"/>
 </a>
 <a href="https://github.com/RyanV-0407/Music-Recommendation-using-ML">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=RyanV-0407&repo=Music-Recommendation-using-ML&bg_color=0d0d18&border_color=1e1e38&title_color=f472b6&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="Music Recommender"/>
+  <img src="assets/project-music.svg" width="49%" alt="Music Recommender"/>
 </a>
 
+<br/>
+
 <a href="https://github.com/RyanV-0407/wakatime-dashboard">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=RyanV-0407&repo=wakatime-dashboard&bg_color=0d0d18&border_color=1e1e38&title_color=22d3ee&icon_color=a78bfa&text_color=9898b0&border_radius=16" width="49%" alt="WakaTime Dashboard"/>
+  <img src="assets/project-waka.svg" width="49%" alt="WakaTime Dashboard"/>
 </a>
 <a href="https://github.com/RyanV-0407/Event-Reminder-System">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=RyanV-0407&repo=Event-Reminder-System&bg_color=0d0d18&border_color=1e1e38&title_color=a78bfa&icon_color=f472b6&text_color=9898b0&border_radius=16" width="49%" alt="Event Reminder System"/>
+  <img src="assets/project-event.svg" width="49%" alt="Event Reminder System"/>
 </a>
 
 <br/><br/>
@@ -78,8 +80,8 @@
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=RyanV-0407&show_icons=true&hide_rank=false&bg_color=0d0d18&border_color=1e1e38&title_color=a78bfa&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="GitHub stats"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RyanV-0407&layout=compact&bg_color=0d0d18&border_color=1e1e38&title_color=f472b6&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="Top languages"/>
+<img src="https://github-readme-stats-sigma-five.vercel.app/api?username=RyanV-0407&show_icons=true&hide_rank=false&bg_color=0d0d18&border_color=1e1e38&title_color=a78bfa&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="GitHub stats"/>
+<img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=RyanV-0407&layout=compact&bg_color=0d0d18&border_color=1e1e38&title_color=f472b6&icon_color=22d3ee&text_color=9898b0&border_radius=16" width="49%" alt="Top languages"/>
 
 <br/>
 

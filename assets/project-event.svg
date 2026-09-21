@@ -1,0 +1,36 @@
+<svg viewBox="0 0 580 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap');
+      .c-bg { fill: #0c0c16; }
+      .c-border { fill: none; stroke: url(#pBorder4); stroke-width: 1.5; rx: 18; ry: 18; stroke-dasharray: 6 4; animation: bdr 13s linear infinite; }
+      @keyframes bdr { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -100; } }
+      .c-title { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 18px; fill: #a78bfa; }
+      .c-desc { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 12.5px; fill: #8888a8; }
+      .c-tag-bg { fill: #13131f; rx: 10; ry: 10; }
+      .c-tag { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 10px; fill: #a78bfa; letter-spacing: 1px; }
+      .c-icon { font-size: 22px; }
+      .c-glow { fill: #a78bfa; opacity: 0.05; animation: glow 5.5s ease-in-out infinite; }
+      @keyframes glow { 0%,100% { opacity: 0.03; } 50% { opacity: 0.08; } }
+      .c-arrow { font-family: 'Inter', sans-serif; font-size: 18px; fill: #3a3a55; animation: arrowPulse 2s ease-in-out infinite; }
+      @keyframes arrowPulse { 0%,100% { transform: translateX(0); opacity: 0.3; } 50% { transform: translateX(4px); opacity: 0.7; } }
+    </style>
+    <linearGradient id="pBorder4"><stop offset="0%" style="stop-color:#a78bfa;stop-opacity:0.5"/><stop offset="100%" style="stop-color:#f472b6;stop-opacity:0.3"/></linearGradient>
+    <filter id="pBlur4"><feGaussianBlur stdDeviation="35"/></filter>
+  </defs>
+  <rect x="2" y="2" width="576" height="176" rx="18" class="c-bg"/>
+  <circle cx="520" cy="40" r="80" class="c-glow" filter="url(#pBlur4)"/>
+  <rect x="2" y="2" width="576" height="176" class="c-border"/>
+  <text x="38" y="48" class="c-icon">🔔</text>
+  <text x="70" y="46" class="c-title">Event Reminder System</text>
+  <text x="540" y="46" class="c-arrow">→</text>
+  <text x="38" y="80" class="c-desc">A smart event management and notification</text>
+  <text x="38" y="100" class="c-desc">system that sends timely reminders via multiple</text>
+  <text x="38" y="120" class="c-desc">channels to keep you on schedule.</text>
+  <rect x="38" y="138" width="80" height="24" class="c-tag-bg"/>
+  <text x="78" y="154" class="c-tag" text-anchor="middle">SYSTEM</text>
+  <rect x="127" y="138" width="80" height="24" class="c-tag-bg"/>
+  <text x="167" y="154" class="c-tag" text-anchor="middle">PYTHON</text>
+  <rect x="216" y="138" width="100" height="24" class="c-tag-bg"/>
+  <text x="266" y="154" class="c-tag" text-anchor="middle">BACKEND</text>
+</svg>
