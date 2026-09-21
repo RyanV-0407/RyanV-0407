@@ -1,0 +1,24 @@
+<svg viewBox="0 0 580 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap');
+      .card-bg { fill: #0d0d18; rx: 16; ry: 16; }
+      .card-border { fill: none; stroke: #1e1e38; stroke-width: 1; rx: 16; ry: 16; }
+      .card-icon { font-size: 28px; }
+      .card-label { font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; fill: #a78bfa; }
+      .card-text { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 13px; fill: #9898b0; line-height: 1.6; }
+      .card-accent { fill: #a78bfa; opacity: 0.08; }
+    </style>
+  </defs>
+  <rect width="580" height="200" class="card-bg"/>
+  <rect width="580" height="200" class="card-border"/>
+  <!-- Subtle accent glow -->
+  <circle cx="50" cy="50" r="80" class="card-accent"/>
+  <!-- Content -->
+  <text x="35" y="50" class="card-icon">👨‍💻</text>
+  <text x="75" y="48" class="card-label">About</text>
+  <text x="35" y="85" class="card-text">I'm Vikram — a Data Scientist and Software</text>
+  <text x="35" y="108" class="card-text">Engineer passionate about building scalable</text>
+  <text x="35" y="131" class="card-text">ML systems, intelligent applications, and clean,</text>
+  <text x="35" y="154" class="card-text">beautiful digital experiences that make an impact.</text>
+</svg>

@@ -1,0 +1,178 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap');
+
+      .bg { fill: #07070c; }
+
+      /* Gradient mesh blobs */
+      .blob1 {
+        fill: url(#grad1);
+        opacity: 0.5;
+        animation: float1 8s ease-in-out infinite;
+      }
+      .blob2 {
+        fill: url(#grad2);
+        opacity: 0.4;
+        animation: float2 10s ease-in-out infinite;
+      }
+      .blob3 {
+        fill: url(#grad3);
+        opacity: 0.35;
+        animation: float3 12s ease-in-out infinite;
+      }
+
+      @keyframes float1 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(40px, -30px) scale(1.1); }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(-50px, 20px) scale(1.15); }
+      }
+      @keyframes float3 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(30px, 40px) scale(1.05); }
+      }
+
+      /* Grid lines */
+      .grid-line {
+        stroke: #1a1a2e;
+        stroke-width: 0.5;
+        fill: none;
+      }
+
+      /* Name text */
+      .name {
+        font-family: 'Inter', sans-serif;
+        font-weight: 900;
+        font-size: 72px;
+        fill: #ffffff;
+        opacity: 0;
+        animation: fadeSlideUp 1s ease-out 0.3s forwards;
+      }
+      .tagline {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        fill: #8b8ba3;
+        letter-spacing: 6px;
+        opacity: 0;
+        animation: fadeSlideUp 1s ease-out 0.7s forwards;
+      }
+      .accent-line {
+        stroke: url(#accentGrad);
+        stroke-width: 3;
+        stroke-linecap: round;
+        opacity: 0;
+        animation: expandLine 0.8s ease-out 0.5s forwards;
+      }
+
+      @keyframes fadeSlideUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes expandLine {
+        from { opacity: 0; stroke-dasharray: 0 200; }
+        to { opacity: 1; stroke-dasharray: 200 0; }
+      }
+
+      /* Floating particles */
+      .particle {
+        fill: #a78bfa;
+        opacity: 0;
+        animation: sparkle 4s ease-in-out infinite;
+      }
+      .particle:nth-child(2) { animation-delay: 0.5s; fill: #22d3ee; }
+      .particle:nth-child(3) { animation-delay: 1s; fill: #f472b6; }
+      .particle:nth-child(4) { animation-delay: 1.5s; fill: #a78bfa; }
+      .particle:nth-child(5) { animation-delay: 2s; fill: #22d3ee; }
+      .particle:nth-child(6) { animation-delay: 2.5s; fill: #f472b6; }
+      .particle:nth-child(7) { animation-delay: 0.8s; fill: #a78bfa; }
+      .particle:nth-child(8) { animation-delay: 1.3s; fill: #22d3ee; }
+
+      @keyframes sparkle {
+        0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
+        50% { opacity: 0.7; transform: translateY(-15px) scale(1); }
+      }
+
+      /* Corner accents */
+      .corner {
+        stroke: #a78bfa;
+        stroke-width: 1.5;
+        fill: none;
+        opacity: 0;
+        animation: fadeIn 0.5s ease-out 1s forwards;
+      }
+      @keyframes fadeIn {
+        to { opacity: 0.4; }
+      }
+    </style>
+
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f472b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a78bfa" />
+      <stop offset="50%" style="stop-color:#22d3ee" />
+      <stop offset="100%" style="stop-color:#f472b6" />
+    </linearGradient>
+
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="60" />
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="50" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="400" class="bg"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.3">
+    <line x1="0" y1="100" x2="1200" y2="100" class="grid-line"/>
+    <line x1="0" y1="200" x2="1200" y2="200" class="grid-line"/>
+    <line x1="0" y1="300" x2="1200" y2="300" class="grid-line"/>
+    <line x1="300" y1="0" x2="300" y2="400" class="grid-line"/>
+    <line x1="600" y1="0" x2="600" y2="400" class="grid-line"/>
+    <line x1="900" y1="0" x2="900" y2="400" class="grid-line"/>
+  </g>
+
+  <!-- Gradient mesh blobs -->
+  <ellipse cx="250" cy="180" rx="250" ry="200" class="blob1" filter="url(#blur1)"/>
+  <ellipse cx="900" cy="250" rx="220" ry="180" class="blob2" filter="url(#blur2)"/>
+  <ellipse cx="600" cy="100" rx="180" ry="150" class="blob3" filter="url(#blur1)"/>
+
+  <!-- Floating particles -->
+  <g>
+    <circle cx="150" cy="80" r="2" class="particle"/>
+    <circle cx="350" cy="320" r="2.5" class="particle"/>
+    <circle cx="500" cy="60" r="1.5" class="particle"/>
+    <circle cx="750" cy="340" r="2" class="particle"/>
+    <circle cx="950" cy="90" r="3" class="particle"/>
+    <circle cx="1050" cy="280" r="2" class="particle"/>
+    <circle cx="200" cy="250" r="1.5" class="particle"/>
+    <circle cx="850" cy="150" r="2.5" class="particle"/>
+  </g>
+
+  <!-- Corner brackets -->
+  <polyline points="30,60 30,30 60,30" class="corner"/>
+  <polyline points="1140,30 1170,30 1170,60" class="corner"/>
+  <polyline points="30,340 30,370 60,370" class="corner"/>
+  <polyline points="1140,370 1170,370 1170,340" class="corner"/>
+
+  <!-- Main text -->
+  <text x="600" y="180" text-anchor="middle" class="name">Vikram Singh Rathour</text>
+  <line x1="450" y1="210" x2="750" y2="210" class="accent-line"/>
+  <text x="600" y="260" text-anchor="middle" class="tagline">DATA SCIENTIST  ·  ENGINEER  ·  BUILDER</text>
+</svg>
