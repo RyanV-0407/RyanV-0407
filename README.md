@@ -4,7 +4,9 @@
 <!--                    ANIMATED HERO BANNER                    -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/hero.svg?v=mlcore" alt="Vikram Singh Rathour — Machine Learning · Deep Learning · AI Builder" width="100%"/>
+<a href="https://vikram0407.vercel.app/">
+  <img src="assets/hero.svg?v=mlcore" alt="Vikram Singh Rathour — Machine Learning · Deep Learning · AI Builder" width="100%"/>
+</a>
 
 <br/>
 
@@ -21,17 +23,17 @@
 <!--                      01 // ABOUT                           -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/section-about.svg?v=music" width="100%" alt="01 // About"/>
+<a href="#!"><img src="assets/section-about.svg?v=music" width="100%" alt="01 // About"/></a>
 
 <br/>
 
-<img src="assets/card-about.svg?v=mlcore" width="49%" alt="About"/>
-<img src="assets/card-focus.svg" width="49%" alt="Currently exploring"/>
+<a href="#!"><img src="assets/card-about.svg?v=mlcore" width="49%" alt="About"/></a>
+<a href="#!"><img src="assets/card-focus.svg" width="49%" alt="Currently exploring"/></a>
 
 <br/>
 
-<img src="assets/card-base.svg?v=mlcore" width="49%" alt="Base & Nexus"/>
-<img src="assets/card-principle.svg" width="49%" alt="Core Principle"/>
+<a href="#!"><img src="assets/card-base.svg?v=mlcore" width="49%" alt="Base & Nexus"/></a>
+<a href="#!"><img src="assets/card-principle.svg" width="49%" alt="Core Principle"/></a>
 
 <br/><br/>
 
@@ -39,11 +41,11 @@
 <!--                      02 // STACK                           -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/section-stack.svg?v=music" width="100%" alt="02 // Stack"/>
+<a href="#!"><img src="assets/section-stack.svg?v=music" width="100%" alt="02 // Stack"/></a>
 
 <br/>
 
-<img src="assets/stack.svg?v=fixed" width="100%" alt="Tech stack"/>
+<a href="#!"><img src="assets/stack.svg?v=fixed" width="100%" alt="Tech stack"/></a>
 
 <br/><br/>
 
@@ -51,7 +53,7 @@
 <!--                    03 // PROJECTS                          -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/section-projects.svg?v=music" width="100%" alt="03 // Projects"/>
+<a href="#!"><img src="assets/section-projects.svg?v=music" width="100%" alt="03 // Projects"/></a>
 
 <br/>
 
@@ -77,7 +79,7 @@
 <!--                    04 // ACTIVITY                          -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/section-activity.svg?v=music" width="100%" alt="04 // Activity"/>
+<a href="#!"><img src="assets/section-activity.svg?v=music" width="100%" alt="04 // Activity"/></a>
 
 <br/>
 
@@ -97,7 +99,7 @@
 <!--                        FOOTER                              -->
 <!-- ═══════════════════════════════════════════════════════════ -->
 
-<img src="assets/footer.svg" width="100%" alt="Let's build something worth shipping"/>
+<a href="#!"><img src="assets/footer.svg" width="100%" alt="Let's build something worth shipping"/></a>
 
 <br/>
 
