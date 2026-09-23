@@ -101,14 +101,16 @@
 
 <a href="#!"><img src="assets/footer.svg" width="100%" alt="Let's build something worth shipping"/></a>
 
-<br/>
-
-<a href="https://vikram0407.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0b0b12" alt="Portfolio"/></a>
-&nbsp;
-<a href="https://www.linkedin.com/in/vikram-singh-r0407"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0b0b12" alt="LinkedIn"/></a>
-&nbsp;
-<a href="https://www.instagram.com/the_ryan.v/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=0b0b12" alt="Instagram"/></a>
-&nbsp;
-<a href="https://github.com/RyanV-0407"><img src="https://img.shields.io/badge/GitHub-24243e?style=for-the-badge&logo=github&logoColor=white&labelColor=0b0b12" alt="GitHub"/></a>
+<p align="center">
+  <a href="https://vikram0407.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white&labelColor=0b0b12" alt="Portfolio"/></a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/vikram-singh-r0407"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0b0b12" alt="LinkedIn"/></a>
+  &nbsp;
+  <a href="https://www.instagram.com/the_ryan.v/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white&labelColor=0b0b12" alt="Instagram"/></a>
+  &nbsp;
+  <a href="https://github.com/RyanV-0407"><img src="https://img.shields.io/badge/GitHub-24243e?style=for-the-badge&logo=github&logoColor=white&labelColor=0b0b12" alt="GitHub"/></a>
+  &nbsp;
+  <a href="mailto:vikramsinghrathour0407@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0b0b12" alt="Email"/></a>
+</p>
 
 </div>
